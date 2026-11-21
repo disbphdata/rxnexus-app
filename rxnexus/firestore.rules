@@ -1,0 +1,90 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Primitive Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Entity-specific shape validation
+    function isValidUser(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.username is string && data.username.size() <= 128
+        && data.name is string && data.name.size() <= 256
+        && data.role is string && data.role.size() <= 64;
+    }
+
+    function isValidDrug(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.name is string && data.name.size() <= 256
+        && data.stockCode is string && data.stockCode.size() <= 64
+        && data.type is string && (data.type == 'General' || data.type == 'Oncology');
+    }
+
+    function isValidBooking(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.hn is string && data.hn.size() <= 32
+        && data.patientName is string && data.patientName.size() <= 256
+        && data.bookingDate is string && data.bookingDate.size() <= 32
+        && data.mode is string && (data.mode == 'General' || data.mode == 'Oncology');
+    }
+
+    function isValidLog(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.userName is string && data.userName.size() <= 256
+        && data.action is string && data.action.size() <= 256;
+    }
+
+    function isValidOwingMed(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.bookingId is string && data.bookingId.size() <= 128
+        && data.patientName is string && data.patientName.size() <= 256
+        && data.hn is string && data.hn.size() <= 32
+        && data.medications is list
+        && data.reportedBy is string && data.reportedBy.size() <= 256
+        && data.createdAt is string && data.createdAt.size() <= 64
+        && data.resolved is bool;
+    }
+
+    // Collection Security Rules
+    match /users/{userId} {
+      allow read: if true; // Allow query lookup of catalog profiles
+      allow create, update: if isValidId(userId) && isValidUser(request.resource.data);
+      allow delete: if isValidId(userId);
+    }
+
+    match /drugs/{drugId} {
+      allow read: if true;
+      allow create, update: if isValidId(drugId) && isValidDrug(request.resource.data);
+      allow delete: if isValidId(drugId);
+    }
+
+    match /bookings/{bookingId} {
+      allow read: if true;
+      allow create, update: if isValidId(bookingId) && isValidBooking(request.resource.data);
+      allow delete: if isValidId(bookingId);
+    }
+
+    match /logs/{logId} {
+      allow read: if true;
+      allow create, update: if isValidId(logId) && isValidLog(request.resource.data);
+      allow delete: if isValidId(logId);
+    }
+
+    match /owing_meds/{owingId} {
+      allow read: if true;
+      allow create, update: if isValidId(owingId) && isValidOwingMed(request.resource.data);
+      allow delete: if isValidId(owingId);
+    }
+  }
+}

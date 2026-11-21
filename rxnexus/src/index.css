@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sarabun", sans-serif;
+  --font-sarabun: "Sarabun", sans-serif;
+  --font-prompt: "Sarabun", sans-serif;
+  --font-mono: "Sarabun", sans-serif;
+  --font-serif: "Sarabun", sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html, body {
+  font-family: "Sarabun", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  background-color: #f8fafc;
+}
+
+/* Keep all text, numbers, inputs, date fields, and numeric badges in the exact same Sarabun font across devices and ratios */
+body, input, select, textarea, button,
+code, kbd, samp, pre, .font-mono, .font-serif, .font-sans, .font-sarabun {
+  font-family: "Sarabun", sans-serif !important;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+input[type="date"],
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  font-family: "Sarabun", sans-serif !important;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Custom CSS Scrollbars */
+.custom-mini-scroll::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.custom-mini-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-mini-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Print CSS Configurations for flawless PDF and Slip Voucher generation */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 7mm 8mm !important;
+  }
+
+  /* Set all unnecessary UI elements, navigation bars, sidebars, and backgrounds to display: none */
+  header, 
+  aside,
+  nav,
+  button,
+  .print\:hidden,
+  .print-hidden,
+  .print-hidden-element,
+  #owing-medication-clerk-urgent-banner,
+  .print-overlay-wrapper > div:not(#printable-area) {
+    display: none !important;
+  }
+
+  /* Reset outer app shell layout containers without stripping background colors inside #printable-area */
+  html, body, #root, .print-overlay-wrapper, main, section {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+
+  html, body, #root, .print-overlay-wrapper {
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
+
+  .print-overlay-wrapper {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Ensure the main Requisition Supply Bill container is visible, takes up 100% width, 
+     and is positioned cleanly so repeating headers and card backgrounds render accurately */
+  #printable-area {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+  }
+
+  #printable-area * {
+    overflow: visible !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+  }
+
+  /* Force print background shadows and colors across all report badges, headers, and cards */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-layout-shell {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+  }
+
+  .print-layout-shell > thead {
+    display: table-header-group !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .print-layout-shell > tfoot {
+    display: table-footer-group !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-layout-shell > thead > tr,
+  .print-layout-shell > thead > tr > td,
+  .print-layout-shell > tfoot > tr,
+  .print-layout-shell > tfoot > tr > td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-layout-shell > thead > tr {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .print-layout-shell > tbody,
+  .print-layout-shell > tbody > tr,
+  .print-layout-shell > tbody > tr > td {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  table:not(.print-layout-shell) > thead {
+    display: table-header-group !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  table:not(.print-layout-shell) > thead > tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  table:not(.print-layout-shell) > tbody > tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  .bg-neutral-50, .bg-indigo-50\/20, .bg-emerald-50\/5 {
+    background-color: #f8fafc !important;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Prevent uploaded scan leaks across paper cuts */
+  img {
+    max-width: 100% !important;
+    max-height: 220px !important;
+    object-fit: contain !important;
+    page-break-inside: avoid !important;
+  }
+}

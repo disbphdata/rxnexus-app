@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RxNexus — คู่มือการใช้งานแบบสั้นแยกตาม Role</title>
+  <link rel="icon" type="image/png" href="RxNexusLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+
+    html, body {
+      font-family: 'Sarabun', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #e2e8f0;
+      color: #1e293b;
+      line-height: 1.48;
+      font-size: 13.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen preview toolbar */
+    .screen-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+    }
+
+    .screen-bar-btn {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .screen-bar-btn:hover {
+      background: #0369a1;
+    }
+
+    /* A4 Page container */
+    .page {
+      width: 190mm;
+      min-height: 274mm;
+      background: #ffffff;
+      margin: 14px auto;
+      padding: 9mm 10mm;
+      border-radius: 10px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    /* Header */
+    .doc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      padding: 2px;
+      background: #ffffff;
+      object-fit: contain;
+    }
+
+    .doc-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .doc-sub {
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .page-tag {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .tag-overview { background: #e0f2fe; color: #0369a1; }
+    .tag-nurse { background: #dbeafe; color: #1d4ed8; }
+    .tag-pharm { background: #d1fae5; color: #047857; }
+    .tag-stock { background: #fef3c7; color: #b45309; }
+    .tag-admin { background: #e0e7ff; color: #4338ca; }
+
+    /* Role Banner */
+    .role-banner {
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .banner-overview { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
+    .banner-nurse { background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%); }
+    .banner-pharm { background: linear-gradient(135deg, #047857 0%, #0d9488 100%); }
+    .banner-stock { background: linear-gradient(135deg, #b45309 0%, #d97706 100%); }
+    .banner-admin { background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%); }
+
+    .banner-title {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .banner-desc {
+      font-size: 13px;
+      opacity: 0.94;
+      margin-top: 2px;
+    }
+
+    .banner-home {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 9px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* Flow steps bar (Page 1) */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .flow-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .flow-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .flow-head {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+
+    .flow-text {
+      font-size: 12px;
+      color: #475569;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-size: 12.5px;
+      font-weight: 800;
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1.5px solid #cbd5e1;
+    }
+
+    td {
+      font-size: 12.5px;
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    /* Step cards */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .step-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 11px;
+      padding: 11px 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-card-full {
+      grid-column: span 2;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .step-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .step-list li {
+      position: relative;
+      padding-left: 15px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .step-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      font-weight: 800;
+      color: #0284c7;
+    }
+
+    /* UI Button pill illustration */
+    .btn-ref {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 0 6px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .btn-blue { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+    .btn-green { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+    .btn-indigo { background: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
+    .btn-amber { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+    .btn-rose { background: #ffe4e6; color: #9f1239; border-color: #fda4af; }
+
+    /* Highlight Tip Box */
+    .tip-box {
+      background: #fffbeb;
+      border: 1.5px solid #fcd34d;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-size: 12.8px;
+      color: #78350f;
+    }
+
+    .tip-box strong {
+      color: #92400e;
+    }
+
+    .info-box {
+      background: #f0f9ff;
+      border: 1.5px solid #7dd3fc;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-size: 12.8px;
+      color: #0c4a6e;
+    }
+
+    /* Color badges legend */
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .legend-item {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 8px;
+      padding-top: 7px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .screen-bar {
+        display: none !important;
+      }
+      .page {
+        margin: 0;
+        width: 100%;
+        min-height: 274mm;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 4mm 2mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-bar">
+    <div style="font-size:14px; font-weight:700;">
+      RxNexus · คู่มือการใช้งานฉบับย่อแยกตาม Role (5 หน้า A4 อ่านง่าย)
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button class="screen-bar-btn" onclick="window.print()">พิมพ์ / บันทึกเป็น PDF</button>
+      <a class="screen-bar-btn" style="background:#334155;" href="/">กลับเข้าสู่ระบบ RxNexus</a>
+    </div>
+  </div>
+
+  <!-- PAGE 1: OVERVIEW -->
+  <section class="page">
+    <div class="page-body">
+      <header class="doc-header">
+        <div class="header-left">
+          <img src="RxNexusLogo.png" alt="RxNexus Logo" class="logo" />
+          <div>
+            <div class="doc-title">RxNexus — คู่มือการใช้งานแยกตาม Role (ฉบับเข้าใจง่าย)</div>
+            <div class="doc-sub">ระบบจองยาเวชภัณฑ์สำรอง &amp; เคมีบำบัด · Bangkok Hospital Pattaya</div>
+          </div>
+        </div>
+        <div class="page-tag tag-overview">หน้า 1 / 5 · ภาพรวม</div>
+      </header>
+
+      <div class="role-banner banner-overview">
+        <div>
+          <div class="banner-title">หลักการทำงาน 4 ขั้นตอนง่ายๆ ของ RxNexus</div>
+          <div class="banner-desc">ทุกแผนกมองเห็นสถานะเดียวกันบน Dashboard แบบ Real-time และบันทึกชื่อ-เวลาอัตโนมัติทุกขั้น</div>
+        </div>
+        <div class="banner-home">1 ระบบ · 4 ตำแหน่ง</div>
+      </div>
+
+      <div class="flow-grid">
+        <div class="flow-box" style="border-color:#93c5fd;">
+          <div class="flow-num" style="background:#2563eb;">1</div>
+          <div class="flow-head">จองยา (Booking)</div>
+          <div class="flow-text">พยาบาลหรือเภสัชกรกรอกชื่อยา &rarr; แจ้งเตือนทันที</div>
+        </div>
+        <div class="flow-box" style="border-color:#6ee7b7;">
+          <div class="flow-num" style="background:#059669;">2</div>
+          <div class="flow-head">ทวนสอบ (Verify Rx)</div>
+          <div class="flow-text">เฉพาะ <strong>เภสัชกร</strong> ซูมใบสั่งและกด Approve</div>
+        </div>
+        <div class="flow-box" style="border-color:#fcd34d;">
+          <div class="flow-num" style="background:#d97706;">3</div>
+          <div class="flow-head">คลังยืนยัน 2 ขั้น</div>
+          <div class="flow-text">กด <strong>1/2 สั่งซื้อ</strong> &rarr; กด <strong>2/2 ของมาถึง</strong> + Timestamp</div>
+        </div>
+        <div class="flow-box" style="border-color:#a5b4fc;">
+          <div class="flow-num" style="background:#4f46e5;">4</div>
+          <div class="flow-head">รับยา &amp; ปิดงาน</div>
+          <div class="flow-text">พยาบาล Double Check รับยา / จัดการ Hold-ยืมยา</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:14.5px; font-weight:800; color:#0f172a; margin-bottom:6px;">
+          เข้าสู่ระบบแล้วเจอหน้าไหน? และหน้าที่หลักของแต่ละตำแหน่ง
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">ตำแหน่ง (Role)</th>
+              <th style="width:20%;">วิธีเข้าสู่ระบบ</th>
+              <th style="width:22%;">หน้าแรกที่เปิดอัตโนมัติ</th>
+              <th style="width:40%;">งานหลักที่ต้องทำ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color:#1d4ed8;">1. พยาบาล (Nurse)</strong></td>
+              <td>รหัสประจำแผนก / วอร์ด</td>
+              <td><strong>ลงทะเบียนจองยา</strong><br/><span style="font-size:11.5px; color:#64748b;">(Booking Drug)</span></td>
+              <td>จองยา (กรอกเฉพาะที่จำเป็น), พิมพ์ใบราคาให้คนไข้, แก้ไขใบจองที่ถูกส่งกลับ, ยืม/คืนยา, แจ้ง Hold/เปลี่ยนวัน, Double Check รับยา</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#047857;">2. เภสัชกร (Pharmacist)</strong></td>
+              <td>รหัสเฉพาะบุคคล</td>
+              <td><strong>Dashboard</strong></td>
+              <td>ทวนสอบใบสั่งยา <strong>Verify Rx</strong> (ซูมดูรูป), จองยาระบุห้องยา, ติดตามยาค้างส่ง, อนุมัติยกเลิก, ขอแก้ไข/ลบ Stock ยา</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#b45309;">3. คลังยา (Stock Clerk)</strong></td>
+              <td>รหัสเจ้าหน้าที่คลัง</td>
+              <td><strong>Dashboard</strong></td>
+              <td><strong>ไม่ต้องทวนสอบ Stock ซ้ำ</strong> — กดยืนยัน 2 ขั้นผ่าน <strong>Shortcut Detail</strong> (1/2 สั่งซื้อ &rarr; 2/2 ของถึง) พร้อม Timestamp &amp; พิมพ์ใบจัดยา A4</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#4338ca;">4. ผู้ดูแล (Admin)</strong></td>
+              <td>รหัสผู้ดูแลระบบ</td>
+              <td><strong>Dashboard</strong></td>
+              <td>อนุมัติพนักงานใหม่, อนุมัติคำขอแก้/ลบ Stock ยาจากเภสัชกร, ตรวจ Audit Log ย้อนหลัง, Export &amp; ล้างข้อมูลเก่าเกิน 6 เดือน</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div style="font-size:14.5px; font-weight:800; color:#0f172a; margin-bottom:6px;">
+          ป้ายสถานะสีที่ควรรู้บนตาราง Dashboard (เห็นเหมือนกันทุก Role)
+        </div>
+        <div class="legend-grid">
+          <div class="legend-item">
+            <strong style="color:#1d4ed8;">แท็บ ยาทั่วไป / Oncology</strong><br/>
+            แยกหมวดยาทั่วไปกับเคมีบำบัดชัดเจน
+          </div>
+          <div class="legend-item">
+            <strong style="color:#be123c;">Verify ไม่ผ่าน (สีแดง)</strong><br/>
+            กด "ดูเหตุผล" แล้วกด "แก้ไขเพื่อจองใหม่"
+          </div>
+          <div class="legend-item">
+            <strong style="color:#b45309;">HOLD / เปลี่ยนวัน</strong><br/>
+            ป้ายเตือนชะลอเตรียมยาเมื่อผลเลือดเปลี่ยน
+          </div>
+          <div class="legend-item">
+            <strong style="color:#047857;">เภสัช: ยอมรับแล้ว</strong><br/>
+            ผ่านการ Verify Rx พร้อมเข้าสู่ขั้นคลัง
+          </div>
+          <div class="legend-item">
+            <strong style="color:#3730a3;">Stock: 1. สั่ง / 2. ถึง</strong><br/>
+            โชว์ชื่อผู้กดยืนยันและเวลาทั้งสั่งซื้อ-ของถึง
+          </div>
+          <div class="legend-item">
+            <strong style="color:#c2410c;">ยืมยา (รอจองคืน)</strong><br/>
+            ป้ายเตือนให้กดจองยาคืนเจ้าของ HN เดิม
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>ใช้งานได้ทุกเครื่อง (PC / Tablet / iPad):</strong> ระบบใช้ฟอนต์มาตรฐาน <strong>Sarabun</strong> จัดวางให้หน้าตาเหมือนกันทุกจอ ไม่ตกขอบ และเปลี่ยนภาษา <strong>ไทย / English</strong> ได้ที่แถบด้านบนตลอดเวลา
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>RxNexus Quick Guide · Powered By Preeyapat P. (Pharmacist)</span>
+      <span>หน้าที่ 1 จาก 5</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 2: NURSE -->
+  <section class="page">
+    <div class="page-body">
+      <header class="doc-header">
+        <div class="header-left">
+          <img src="RxNexusLogo.png" alt="RxNexus Logo" class="logo" />
+          <div>
+            <div class="doc-title">คู่มือสำหรับ Role 1: พยาบาล (Nurse)</div>
+            <div class="doc-sub">เข้าใช้งานด้วยรหัสประจำแผนก &rarr; เปิดหน้า "ลงทะเบียนจองยา" อัตโนมัติ</div>
+          </div>
+        </div>
+        <div class="page-tag tag-nurse">หน้า 2 / 5 · Nurse</div>
+      </header>
+
+      <div class="role-banner banner-nurse">
+        <div>
+          <div class="banner-title">พยาบาล (Nurse) — จองยาด่วน · แก้ไข · ยืม/คืนยา · แจ้ง Hold</div>
+          <div class="banner-desc">ออกแบบให้กรอกข้อมูลน้อยที่สุดเฉพาะที่จำเป็น ไม่ต้องเลื่อนหาชื่อยายาวๆ ลดเวลาหน้าวอร์ด</div>
+        </div>
+        <div class="banner-home">หน้าแรก:<br/>ลงทะเบียนจองยา</div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#2563eb;">1</span>
+            <span>วิธีจองยาใน 1 นาที (Booking Drug)</span>
+          </div>
+          <ul class="step-list">
+            <li>เลือกประเภท: <strong>ยาทั่วไป</strong> หรือ <strong>ยามะเร็ง (Oncology)</strong></li>
+            <li>กรอกข้อมูลจำเป็น: <strong>HN (10 หลัก 02-xx-xxxxxx)</strong>, <strong>ชื่อผู้ป่วย</strong>, <strong>แผนก</strong> และ <strong>วันที่ใช้ยา</strong></li>
+            <li>ช่องรายการยา: แค่พิมพ์คำค้น (<strong>Auto-Suggest</strong>) ระบบจะดึงชื่อยาที่เกี่ยวข้องขึ้นมาให้คลิกเลือกทันที ไม่ต้องเลื่อน Scroll ยาว</li>
+            <li>ใส่ <strong>จำนวนยา</strong> และเลือกสิทธิราคา (<strong>OPD / IPD / Employee / IT</strong>)</li>
+            <li>ใส่ <strong>Note</strong> แจ้งรายละเอียดเพิ่มเติม + แนบรูปใบสั่งยา (ถ้ามี) แล้วกด <span class="btn-ref btn-blue">บันทึกข้อมูล</span></li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#0284c7;">2</span>
+            <span>ตรวจการจอง &amp; พิมพ์ใบราคาให้ผู้ป่วย</span>
+          </div>
+          <ul class="step-list">
+            <li>หลังบันทึก ระบบส่ง Alert แจ้งเตือนไปเภสัชกรและคลังยาทันทีโดยข้อมูลไม่สูญหาย</li>
+            <li>เปิดเมนู <strong>Dashboard</strong> เพื่อดูสถานะของเคสได้แบบ Real-time</li>
+            <li>กดปุ่ม <span class="btn-ref btn-blue">PDF</span> ท้ายแถวรายการเพื่อพิมพ์ <strong>Print Report</strong> ให้ผู้ป่วยตรวจสอบราคายาได้ทันที</li>
+            <li>ดูคิวนัดล่วงหน้าทั้งหมดได้ที่เมนู <strong>ปฏิทินคิวผู้ป่วย</strong> (กดที่ชื่อผู้ป่วยเพื่อดูรายละเอียดและ Note)</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#e11d48;">3</span>
+            <span>เมื่อใบจองถูกส่งกลับ (Verify ไม่ผ่าน)</span>
+          </div>
+          <ul class="step-list">
+            <li>หากเภสัชตรวจพบจุดผิดพลาด รายการจะขึ้นแถบสีแดง <strong>Verify ไม่ผ่าน</strong> พร้อมเสียง/ป้ายเตือน</li>
+            <li>กด <span class="btn-ref btn-rose">ดูเหตุผล</span> เพื่ออ่าน Note คำแนะนำจากเภสัชกร</li>
+            <li>กด <span class="btn-ref btn-rose">แก้ไขเพื่อจองใหม่</span> &rarr; ข้อมูลเดิมอยู่ครบทุกช่อง แค่แก้จุดที่ผิดแล้วกดบันทึก ระบบส่งกลับไป <strong>Re-verify Rx</strong> ให้อัตโนมัติ</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#d97706;">4</span>
+            <span>ควบคุมหน้างาน: Hold · เปลี่ยนวัน · ยืม-คืนยา</span>
+          </div>
+          <ul class="step-list">
+            <li><strong>กรณี Hold / เลื่อนนัด:</strong> กด <span class="btn-ref btn-amber">Hold</span> หรือ <span class="btn-ref">เปลี่ยนวัน</span> ใส่เหตุผล+ชื่อพยาบาล &rarr; แจ้งเตือนคลังทันที (ปลดกลับด้วยปุ่ม <span class="btn-ref btn-green">Continue</span>)</li>
+            <li><strong>กรณียืมยาข้ามคนไข้:</strong> เลือกยืมยาในฟอร์มจอง ระบบจับชื่อ HN เจ้าของยาและเขียน Note ให้อัตโนมัติ และแจ้งเตือนให้กด <span class="btn-ref btn-amber">จองยาคืน HN</span> จนกว่าจะคืนเสร็จ</li>
+            <li><strong>ขอยกเลิกเคส:</strong> กด <span class="btn-ref btn-rose">ขอยกเลิก</span> ใส่เหตุผล+ลงชื่อ &rarr; รอเภสัชกรหรือ Admin กดอนุมัติ</li>
+          </ul>
+        </div>
+
+        <div class="step-card step-card-full" style="background:#eff6ff; border-color:#bfdbfe;">
+          <div class="step-title" style="color:#1e40af;">
+            <span class="step-badge" style="background:#1e40af;">5</span>
+            <span>ตรวจเช็กรับยาหน้างาน (Double Check &amp; ยาถึงคลังแล้ว)</span>
+          </div>
+          <ul class="step-list">
+            <li>สังเกตช่อง <strong>สถานะการตรวจสอบ (Stock:)</strong> เมื่อคลังกดยืนยัน 2/2 ครบแล้วจะขึ้นสีเขียว <strong>ของมาถึงแล้ว</strong> พร้อมเวลา และเครื่องหมายถูกหน้าชื่อคนไข้</li>
+            <li>หากหน้างานยังไม่ได้รับยาที่ค้างอยู่ ให้เปิดแท็บ <strong>รายการยาค้างส่ง</strong> แล้วติ๊กเลือกรายการเพื่อยิง Alert เร่งด่วนไปที่คลังยาได้ทันที</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <strong>ข้อควรจำสำหรับพยาบาล:</strong> หลังบันทึกจองยา <em>ไม่ควรลบรายการเอง</em> หากมีการเปลี่ยนแปลงให้ใช้ปุ่ม <strong>แก้ไข</strong>, <strong>Hold</strong>, <strong>เปลี่ยนวัน</strong> หรือ <strong>ขอยกเลิก</strong> เพื่อให้เภสัชกรและคลังยามีประวัติตรวจสอบย้อนหลังตรงกันเสมอ
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>RxNexus Quick Guide · สำหรับพยาบาล (Nurse)</span>
+      <span>หน้าที่ 2 จาก 5</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 3: PHARMACIST -->
+  <section class="page">
+    <div class="page-body">
+      <header class="doc-header">
+        <div class="header-left">
+          <img src="RxNexusLogo.png" alt="RxNexus Logo" class="logo" />
+          <div>
+            <div class="doc-title">คู่มือสำหรับ Role 2: เภสัชกร (Pharmacist)</div>
+            <div class="doc-sub">เข้าใช้งานด้วยรหัสเฉพาะบุคคล &rarr; เปิดหน้า "Dashboard" อัตโนมัติ</div>
+          </div>
+        </div>
+        <div class="page-tag tag-pharm">หน้า 3 / 5 · Pharmacist</div>
+      </header>
+
+      <div class="role-banner banner-pharm">
+        <div>
+          <div class="banner-title">เภสัชกร (Pharmacist) — ทวนสอบ Verify Rx · ซูมใบสั่ง · ยาค้างส่ง · ขอแก้ Stock</div>
+          <div class="banner-desc">มีสิทธิ์เพียงบทบาทเดียวในการทวนสอบคำสั่งจองยา (Verify Rx) ก่อนส่งต่อให้คลังยาดำเนินการ</div>
+        </div>
+        <div class="banner-home">หน้าแรก:<br/>Dashboard</div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#059669;">1</span>
+            <span>ทวนสอบรายการจองยา (Verify Rx / Re-verify)</span>
+          </div>
+          <ul class="step-list">
+            <li>หน้า <strong>Dashboard</strong> แยกแท็บ <strong>รายการจองยาทั่วไป</strong> กับ <strong>Oncology</strong> ชัดเจน (ป้ายสีแดง <span class="btn-ref btn-rose">รอตรวจสอบ</span> แจ้งเตือนเคสค้าง)</li>
+            <li>กดปุ่ม <span class="btn-ref btn-blue">Verify Rx</span> (หรือ <span class="btn-ref btn-indigo">Re-verify Rx</span> หลังพยาบาลแก้ส่งกลับมา)</li>
+            <li>ใช้ลูกกลิ้งเมาส์ <strong>(Mouse Scroll Zoom)</strong> บนรูปใบสั่งยา เพื่อซูมดูตัวเลขแล็บและขนาดยาได้ทันที</li>
+            <li>เลือก <strong>ห้องยาจ่ายจริง</strong> (Phar IV, A1, E3, E6, D) และตรวจสอบชื่อเภสัชกรผู้ทวนสอบ</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#0d9488;">2</span>
+            <span>ตัดสินใจ: Approve หรือ Verify ไม่ผ่าน</span>
+          </div>
+          <ul class="step-list">
+            <li><strong>กรณีถูกต้องครบถ้วน:</strong> กด <strong>Approve</strong> &rarr; สถานะเปลี่ยนเป็น <span class="btn-ref btn-green">ยอมรับแล้ว</span> พร้อมบันทึกชื่อและเวลาของเภสัชกร (คลังยาจึงจะกดยืนยันสั่งซื้อต่อได้)</li>
+            <li><strong>กรณีพบจุดผิดพลาด:</strong> กด <strong>Not Approved</strong> &rarr; เลือกเหตุผลหลักและ <strong>บังคับใส่ Note คำแนะนำ</strong> &rarr; ระบบส่ง Alert กลับผู้จองให้แก้ไขโดยไม่ลบข้อมูล</li>
+            <li>ตรวจสอบรายการที่วอร์ดกด <strong>Hold / เปลี่ยนวัน</strong> ได้จากแถบเตือนด้านบน Dashboard เพื่อชะลอการเตรียมผสมยา</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#2563eb;">3</span>
+            <span>จองยาเองในนามเภสัชกร (Booking Drug)</span>
+          </div>
+          <ul class="step-list">
+            <li>กดเมนูด้านซ้าย <strong>ลงทะเบียนจองยา</strong></li>
+            <li>กรอก ชื่อผู้ป่วย, HN, แผนกที่จอง, พิมพ์ชื่อยา Auto-Suggest, จำนวน</li>
+            <li><strong>จุดสำคัญของเภสัชกร:</strong> เลือก <strong>ห้องยาที่จองใช้ยา (Pharmacy Location)</strong> ให้ตรงห้องจ่ายจริง (Phar IV / A1 / E3 / E6 / D)</li>
+            <li>ระบุ <strong>Note</strong> แจ้งคลัง/วอร์ด และกด <span class="btn-ref btn-blue">PDF</span> เพื่อพิมพ์ใบราคายาให้ผู้ป่วยตรวจสอบได้เช่นเดียวกัน</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#e11d48;">4</span>
+            <span>ยาค้างส่ง · อนุมัติยกเลิก · ขอแก้ Stock ยา</span>
+          </div>
+          <ul class="step-list">
+            <li><strong>รายการยาค้างส่ง:</strong> กรองตามห้องยาที่ดูแล หากยังไม่มียามาส่ง ให้ติ๊กตัวเลือกเพื่อส่ง Urgent Alert ตามยาไปที่คลัง</li>
+            <li><strong>คำขอยกเลิกจากวอร์ด:</strong> เภสัชกรกด <span class="btn-ref btn-green">อนุมัติยกเลิก</span> หรือ <span class="btn-ref">ปฏิเสธ</span> ได้โดยตรงบนตาราง Dashboard</li>
+            <li><strong>ขอแก้/ลบรายการยาในคลัง:</strong> เข้าเมนู <strong>คลังข้อมูลยาและราคา</strong> ระบุเหตุผลการแก้/ลบ &rarr; ระบบจะส่งคำขอให้ <strong>Admin กดอนุมัติ</strong> ก่อนมีผลจริง</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <strong>สำคัญมาก:</strong> ปุ่มของคลังยา (ขั้นตอนที่ 3) จะยังไม่เปิดให้คลังกดยืนยันสั่งซื้อ จนกว่าเภสัชกรจะทวนสอบใบจองและกด <strong>Approve</strong> ให้สถานะเป็น <strong>"ยอมรับแล้ว"</strong> เรียบร้อยก่อน
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>RxNexus Quick Guide · สำหรับเภสัชกร (Pharmacist)</span>
+      <span>หน้าที่ 3 จาก 5</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 4: STOCK CLERK -->
+  <section class="page">
+    <div class="page-body">
+      <header class="doc-header">
+        <div class="header-left">
+          <img src="RxNexusLogo.png" alt="RxNexus Logo" class="logo" />
+          <div>
+            <div class="doc-title">คู่มือสำหรับ Role 3: เจ้าหน้าที่คลังยา (Stock Clerk)</div>
+            <div class="doc-sub">เข้าใช้งาน &rarr; เปิดหน้า "Dashboard" อัตโนมัติ · ไม่ใช้การทวนสอบ Stock ซ้ำ</div>
+          </div>
+        </div>
+        <div class="page-tag tag-stock">หน้า 4 / 5 · Stock Clerk</div>
+      </header>
+
+      <div class="role-banner banner-stock">
+        <div>
+          <div class="banner-title">คลังยา (Stock Clerk) — กดยืนยัน 2 ขั้นตอน + Shortcut Detail + พิมพ์ A4</div>
+          <div class="banner-desc">ไม่ต้องทวนสอบซ้ำ: เมื่อเภสัชทวนสอบเสร็จ ให้กดยืนยันสั่งซื้อ (1/2) และกดยืนยันของมาถึง (2/2) พร้อม Timestamp</div>
+        </div>
+        <div class="banner-home">หน้าแรก:<br/>Dashboard</div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card" style="border-color:#a5b4fc; background:#eef2ff;">
+          <div class="step-title" style="color:#3730a3;">
+            <span class="step-badge" style="background:#4f46e5;">1</span>
+            <span>ขั้นที่ 1: กด "ยืนยันการสั่งซื้อ (1/2)"</span>
+          </div>
+          <ul class="step-list">
+            <li>ดูรายการที่เภสัชกรทวนสอบเสร็จแล้ว (ขึ้นสถานะ <span class="btn-ref btn-amber">รอยืนยันสั่งซื้อ</span>)</li>
+            <li>เมื่อสั่งซื้อยาจริงแล้ว กดปุ่ม <span class="btn-ref btn-indigo">ยืนยันการสั่งซื้อ (1/2)</span></li>
+            <li>หน้าต่าง <strong>Shortcut Detail</strong> จะแสดงข้อมูลครบในจอเดียว: ผู้ป่วย, HN, ห้องยา, รายการยา + Stock Code, ชื่อเภสัชที่ตรวจ, Note</li>
+            <li>ตรวจชื่อผู้ยืนยัน + ใส่เลข <strong>PO / หมายเหตุ</strong> (ถ้ามี) &rarr; กด <strong>ยืนยันการสั่งซื้อจริง (บันทึกเวลา)</strong></li>
+            <li>ตารางจะขึ้นสถานะ <span class="btn-ref btn-indigo">ยืนยันสั่งซื้อแล้ว</span> พร้อมเวลา <strong>1. สั่ง: ชื่อ วัน/เวลา</strong></li>
+          </ul>
+        </div>
+
+        <div class="step-card" style="border-color:#6ee7b7; background:#ecfdf5;">
+          <div class="step-title" style="color:#065f46;">
+            <span class="step-badge" style="background:#059669;">2</span>
+            <span>ขั้นที่ 2: กด "ยืนยันของมาถึง (2/2)"</span>
+          </div>
+          <ul class="step-list">
+            <li>เมื่อบริษัทยาส่งของมาถึงคลังจริง ให้กดปุ่มสีเขียว <span class="btn-ref btn-green">ยืนยันของมาถึง (2/2)</span></li>
+            <li>หน้าต่าง <strong>Shortcut Detail</strong> จะโชว์ประวัติขั้นที่ 1 (ผู้กดสั่งซื้อและเวลาสั่ง) ให้ทวนสอบความถูกต้องก่อนรับเข้า</li>
+            <li>ตรวจชื่อผู้รับของ + ใส่เลข <strong>Lot / หมายเหตุรับของ</strong> (ถ้ามี) &rarr; กด <strong>ยืนยันของมาถึงจริง (บันทึกเวลา)</strong></li>
+            <li>สถานะเปลี่ยนเป็น <span class="btn-ref btn-green">ของมาถึงแล้ว</span> และโชว์ครบทั้ง <strong>1. สั่ง:</strong> และ <strong>2. ถึง:</strong> ในคอลัมน์สถานะ</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#d97706;">3</span>
+            <span>ติดตามยาค้างส่ง &amp; แจ้งเตือน Hold</span>
+          </div>
+          <ul class="step-list">
+            <li><strong>เคสระงับยา (Hold / เปลี่ยนวัน):</strong> มีแถบแจ้งเตือนบน Dashboard ทันที เพื่อชะลอการจัดเตรียมยาและป้องกันยาราคาสูงเสียเปล่า</li>
+            <li><strong>แท็บรายการยาค้างส่ง (Owings):</strong> กดกรองตามห้องยา (Phar IV, A1, E3, E6, D) ดูรายการที่วอร์ด/เภสัชกดเร่งตาม แล้วติ๊กจบงานเมื่อส่งยาครบ</li>
+            <li>นำเมาส์ไปชี้ที่กล่อง <strong>Stock:</strong> บนตารางเพื่อดูรายละเอียด PO, Lot และเวลาเต็มได้ตลอดเวลา</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#0284c7;">4</span>
+            <span>พิมพ์ใบจัดเตรียมยา A4 (Report รายการยา)</span>
+          </div>
+          <ul class="step-list">
+            <li>เข้าเมนู <strong>Report รายการยา</strong></li>
+            <li>เลือกตัวกรอง: ตามวันที่ใช้ยา / วันที่จอง, ช่วงวันที่, ประเภทยา (General/Oncology) และ <strong>ห้องยา</strong></li>
+            <li>กดพิมพ์รายงาน A4 (<strong>ไม่ตกขอบ</strong>): แสดงครบทั้งตารางสรุปยอดรวม และตารางแยกรายคนไข้ที่มี <strong>☐ ช่องติ๊ก</strong>, <strong>Stock Code</strong>, ป้าย Hold/เปลี่ยนวัน และยอด <strong>Qty</strong> พอดีหน้ากระดาษ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>สรุปลำดับสถานะช่อง Stock:</strong> &nbsp;<code>รอเภสัชทวนสอบ</code> &rarr; <code>รอยืนยันสั่งซื้อ</code> <em>(กด 1/2)</em> &rarr; <code>ยืนยันสั่งซื้อแล้ว</code> <em>(กด 2/2)</em> &rarr; <strong style="color:#047857;">ของมาถึงแล้ว (มี Timestamp ครบทั้ง 2 ขั้น)</strong>
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>RxNexus Quick Guide · สำหรับเจ้าหน้าที่คลังยา (Stock Clerk)</span>
+      <span>หน้าที่ 4 จาก 5</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 5: ADMIN -->
+  <section class="page">
+    <div class="page-body">
+      <header class="doc-header">
+        <div class="header-left">
+          <img src="RxNexusLogo.png" alt="RxNexus Logo" class="logo" />
+          <div>
+            <div class="doc-title">คู่มือสำหรับ Role 4: ผู้ดูแลระบบ (Admin)</div>
+            <div class="doc-sub">บริหารสิทธิ์ผู้ใช้ · อนุมัติคลังยา · ตรวจ Audit Log · ดูแลฐานข้อมูล</div>
+          </div>
+        </div>
+        <div class="page-tag tag-admin">หน้า 5 / 5 · Admin</div>
+      </header>
+
+      <div class="role-banner banner-admin">
+        <div>
+          <div class="banner-title">ผู้ดูแลระบบ (Admin) — ควบคุมสิทธิ์ · อนุมัติคลังยา · Audit Trail</div>
+          <div class="banner-desc">ดูแลความปลอดภัยของข้อมูลระดับโรงพยาบาล ตรวจสอบการเปลี่ยนแปลงข้อมูลยา และจัดการรอบจัดเก็บข้อมูล</div>
+        </div>
+        <div class="banner-home">สิทธิ์สูงสุด<br/>Full Access</div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#4338ca;">1</span>
+            <span>อนุมัติผู้ใช้ใหม่ (จัดการข้อมูลเจ้าหน้าที่)</span>
+          </div>
+          <ul class="step-list">
+            <li>เข้าเมนู <strong>จัดการข้อมูลเจ้าหน้าที่</strong> ด้านล่างแถบซ้าย</li>
+            <li>ตรวจสอบบัญชีที่สมัครเข้ามาใหม่ (ทั้งรหัสประจำแผนกของพยาบาล และรหัสส่วนบุคคลของเภสัช/คลังยา)</li>
+            <li>กำหนดบทบาท <strong>Role</strong> ให้ถูกต้องแล้วกดอนุมัติ เพื่อให้บุคลากรเข้าสู่หน้าแรกตามสิทธิ์ได้ทันที</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#4f46e5;">2</span>
+            <span>อนุมัติแก้ไข / ลบ Stock ยา (REQ-16)</span>
+          </div>
+          <ul class="step-list">
+            <li>เมื่อเภสัชกรส่งคำขอแก้ชื่อ/ราคา หรือขอลบรายการยา จะมี <strong>Banner แจ้งเตือน</strong> ขึ้นอัตโนมัติ</li>
+            <li>เข้าเมนู <strong>คลังข้อมูลยาและราคา</strong> ตรวจดูเหตุผลและชื่อเภสัชผู้ส่งคำขอ</li>
+            <li>กด <span class="btn-ref btn-green">อนุมัติ</span> เพื่ออัปเดตฐานข้อมูลจริง หรือ <span class="btn-ref btn-rose">ปฏิเสธ</span> หากไม่ถูกต้อง</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#0284c7;">3</span>
+            <span>ตรวจสอบประวัติระบบ (Audit Trail)</span>
+          </div>
+          <ul class="step-list">
+            <li>เข้าเมนู <strong>บันทึกประวัติระบบ</strong> เพื่อดูเหตุการณ์ย้อนหลังได้ 100%</li>
+            <li>ตรวจสอบได้ทั้ง: ผู้จอง, เวลาที่เภสัชกด Verify Rx, เวลาที่คลังกดยืนยัน <strong>1/2 สั่งซื้อ</strong> และ <strong>2/2 ของถึง</strong> (พร้อมเลข PO/Lot), การ Hold และอนุมัติยกเลิก</li>
+            <li>Admin เป็นบทบาทเดียวที่กด <strong>ลบใบจองยา</strong> ออกจากตารางหลักได้ (มีหน้าต่างยืนยันป้องกันการลบผิดพลาด)</li>
+          </ul>
+        </div>
+
+        <div class="step-card">
+          <div class="step-title">
+            <span class="step-badge" style="background:#0f172a;">4</span>
+            <span>สำรองข้อมูล &amp; ล้างข้อมูลเก่าเกิน 6 เดือน</span>
+          </div>
+          <ul class="step-list">
+            <li>เข้าเมนู <strong>สำรองและล้างข้อมูล</strong> (Database Maintenance)</li>
+            <li><strong>ส่งออก CSV / JSON:</strong> ดาวน์โหลดรายการจองยาและ Audit Log เก็บไว้ทำรายงานสถิติหรือสำรองรายเดือน</li>
+            <li><strong>Archive &amp; Cleanup:</strong> ล้างข้อมูลเก่าที่เกิน <strong>6 เดือน</strong> (ระบบบังคับสำรองไฟล์ก่อนล้างจริง) เพื่อให้ระบบโหลดไวตลอดเวลา</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <strong>เช็กลิสต์ก่อนเริ่มใช้งานวันแรก (Go-Live Checklist):</strong> &nbsp;1) ตรวจรายชื่อยาและราคาสิทธิ Payor ในคลังยา &rarr; 2) ตั้งรหัสแผนกสำหรับพยาบาล &amp; รหัสเฉพาะบุคคลให้เภสัช/คลัง &rarr; 3) ทดสอบ Flow ครบ 4 ขั้นตอน (จอง &rarr; Verify Rx &rarr; คลัง 1/2 &amp; 2/2 &rarr; พิมพ์ A4)
+      </div>
+    </div>
+
+    <footer class="doc-footer">
+      <span>RxNexus Quick Guide · Powered By Preeyapat P. (Pharmacist) · Bangkok Hospital Pattaya</span>
+      <span>หน้าที่ 5 จาก 5</span>
+    </footer>
+  </section>
+
+</body>
+</html>

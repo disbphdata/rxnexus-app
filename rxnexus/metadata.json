@@ -1,0 +1,6 @@
+{
+  "name": "RxNexus",
+  "description": "An enterprise medication management and advance booking system with multi-role access control, queue calendar, and tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RxNexus — Executive Pitch Deck</title>
+  <link rel="icon" type="image/png" href="/RxNexusLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #091326;
+      --bg-surface: #0f1d36;
+      --bg-card: #132544;
+      --bg-card-soft: rgba(19, 37, 68, 0.72);
+      --border: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(148, 163, 184, 0.32);
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --blue: #2563eb;
+      --blue-bright: #38bdf8;
+      --teal: #10b981;
+      --teal-soft: rgba(16, 185, 129, 0.14);
+      --amber: #f59e0b;
+      --amber-soft: rgba(245, 158, 11, 0.14);
+      --rose: #f43f5e;
+      --rose-soft: rgba(244, 63, 94, 0.14);
+      --indigo: #818cf8;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: 'Sarabun', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 12% 15%, #12294f 0%, #091326 52%, #050b16 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select {
+      font-family: inherit;
+    }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 19, 38, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 3px;
+      object-fit: contain;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-bright);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+
+    .nav-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-btn.active {
+      color: #091326;
+      background: var(--blue-bright);
+      font-weight: 700;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 9px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 18px rgba(13, 148, 136, 0.25);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    .btn-amber {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #091326;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 22px rgba(245, 158, 11, 0.22);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .btn-amber:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    /* Progress Bar */
+    .progress-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #38bdf8 0%, #10b981 100%);
+      transition: width 0.3s ease;
+      width: 11.1%;
+    }
+
+    /* Stage / Slides */
+    .stage {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 20px 92px;
+      min-height: calc(100vh - 125px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeSlide 0.28s ease-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 8px;
+    }
+
+    .slide-title {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      line-height: 1.22;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .slide-subtitle {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      max-width: 780px;
+    }
+
+    /* Grids & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .card-solid {
+      background: #0d1a31;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 10px 16px 10px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .hero-logo-img {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 4px;
+      object-fit: contain;
+    }
+
+    .highlight-gradient {
+      background: linear-gradient(90deg, #38bdf8 0%, #34d399 55%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(9, 19, 38, 0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* Interactive Multi-role buttons */
+    .role-card {
+      background: rgba(9, 19, 38, 0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .role-card:hover {
+      border-color: rgba(56, 189, 248, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .role-card.active {
+      border: 2px solid var(--blue-bright);
+      background: rgba(30, 58, 138, 0.28);
+      box-shadow: 0 10px 26px rgba(56, 189, 248, 0.14);
+    }
+
+    .terminal-box {
+      margin-top: 18px;
+      background: #060d1b;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dim);
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      font-size: 13px;
+      padding: 11px 10px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      vertical-align: middle;
+    }
+
+    /* Form elements */
+    .field-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-dim);
+      margin-bottom: 5px;
+    }
+    .field-input {
+      width: 100%;
+      background: #071021;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      color: #ffffff;
+      padding: 8px 11px;
+      font-size: 13px;
+    }
+    .field-input:focus {
+      outline: 2px solid var(--blue-bright);
+      outline-offset: 1px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #38bdf8;
+      cursor: pointer;
+    }
+
+    /* Segmented Tabs */
+    .seg-tabs {
+      display: inline-flex;
+      background: #071021;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .seg-tab {
+      border: none;
+      background: transparent;
+      color: var(--text-dim);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .seg-tab.active {
+      background: var(--blue-bright);
+      color: #091326;
+    }
+
+    /* Bottom Footer Dock */
+    .footer-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      background: rgba(6, 13, 27, 0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dot.active {
+      width: 26px;
+      background: var(--blue-bright);
+    }
+
+    .list-clean {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .list-clean li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .list-clean li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--blue-bright);
+      font-weight: 800;
+    }
+
+    .text-teal { color: #34d399; }
+    .text-amber { color: #fbbf24; }
+    .text-rose { color: #fb7185; }
+    .text-blue { color: #38bdf8; }
+
+    .hidden { display: none !important; }
+
+    /* Overview / All slides toggle */
+    body.show-all .slide {
+      display: block !important;
+      margin-bottom: 36px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    body.show-all .footer-dock {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid, .grid-4, .grid-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-grid, .grid-2, .grid-4, .grid-5 {
+        grid-template-columns: 1fr;
+      }
+      .topbar-actions .hide-sm {
+        display: none;
+      }
+    }
+
+    /* Print / Save PDF (All slides clean A4 landscape) */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 10mm;
+      }
+      html, body {
+        background: #091326 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .topbar, .footer-dock, .no-print {
+        display: none !important;
+      }
+      .stage {
+        max-width: 100%;
+        padding: 0;
+        display: block;
+      }
+      .slide {
+        display: block !important;
+        page-break-after: always;
+        break-after: page;
+        padding: 8px 4px;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="/RxNexusLogo.png" alt="RxNexus Logo" class="brand-logo" onerror="this.style.display='none'" />
+        <div>
+          <div class="brand-title">RxNexus</div>
+          <div class="brand-sub">Bangkok Hospital Pattaya · Executive Pitch</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Slide navigation">
+        <button class="nav-btn active" onclick="goToSlide(0)">1. วิสัยทัศน์</button>
+        <button class="nav-btn" onclick="goToSlide(1)">2. ปัญหาหน้างาน</button>
+        <button class="nav-btn" onclick="goToSlide(2)">3. สถาปัตยกรรม</button>
+        <button class="nav-btn" onclick="goToSlide(3)">4. จำลอง Multi-Role</button>
+        <button class="nav-btn" onclick="goToSlide(4)">5. Hold &amp; ยืมยา</button>
+        <button class="nav-btn" onclick="goToSlide(5)">6. Verify &amp; Print A4</button>
+        <button class="nav-btn" onclick="goToSlide(6)">7. คำนวณ ROI</button>
+        <button class="nav-btn" onclick="goToSlide(7)">8. Lean Canvas &amp; KPIs</button>
+        <button class="nav-btn" onclick="goToSlide(8)">9. แผนติดตั้ง</button>
+      </nav>
+
+      <div class="topbar-actions">
+        <button id="btn-view-mode" class="btn-outline" onclick="toggleAllSlides()">ดูทั้งหมด</button>
+        <button class="btn-outline hide-sm" onclick="window.print()">บันทึก PDF</button>
+        <a href="/RxNexus_Role_Instructions.pdf" target="_blank" class="btn-outline hide-sm">คู่มือแยก Role (PDF)</a>
+        <a href="/RxNexus_User_Guide.html" target="_blank" class="btn-outline hide-sm">คู่มืออบรม</a>
+        <a href="/" target="_blank" class="btn-primary">เปิดระบบจริง</a>
+      </div>
+    </div>
+    <div class="progress-track">
+      <div id="progress-fill" class="progress-fill"></div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <!-- SLIDE 1: Cover & Executive Summary -->
+    <section id="slide-0" class="slide active">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-logo-wrap">
+            <img src="/RxNexusLogo.png" alt="RxNexus Logo" class="hero-logo-img" onerror="this.style.display='none'" />
+            <div>
+              <div style="font-size:13px; font-weight:800; color:#fff;">Bangkok Hospital Pattaya</div>
+              <div style="font-size:12px; color:#38bdf8;">Outpatient Sourcing · High-Cost &amp; Oncology Medication Hub</div>
+            </div>
+          </div>
+
+          <h1 class="slide-title" style="font-size: clamp(30px, 3.8vw, 46px);">
+            RxNexus: ระบบจองยา<br />
+            <span class="highlight-gradient">เวชภัณฑ์สำรอง &amp; เคมีบำบัด</span><br />
+            แบบ Real-time ครบวงจร
+          </h1>
+
+          <p class="slide-subtitle" style="margin-top:14px; margin-bottom:24px;">
+            เชื่อมการทำงานของ <strong>พยาบาล · เภสัชกร · คลังยา · Admin</strong> ให้เป็นหนึ่งเดียว
+            ลดความสูญเสียจากการเตรียมยาราคาสูงเก้อ หยุดปัญหาใบจองตกหล่น
+            พร้อมระบบติดตามยาค้างส่ง ยืมยาข้ามคนไข้ และ Double Check ตรวจสอบย้อนหลังได้ 100%
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <button class="btn-amber" onclick="nextSlide()">เริ่มนำเสนอสไลด์ถัดไป &rarr;</button>
+            <button class="btn-outline" style="padding:11px 18px; font-size:14px;" onclick="goToSlide(6)">ทดลองคำนวณความคุ้มค่า (ROI)</button>
+          </div>
+
+          <div style="margin-top:20px; font-size:12.5px; color:var(--text-dim);">
+            <strong style="color:#7dd3fc;">Powered By Preeyapat P. (Pharmacist)</strong> · มาตรฐานครบทั้ง 18 ข้อ (REQ-01 ถึง REQ-18) · ฟอนต์มาตรฐาน Sarabun ทุกหน้าจอ
+          </div>
+        </div>
+
+        <div class="card-solid" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:10px; border-bottom:1px solid var(--border);">
+            <div style="font-size:13px; font-weight:800; color:#fff;">ภาพรวมการทำงานของระบบ (Operational Snapshot)</div>
+            <div style="font-size:12px; font-weight:700; color:var(--teal);">Real-time Sync</div>
+          </div>
+
+          <div class="stat-row">
+            <div>
+              <div class="stat-label">แยกหมวดหมู่คิวชัดเจน (Dashboard All-Users)</div>
+              <div class="stat-value">ยาทั่วไป (General) &amp; ยาเคมีบำบัด (Oncology)</div>
+            </div>
+            <div style="font-size:13px; font-weight:800; color:var(--blue-bright);">REQ-05</div>
+          </div>
+
+          <div class="stat-row">
+            <div>
+              <div class="stat-label">ป้องกันการผสมยาทิ้งเมื่อผลเลือดเปลี่ยน / เลื่อนนัด</div>
+              <div class="stat-value">Hold / Rollover / Cancel Alert ทันที</div>
+            </div>
+            <div style="font-size:13px; font-weight:800; color:var(--amber);">REQ-17 / 18</div>
+          </div>
+
+          <div class="stat-row">
+            <div>
+              <div class="stat-label">คุมสต็อกยาขาด &amp; การยืมยาหน้างาน</div>
+              <div class="stat-value">Owing Meds Desk &amp; Auto-Return ยืมยา</div>
+            </div>
+            <div style="font-size:13px; font-weight:800; color:var(--teal);">REQ-12 / 14 / 15</div>
+          </div>
+
+          <div class="stat-row">
+            <div>
+              <div class="stat-label">คลังยากดยืนยันจริง 2 ขั้นตอน (ไม่ทวนสอบซ้ำ) + Audit Log</div>
+              <div class="stat-value">1/2 สั่งซื้อ &rarr; 2/2 ของถึง (Shortcut Detail + Timestamp)</div>
+            </div>
+            <div style="font-size:13px; font-weight:800; color:var(--indigo);">REQ-08 / 09</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Hospital Pain Points -->
+    <section id="slide-1" class="slide">
+      <div class="section-kicker">01 · ปัญหาหน้างานเดิม (Operational Pain Points)</div>
+      <h2 class="slide-title">4 จุดรั่วไหลสำคัญในการประสานงานยาราคาสูง</h2>
+      <p class="slide-subtitle" style="margin-bottom:24px;">
+        กระบวนการจองยาแบบเดิมที่อาศัยแชต โทรศัพท์ และไฟล์กระจัดกระจาย ก่อให้เกิดทั้งความเสี่ยงทางคลินิกและต้นทุนแฝงที่วัดมูลค่าได้ยาก
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div style="font-size:16px; font-weight:800; color:var(--rose); margin-bottom:8px;">
+            1. ยาราคาสูง &amp; เคมีบำบัดถูกเตรียมเก้อ
+          </div>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:12px;">
+            ผู้ป่วย Oncology มักมีภาวะแทรกซ้อน เช่น ไข้หรือเกล็ดเลือดต่ำในวันนัด หากพยาบาลแจ้งระงับ (Hold) หรือเลื่อนวัน (Rollover) ช้า ห้องยาอาจผสมเตรียมยาล่วงหน้าไปแล้ว ทำให้ยาเสื่อมสภาพและสูญเสียทันที
+          </p>
+          <div style="font-size:12.5px; font-weight:700; color:#fda4af;">
+            ผลกระทบ: สูญเสียต้นทุนยาหลักหมื่นถึงหลักแสนบาทต่อเคส
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size:16px; font-weight:800; color:var(--amber); margin-bottom:8px;">
+            2. ข้อมูลจองยาตกหล่น &amp; UI ใช้งานซับซ้อน
+          </div>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:12px;">
+            ระบบเดิมต้องเลื่อนหาชื่อยายาวเหยียด บังคับกรอกช่องที่ไม่จำเป็น ล็อกอินร่วมแผนกไม่เสถียร และเมื่อเภสัชกรตรวจพบความผิดพลาด ไม่มี Loop ส่งกลับแก้ไขที่ชัดเจนทำให้ข้อมูลสูญหายกลางทาง
+          </p>
+          <div style="font-size:12.5px; font-weight:700; color:#fcd34d;">
+            ผลกระทบ: เสียเวลาหน้างานและเกิดความเสี่ยง Medication Error
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size:16px; font-weight:800; color:var(--blue-bright); margin-bottom:8px;">
+            3. ยาค้างส่ง (Owings) และการยืมยาข้ามคนไข้ไร้การติดตาม
+          </div>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:12px;">
+            เมื่อมีการจ่ายยาไม่ครบหรือยืมยาจากคนไข้รายอื่นมาใช้ก่อน หากไม่มีระบบแจ้งเตือนแยกตามห้องยา (Phar IV, A1, E3, E6, D) และปุ่มจองคืนอัตโนมัติ มักเกิดการลืมคืนสต็อกและต้องโทรตามซ้ำ
+          </p>
+          <div style="font-size:12.5px; font-weight:700; color:#7dd3fc;">
+            ผลกระทบ: คลังยาสต็อกคลาดเคลื่อน และคนไข้เสี่ยงได้รับยาไม่ต่อเนื่อง
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size:16px; font-weight:800; color:var(--teal); margin-bottom:8px;">
+            4. ใบสั่งยาตรวจยาก &amp; ใบจัดเตรียมคลังขาดข้อมูล
+          </div>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:12px;">
+            เภสัชกรดูภาพสแกนใบสั่งยายากหากซูมไม่สะดวก ขณะที่คลังยาไม่มีรายงาน A4 แยกรายคนไข้ที่มีทั้ง Stock Code, จำนวน และช่องติ๊กเช็คหน้างาน ทำให้จัดยาผิดพลาดหรือกระดาษพิมพ์ตกขอบ
+          </p>
+          <div style="font-size:12.5px; font-weight:700; color:#6ee7b7;">
+            ผลกระทบ: คอขวดที่ขั้นตอน Verify RX และการจัดเตรียมยาในคลัง
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Architecture & 18 Requirements -->
+    <section id="slide-2" class="slide">
+      <div class="section-kicker">02 · สถาปัตยกรรมระบบมาตรฐาน (REQ-01 ถึง REQ-18)</div>
+      <h2 class="slide-title">1 ระบบ 4 บทบาท: ออกแบบเฉพาะเพื่อ Workflow โรงพยาบาลจริง</h2>
+      <p class="slide-subtitle" style="margin-bottom:20px;">
+        เปิดหน้าแรกอัตโนมัติตามตำแหน่งงาน (Default Landing Page) พร้อมระบบ Real-time Notification และ Audit Log ทุกขั้นตอน
+      </p>
+
+      <!-- End-to-End SVG Diagram -->
+      <div class="card-solid" style="margin-bottom:18px; padding:16px 18px;">
+        <svg viewBox="0 0 1120 150" style="width:100%; height:auto; display:block;" role="img" aria-label="RxNexus Workflow">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"></path>
+            </marker>
+          </defs>
+          <!-- Step 1 -->
+          <rect x="10" y="18" width="195" height="92" rx="12" fill="#132544" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="107" y="44" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="800">1. ลงทะเบียนจองยา</text>
+          <text x="107" y="66" text-anchor="middle" fill="#f8fafc" font-size="12">พยาบาล / เภสัชกร</text>
+          <text x="107" y="86" text-anchor="middle" fill="#94a3b8" font-size="11">Minimal + Auto-Suggest + Alert</text>
+
+          <line x1="205" y1="64" x2="235" y2="64" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 2 -->
+          <rect x="240" y="18" width="195" height="92" rx="12" fill="#132544" stroke="#10b981" stroke-width="1.5"/>
+          <text x="337" y="44" text-anchor="middle" fill="#34d399" font-size="13" font-weight="800">2. ทวนสอบ Verify RX</text>
+          <text x="337" y="66" text-anchor="middle" fill="#f8fafc" font-size="12">เภสัชกร (Scroll Zoom)</text>
+          <text x="337" y="86" text-anchor="middle" fill="#94a3b8" font-size="11">Approve / Reject + Note Loop</text>
+
+          <line x1="435" y1="64" x2="465" y2="64" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 3 -->
+          <rect x="470" y="18" width="195" height="92" rx="12" fill="#132544" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="567" y="44" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="800">3. คลังยืนยัน 2 ขั้นตอน</text>
+          <text x="567" y="66" text-anchor="middle" fill="#f8fafc" font-size="12">1/2 สั่งซื้อ &rarr; 2/2 ของถึง</text>
+          <text x="567" y="86" text-anchor="middle" fill="#94a3b8" font-size="11">Shortcut Detail + Timestamp + A4</text>
+
+          <line x1="665" y1="64" x2="695" y2="64" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 4 -->
+          <rect x="700" y="18" width="195" height="92" rx="12" fill="#132544" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="797" y="44" text-anchor="middle" fill="#a5b4fc" font-size="13" font-weight="800">4. รับยา Double Check</text>
+          <text x="797" y="66" text-anchor="middle" fill="#f8fafc" font-size="12">พยาบาลตรวจรับหน้างาน</text>
+          <text x="797" y="86" text-anchor="middle" fill="#94a3b8" font-size="11">ยืนยันชื่อผู้รับ + Timestamp</text>
+
+          <line x1="895" y1="64" x2="925" y2="64" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 5 -->
+          <rect x="930" y="18" width="180" height="92" rx="12" fill="#1b1428" stroke="#fb7185" stroke-width="1.5"/>
+          <text x="1020" y="44" text-anchor="middle" fill="#fb7185" font-size="13" font-weight="800">5. จัดการข้อยกเว้น</text>
+          <text x="1020" y="66" text-anchor="middle" fill="#f8fafc" font-size="12">Hold · Rollover · Cancel</text>
+          <text x="1020" y="86" text-anchor="middle" fill="#94a3b8" font-size="11">ยืม/คืนยา &amp; ค้างส่ง Owing</text>
+
+          <!-- Reject Loop arrow -->
+          <path d="M 337 110 L 337 136 L 107 136 L 107 114" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+          <text x="222" y="132" text-anchor="middle" fill="#fda4af" font-size="11" font-weight="700">Reject + Note บังคับกรอก &rarr; แก้ไข &rarr; Re-verify (ไม่ลบใบจอง)</text>
+        </svg>
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--blue-bright);">Role 1 · พยาบาล (Nurse)</div>
+          <div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0 10px;">หน้าแรก: Booking Drug</div>
+          <ul class="list-clean">
+            <li>จองยาด่วนแบบ Minimal + Payor</li>
+            <li>แก้ใบจองเมื่อโดน Reject (REQ-07)</li>
+            <li>ยืม/จองคืนยาอัตโนมัติ (REQ-14/15)</li>
+            <li>รับยา Double Check &amp; แจ้ง Hold</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--teal);">Role 2 · เภสัชกร (Pharmacist)</div>
+          <div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0 10px;">หน้าแรก: Dashboard</div>
+          <ul class="list-clean">
+            <li>จองยาระบุห้องยา Phar Location</li>
+            <li>ทวนสอบ Verify RX (Scroll Zoom)</li>
+            <li>Approve / Reject + Note แจ้งแก้</li>
+            <li>อนุมัติ Cancel &amp; ขอแก้ Stock ยา</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--amber);">Role 3 · คลังยา (Stock Clerk)</div>
+          <div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0 10px;">หน้าแรก: Dashboard</div>
+          <ul class="list-clean">
+            <li>รับ Alert Real-time ทันทีที่จองยา</li>
+            <li>ไม่ต้องทวนสอบ: กดยืนยันสั่งซื้อ (1/2)</li>
+            <li>กดยืนยันของมาถึง (2/2) ผ่าน Shortcut Detail</li>
+            <li>แสดง Timestamp 1.สั่ง / 2.ถึง + พิมพ์ A4</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--indigo);">Role 4 · ผู้ดูแล (Admin)</div>
+          <div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0 10px;">หน้าแรก: Dashboard</div>
+          <ul class="list-clean">
+            <li>อนุมัติบัญชีพนักงานสมัครใหม่</li>
+            <li>อนุมัติคำขอแก้ไข/ลบคลังยา (REQ-16)</li>
+            <li>ตรวจ Audit Logs ครบทุก Action</li>
+            <li>Export / Archive / ล้างข้อมูล 6 เดือน</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Interactive Multi-Role Workflow Simulator -->
+    <section id="slide-3" class="slide">
+      <div class="section-kicker">03 · ทดลองจำลองการทำงานจริง (Interactive Multi-Role Demo)</div>
+      <h2 class="slide-title">คลิกเลือกบทบาทเพื่อดูจังหวะการรับ-ส่งข้อมูลแบบ Real-time</h2>
+      <p class="slide-subtitle" style="margin-bottom:20px;">
+        ทุกการกดปุ่มจะสร้างสัญญาณ Alert พร้อมบันทึกเวลา (Timestamp) และชื่อผู้ดำเนินการอัตโนมัติ ลดการโทรตามงานระหว่างแผนก
+      </p>
+
+      <div class="grid-4">
+        <button id="role-box-nurse" class="role-card active" onclick="simulateActiveRole('nurse')">
+          <div>
+            <div style="font-size:11px; font-weight:800; color:var(--blue-bright); text-transform:uppercase;">Step 1 · Nurse</div>
+            <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 6px;">พยาบาลหน้าวอร์ด</div>
+            <p style="font-size:12.5px; color:var(--text-muted);">
+              Login รหัสแผนก &rarr; พิมพ์ชื่อยา Auto-Suggest + ระบุราคาตามสิทธิ Payor + พิมพ์ใบราคาให้ผู้ป่วย
+            </p>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--blue-bright);">คลิกจำลอง Action &rarr;</div>
+        </button>
+
+        <button id="role-box-pharmacist" class="role-card" onclick="simulateActiveRole('pharmacist')">
+          <div>
+            <div style="font-size:11px; font-weight:800; color:var(--teal); text-transform:uppercase;">Step 2 · Pharmacist</div>
+            <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 6px;">เภสัชกรทวนสอบ</div>
+            <p style="font-size:12.5px; color:var(--text-muted);">
+              ดูใบสแกนด้วย Scroll Mouse Zoom &rarr; กด Approve เปลี่ยนเป็น "ยอมรับแล้ว" หรือ Reject + Note ส่งกลับแก้
+            </p>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--teal);">คลิกจำลอง Action &rarr;</div>
+        </button>
+
+        <button id="role-box-stock" class="role-card" onclick="simulateActiveRole('stock')">
+          <div>
+            <div style="font-size:11px; font-weight:800; color:var(--amber); text-transform:uppercase;">Step 3 · Stock Clerk</div>
+            <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 6px;">เจ้าหน้าที่คลังยา</div>
+            <p style="font-size:12.5px; color:var(--text-muted);">
+              หลังเภสัชทวนสอบ: กดยืนยัน 2 ขั้นตอน (1/2 สั่งซื้อจริง &rarr; 2/2 ของมาส่งจริง) พร้อมหน้า Shortcut Detail และ Timestamp + พิมพ์ A4
+            </p>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--amber);">คลิกจำลอง Action &rarr;</div>
+        </button>
+
+        <button id="role-box-admin" class="role-card" onclick="simulateActiveRole('admin')">
+          <div>
+            <div style="font-size:11px; font-weight:800; color:var(--indigo); text-transform:uppercase;">Step 4 · Admin &amp; Audit</div>
+            <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 6px;">ผู้ดูแลและตรวจสอบ</div>
+            <p style="font-size:12.5px; color:var(--text-muted);">
+              อนุมัติคำขอแก้ไข/ลบ Stock ยาจากเภสัชกร ตรวจ Audit Trail ย้อนหลัง และสำรองฐานข้อมูลรายเดือน
+            </p>
+          </div>
+          <div style="font-size:12px; font-weight:700; color:var(--indigo);">คลิกจำลอง Action &rarr;</div>
+        </button>
+      </div>
+
+      <div class="terminal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid var(--border);">
+          <div id="simulator-role-title" style="font-size:14px; font-weight:800; color:var(--blue-bright);">
+            พยาบาล (Nurse): หน้าจอจำลองการลงทะเบียนจองยา &amp; แจ้งเตือน Real-time
+          </div>
+          <div id="simulator-req-tag" style="font-size:12px; font-weight:700; color:var(--text-dim);">REQ-02 · REQ-03 · REQ-09 · REQ-11</div>
+        </div>
+        <div id="simulator-content" style="font-size:14px; color:#e2e8f0; line-height:1.65;">
+          1) พยาบาล Login ด้วยรหัสประจำแผนก ระบบพาเข้าหน้า <strong>Booking Drug</strong> ทันที ไม่ต้องเสียเวลาคลิกหลายเมนู<br />
+          2) พิมพ์ชื่อยา ระบบค้นหาตัวยาที่เกี่ยวข้องขึ้นมาให้อัตโนมัติ พร้อมราคาตามสิทธิ (Payor) และระบุ Note ได้<br />
+          3) ทันทีที่กดบันทึก: ระบบยิง <strong>Real-time Alert + เสียงแจ้งเตือน</strong> ไปที่ Dashboard ของเภสัชกรและคลังยาทันทีโดยไม่ Lag
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Interactive Feature Sandbox (HOLD, Rollover & Borrow) -->
+    <section id="slide-4" class="slide">
+      <div class="section-kicker">04 · จุดเด่นเฉพาะทางคลินิก (Clinical Safety &amp; Zero-Waste)</div>
+      <h2 class="slide-title">ทดลองควบคุมการ HOLD ยา, เลื่อนวัน (Rollover) และยืมยาข้ามคนไข้</h2>
+      <p class="slide-subtitle" style="margin-bottom:18px;">
+        ทดลองสั่งระงับยาหรือปลดล็อกเคสผู้ป่วยด้านซ้าย เพื่อดูการอัปเดตสถานะและป้ายแจ้งเตือนฝั่งขวาแบบทันที
+      </p>
+
+      <div class="grid-3" style="grid-template-columns: 1fr 1.85fr; align-items: stretch;">
+        <!-- Sandbox Controls -->
+        <div class="card-solid" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="font-size:14px; font-weight:800; color:var(--amber); border-bottom:1px solid var(--border); padding-bottom:8px;">
+            แผงควบคุมจำลองหน้างาน (Ward Action)
+          </div>
+
+          <div>
+            <label class="field-label" for="mock-held-patient">เลือกเคสผู้ป่วย</label>
+            <select id="mock-held-patient" class="field-input">
+              <option value="0">นายแพทย์ อังกูร (HN: 02-26-032035)</option>
+              <option value="1">คุณพัชราภา สงวนงาม (HN: 02-12-345678)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="field-label" for="mock-held-reason">เหตุผลทางการแพทย์ (บังคับกรอก)</label>
+            <input id="mock-held-reason" type="text" class="field-input" value="เกล็ดเลือดต่ำกว่าเกณฑ์ (ANC / Plt Drop)" />
+          </div>
+
+          <div>
+            <label class="field-label" for="mock-held-nurse">พยาบาลผู้แจ้ง (Timestamp Auto)</label>
+            <input id="mock-held-nurse" type="text" class="field-input" value="พยาบาล สมร (OPD Chemo)" />
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px;">
+            <button onclick="triggerMockHold('hold')" style="padding:9px; border-radius:8px; border:none; background:#e11d48; color:#fff; font-size:12.5px; font-weight:700; cursor:pointer;">
+              แจ้ง HOLD ยา
+            </button>
+            <button onclick="triggerMockHold('rollover')" style="padding:9px; border-radius:8px; border:none; background:#d97706; color:#fff; font-size:12.5px; font-weight:700; cursor:pointer;">
+              เลื่อนวัน (Rollover)
+            </button>
+          </div>
+
+          <button onclick="triggerMockHold('continue')" style="padding:9px; border-radius:8px; border:1px solid var(--teal); background:var(--teal-soft); color:#6ee7b7; font-size:12.5px; font-weight:700; cursor:pointer;">
+            คืนสถานะพร้อมให้ยา (Continue / Unhold)
+          </button>
+
+          <div style="margin-top:4px; padding:10px 12px; background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.25); border-radius:9px; font-size:12px; color:#bae6fd;">
+            <strong>ยืมยาข้ามคนไข้ (REQ-14/15):</strong> เมื่อเลือกยืมยา ระบบจะ Auto-Detect รายชื่อคนไข้ที่มียาอยู่ เขียน Note ให้อัตโนมัติ และปลด Alert ทันทีเมื่อกด "จองยาคืนให้ HN ต้นทาง"
+          </div>
+        </div>
+
+        <!-- Live Preview Table -->
+        <div class="card-solid" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:12px; gap:10px; flex-wrap:wrap;">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span style="font-size:13px; color:var(--text-dim);">ยาทั่วไป (General)</span>
+                <span style="font-size:13px; color:var(--text-dim);">มะเร็ง (Oncology)</span>
+                <span style="font-size:13px; font-weight:800; color:var(--amber);">
+                  Hold / Rollover Alert (<span id="mock-hold-badge">2</span>)
+                </span>
+              </div>
+              <span style="font-size:12px; font-weight:700; color:var(--teal);">แจ้งคลังยา + เภสัชกรทันที</span>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ผู้ป่วย (HN)</th>
+                    <th>รายการยาครบทุกตัว</th>
+                    <th>สถานะ / เหตุผล</th>
+                    <th>ผู้แจ้ง</th>
+                  </tr>
+                </thead>
+                <tbody id="mock-hold-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="mock-alert-log" style="margin-top:14px; padding:10px 14px; background:#071021; border:1px solid var(--border); border-radius:9px; font-size:12.5px; color:var(--text-muted);">
+            Alert ล่าสุด: คลังยาได้รับแจ้งรายการระงับครบทุกตัวยาแล้ว เพื่อชะลอการจัดเตรียมล่วงหน้า
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Pharmacy & Stock Clerk Breakthroughs -->
+    <section id="slide-5" class="slide">
+      <div class="section-kicker">05 · เครื่องมือเพิ่มความแม่นยำสำหรับเภสัชกร &amp; คลังยา</div>
+      <h2 class="slide-title">3 ฟีเจอร์หน้างานที่แก้คอขวดได้ตรงจุดที่สุด</h2>
+      <p class="slide-subtitle" style="margin-bottom:22px;">
+        ออกแบบจากการลงพื้นที่จริงของฝ่ายเภสัชกรรมและคลังเวชภัณฑ์ โรงพยาบาลกรุงเทพพัทยา
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div style="font-size:12px; font-weight:800; color:var(--teal); margin-bottom:6px;">REQ-05 · REQ-06 · REQ-07</div>
+          <h3 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:10px;">
+            Verify RX + Mouse Scroll Zoom
+          </h3>
+          <ul class="list-clean">
+            <li>ดูใบสั่งยาสแกนและหมุนลูกกลิ้งเมาส์ (Scroll Mouse) เพื่อย่อ-ขยายดูตัวเลขแล็บและขนาดยาได้ทันที</li>
+            <li>แยกหมวดหมู่ <strong>General</strong> และ <strong>Oncology</strong> ชัดเจนบน Dashboard ที่เห็นร่วมกันทุกตำแหน่ง</li>
+            <li>กด <strong>Approve</strong> สถานะเป็น "ยอมรับแล้ว" พร้อมชื่อเภสัชกรและเวลา</li>
+            <li>กด <strong>Not Approved</strong> บังคับใส่ Note เหตุผล ส่งกลับให้พยาบาลแก้โดยข้อมูลเดิมไม่สูญหาย</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:800; color:var(--rose); margin-bottom:6px;">REQ-12 · REQ-16</div>
+          <h3 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:10px;">
+            ศูนย์จัดการยาค้างส่ง (Owings Desk)
+          </h3>
+          <ul class="list-clean">
+            <li>มีตัวกรอง <strong>Pharmacy Location</strong> (Phar IV, Phar A1, Phar E3, Phar E6, Phar D) แยกความรับผิดชอบชัดเจน</li>
+            <li>เภสัชกร/พยาบาลติ๊กยาที่ยังไม่ได้รับเพื่อส่ง <strong>Urgent Alert</strong> ไปที่คลังยาทันที</li>
+            <li>Alert ทำงานต่อเนื่องจนกว่าหน้างานได้รับยาครบและกด <strong>Complete</strong></li>
+            <li>การขอแก้ไข/ลบ Stock ยาโดยเภสัชกร จะส่ง Banner + Alert ให้ Admin อนุมัติก่อนมีผลจริง</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:800; color:var(--amber); margin-bottom:6px;">REQ-13 · ปฏิทินคิว REQ-10</div>
+          <h3 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:10px;">
+            รายงานจัดเตรียมยา A4 ไม่ตกขอบ
+          </h3>
+          <ul class="list-clean">
+            <li>เลือกกรองตาม Date of Use / Order Date, ช่วงวันที่, ประเภทยา และห้องยา</li>
+            <li>แสดง 2 ส่วนครบทั้งในหน้า Preview และหน้าพิมพ์ A4: ตารางสรุปยอดรวม + ตารางแยกรายคนไข้</li>
+            <li>มี <strong>ช่องติ๊กเช็คหน้างาน (☐)</strong>, <strong>Stock Code</strong> ครบทุกแถว, ป้ายเตือน Hold/Rollover และยอด Qty พอดีขอบกระดาษ 100%</li>
+            <li>คลิกชื่อคนไข้บนปฏิทินคิวเพื่อตรวจ Location, Regimen และ Note ได้ในคลิกเดียว</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Interactive ROI Calculator -->
+    <section id="slide-6" class="slide">
+      <div class="section-kicker">06 · ความคุ้มค่าทางการเงิน (Financial &amp; Operational ROI)</div>
+      <h2 class="slide-title">ประเมินมูลค่ายาและเวลาทำงานที่ประหยัดได้ต่อปี</h2>
+      <p class="slide-subtitle" style="margin-bottom:20px;">
+        ปรับตัวเลขปริมาณเคสของโรงพยาบาลด้านซ้ายเพื่อคำนวณผลประหยัดจากปัญหาการผสมยาทิ้งและการประสานงานล่าช้า
+      </p>
+
+      <div class="grid-2">
+        <div class="card-solid" style="display:flex; flex-direction:column; gap:18px;">
+          <div style="font-size:15px; font-weight:800; color:var(--blue-bright); border-bottom:1px solid var(--border); padding-bottom:8px;">
+            ตัวแปรปริมาณงานโรงพยาบาล
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13.5px; font-weight:700; margin-bottom:6px;">
+              <span>จำนวนคอร์สยาเคมีบำบัด / ยาพิเศษต่อปี</span>
+              <span id="val-courses" class="text-amber">400 เคส/ปี</span>
+            </div>
+            <input id="range-courses" type="range" min="100" max="2000" step="50" value="400" oninput="calculateSavings()" />
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim);">
+              <span>100 เคส</span><span>2,000 เคส</span>
+            </div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13.5px; font-weight:700; margin-bottom:6px;">
+              <span>มูลค่ายาเฉลี่ยต่อ 1 รอบการรักษา (บาท)</span>
+              <span id="val-cost" class="text-amber">45,000 บาท</span>
+            </div>
+            <input id="range-cost" type="range" min="10000" max="150000" step="5000" value="45000" oninput="calculateSavings()" />
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim);">
+              <span>10,000 บาท</span><span>150,000 บาท</span>
+            </div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13.5px; font-weight:700; margin-bottom:6px;">
+              <span>สัดส่วนเคสที่มีการ Hold / เลื่อนวัน / ยกเลิกกะทันหัน</span>
+              <span id="val-rate" class="text-amber">8%</span>
+            </div>
+            <input id="range-rate" type="range" min="3" max="20" step="1" value="8" oninput="calculateSavings()" />
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim);">
+              <span>3%</span><span>20%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-solid" style="border-color: rgba(16, 185, 129, 0.38); display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
+          <div>
+            <div style="font-size:12px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:0.05em;">
+              ประมาณการมูลค่ายาที่ป้องกันความสูญเสียได้
+            </div>
+            <div id="output-savings" style="font-size: clamp(32px, 4vw, 44px); font-weight:800; color:#34d399; margin:6px 0 8px; font-variant-numeric:tabular-nums;">
+              1,296,000 บาท/ปี
+            </div>
+            <p style="font-size:13px; color:var(--text-muted);">
+              คำนวณจากการป้องกันความสูญเสียของยาเคมีบำบัดและยาราคาสูงด้วย Real-time Hold / Rollover / Cancel Alert ได้เฉลี่ย 90% ของเคสที่เปลี่ยนแปลงกะทันหัน
+            </p>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:10px; border-top:1px solid var(--border); padding-top:14px;">
+            <div style="display:flex; justify-content:space-between; font-size:13.5px;">
+              <span style="color:var(--text-dim);">ชั่วโมงประสานงานที่ประหยัดได้ (Nurse &amp; Phar):</span>
+              <strong id="output-hours" style="color:#fff;">~600 ชม./ปี</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:13.5px;">
+              <span style="color:var(--text-dim);">อัตราความครบถ้วนของข้อมูลจอง (Zero Data Loss):</span>
+              <strong style="color:var(--teal);">100% Cloud Audit Trail</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:13.5px;">
+              <span style="color:var(--text-dim);">ระยะเวลาคืนทุน (Payback Period):</span>
+              <strong style="color:var(--amber);">น้อยกว่า 3 เดือน</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Lean Canvas & KPIs -->
+    <section id="slide-7" class="slide">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+        <div>
+          <div class="section-kicker">07 · กรอบกลยุทธ์และตัวชี้วัดความสำเร็จ</div>
+          <h2 class="slide-title" style="margin-bottom:0;">RxNexus Lean Canvas &amp; Target KPIs</h2>
+        </div>
+
+        <div class="seg-tabs" role="tablist">
+          <button id="btn-tab-lean" class="seg-tab active" onclick="toggleCanvasTab('lean')">Lean Canvas</button>
+          <button id="btn-tab-kpis" class="seg-tab" onclick="toggleCanvasTab('kpis')">Quantitative KPIs</button>
+        </div>
+      </div>
+
+      <!-- Lean Canvas -->
+      <div id="canvas-tab-lean-content" class="grid-5">
+        <div class="card" style="padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--rose); margin-bottom:8px;">1. PROBLEM</div>
+          <ul class="list-clean">
+            <li>ข้อมูลจองยาเดิมสูญหาย ไม่เป็นระบบ</li>
+            <li>ล็อกอินรวมแผนก ขาดความปลอดภัย</li>
+            <li>ไม่มีแจ้งเตือน Hold / ยาค้างส่งแบบทันที</li>
+            <li>ค้นหายาและเช็กราคาตามสิทธิได้ช้า</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--teal); margin-bottom:8px;">2. SOLUTION</div>
+          <ul class="list-clean">
+            <li>Cloud Database Real-time Sync</li>
+            <li>หน้าแรกเฉพาะ Role + RBAC ชัดเจน</li>
+            <li>Verify RX Scroll Zoom &amp; Reject Loop</li>
+            <li>Owings Desk, Borrow Return &amp; A4 Print</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--amber); margin-bottom:8px;">3. UNIQUE VALUE</div>
+          <ul class="list-clean">
+            <li>จองไวในไม่กี่คลิกด้วย Auto-Suggest</li>
+            <li>ลดความสูญเสียยาราคาสูงได้ทันที</li>
+            <li>ปฏิทินคิวยา + สถานะครบจบในหน้าเดียว</li>
+            <li>พิมพ์ใบประเมินราคาให้คนไข้ได้ทันที</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--blue-bright); margin-bottom:8px;">4. CHANNELS &amp; EDGE</div>
+          <ul class="list-clean">
+            <li>สร้างจาก Workflow จริงของรพ.</li>
+            <li>ใช้งานได้ทุกเครื่อง (Web + iPad/iOS)</li>
+            <li>ฟอนต์ Sarabun คงที่ทุกขนาดหน้าจอ</li>
+            <li>ครอบคลุม OPD Chemo &amp; All Wards</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--indigo); margin-bottom:8px;">5. TARGET &amp; IMPACT</div>
+          <ul class="list-clean">
+            <li>ผู้ป่วย Oncology &amp; By-Case Special Meds</li>
+            <li>ห้องยา Phar IV, A1, E3, E6, D และคลังยา</li>
+            <li>ลดต้นทุนยาเสียเปล่าและเวลาคอยคิว</li>
+            <li>ยกระดับ Patient Safety มาตรฐานสากล</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quantitative KPIs -->
+      <div id="canvas-tab-kpis-content" class="grid-3 hidden">
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--teal);">Medication Compliance</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">&gt; 98.5%</div>
+          <p style="font-size:13px; color:var(--text-muted);">อัตราความสำเร็จของการจองยาพิเศษและเคมีบำบัดครบถ้วนไม่ตกหล่น</p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--amber);">Waste Reduction</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">ลดลง 90%</div>
+          <p style="font-size:13px; color:var(--text-muted);">ลดมูลค่ายาเคมีบำบัดที่ผสมเตรียมเก้อด้วยระบบแจ้ง Hold &amp; Rollover ทันที</p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--blue-bright);">Notification Speed</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">&lt; 2 วินาที</div>
+          <p style="font-size:13px; color:var(--text-muted);">ส่ง Real-time Alert ข้ามแผนกแทนการโทรศัพท์ตามยอดและค้างส่ง</p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--indigo);">Audit &amp; Accountability</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">2-Step + Timestamp</div>
+          <p style="font-size:13px; color:var(--text-muted);">บันทึกผู้จอง เภสัช Verify RX คลังยืนยันสั่งซื้อ/รับของ (1/2 &rarr; 2/2) และพยาบาล Double Check ครบทุกเคส</p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--rose);">Owing &amp; Borrow Control</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">Zero Lost Loans</div>
+          <p style="font-size:13px; color:var(--text-muted);">ตรวจจับการยืมยาข้ามคนไข้และปิดสถานะคืนยาอัตโนมัติเมื่อจองคืน</p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:12px; font-weight:700; color:var(--teal);">Master Standards</div>
+          <div style="font-size:32px; font-weight:800; color:#fff; margin:6px 0;">18 / 18 REQ</div>
+          <p style="font-size:13px; color:var(--text-muted);">ผ่านเกณฑ์ข้อกำหนดทางคลินิกและการปฏิบัติงานจริงครบถ้วน 100%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Rollout Roadmap & Closing -->
+    <section id="slide-8" class="slide">
+      <div class="section-kicker">08 · แผนการนำขึ้นใช้งานจริง (Implementation Roadmap)</div>
+      <h2 class="slide-title">พร้อมยกระดับมาตรฐานความปลอดภัยและคุ้มทุนตั้งแต่วันแรก</h2>
+      <p class="slide-subtitle" style="margin-bottom:22px;">
+        ระบบพัฒนาสมบูรณ์ พร้อมคู่มือสอนงานแบบสั้นเข้าใจง่ายแยกตาม Role (PDF) และคู่มืออบรมฉบับเต็ม (HTML &amp; PDF) สามารถเริ่ม Pilot ได้ทันที
+      </p>
+
+      <div class="grid-3" style="margin-bottom:22px;">
+        <div class="card-solid">
+          <div style="font-size:12px; font-weight:800; color:var(--blue-bright);">สัปดาห์ที่ 1–2 · Phase 1</div>
+          <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 8px;">Pilot &amp; Staff Training</div>
+          <p style="font-size:13px; color:var(--text-muted);">
+            นำเข้า Master Stock ยา + สิทธิ Payor ตั้งค่ารหัสแผนก/เภสัชกร และแจกคู่มือการใช้งานแยกตาม Role แบบอ่านง่ายให้ทีมหน้างาน
+          </p>
+        </div>
+
+        <div class="card-solid">
+          <div style="font-size:12px; font-weight:800; color:var(--teal);">สัปดาห์ที่ 3–4 · Phase 2</div>
+          <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 8px;">Oncology &amp; Ward Go-Live</div>
+          <p style="font-size:13px; color:var(--text-muted);">
+            เปิดใช้งานเต็มรูปแบบในแผนก Oncology, ห้องยา Phar IV / A1 / E3 / E6 / D และคลังยา พร้อมติดตาม Alert หน้างานจริง
+          </p>
+        </div>
+
+        <div class="card-solid">
+          <div style="font-size:12px; font-weight:800; color:var(--amber);">เดือนที่ 2+ · Phase 3</div>
+          <div style="font-size:16px; font-weight:800; color:#fff; margin:4px 0 8px;">Audit Review &amp; Hospital Scale</div>
+          <p style="font-size:13px; color:var(--text-muted);">
+            สรุปตัวเลขลดของเสียและเวลาคอยจาก Audit Logs / Export CSV เพื่อขยายการใช้งานครอบคลุมทุกหอผู้ป่วยในโรงพยาบาล
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img src="/RxNexusLogo.png" alt="RxNexus Logo" style="width:52px; height:52px; border-radius:12px; background:#fff; padding:4px; object-fit:contain;" onerror="this.style.display='none'" />
+          <div>
+            <div style="font-size:16px; font-weight:800; color:#fff;">พร้อมทดสอบระบบและสื่อการสอนครบชุด</div>
+            <div style="font-size:13px; color:var(--text-muted);">
+              Powered By <strong style="color:#7dd3fc;">Preeyapat P. (Pharmacist)</strong> · ดาวน์โหลดคู่มือแยก Role หรือเปิดระบบจริงได้ทันที
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="/RxNexus_Role_Instructions.pdf" target="_blank" class="btn-outline" style="padding:10px 16px; border-color:rgba(56,189,248,0.5); color:#7dd3fc;">คู่มือแยก Role อ่านง่าย (PDF)</a>
+          <a href="/RxNexus_User_Guide.pdf" target="_blank" class="btn-outline" style="padding:10px 16px;">คู่มือฉบับเต็ม (PDF)</a>
+          <a href="/" target="_blank" class="btn-amber">เปิดระบบ RxNexus จริง &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation Dock -->
+  <footer class="footer-dock">
+    <div class="footer-inner">
+      <div style="display:flex; gap:8px;">
+        <button class="btn-outline" onclick="prevSlide()">&larr; ก่อนหน้า</button>
+        <button class="btn-outline" onclick="nextSlide()">ถัดไป &rarr;</button>
+      </div>
+
+      <div class="dots" aria-label="Slide pagination">
+        <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+        <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+        <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        <button class="dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+        <button class="dot" onclick="goToSlide(4)" aria-label="Slide 5"></button>
+        <button class="dot" onclick="goToSlide(5)" aria-label="Slide 6"></button>
+        <button class="dot" onclick="goToSlide(6)" aria-label="Slide 7"></button>
+        <button class="dot" onclick="goToSlide(7)" aria-label="Slide 8"></button>
+        <button class="dot" onclick="goToSlide(8)" aria-label="Slide 9"></button>
+      </div>
+
+      <div id="slide-counter" style="font-size:12.5px; font-weight:700; color:var(--text-dim);">
+        สไลด์ 1 / 9 (ใช้ปุ่ม &larr; &rarr; ได้)
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlideIdx = 0;
+    const totalSlides = 9;
+    let isShowAll = false;
+
+    function goToSlide(idx) {
+      if (idx < 0 || idx >= totalSlides) return;
+      if (isShowAll) toggleAllSlides();
+
+      for (let i = 0; i < totalSlides; i++) {
+        const s = document.getElementById('slide-' + i);
+        if (s) s.classList.remove('active');
+      }
+      const target = document.getElementById('slide-' + idx);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+      document.querySelectorAll('.nav-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+
+      const fill = document.getElementById('progress-fill');
+      if (fill) fill.style.width = (((idx + 1) / totalSlides) * 100) + '%';
+
+      const counter = document.getElementById('slide-counter');
+      if (counter) counter.textContent = `สไลด์ ${idx + 1} / ${totalSlides} (ใช้ปุ่ม ← → ได้)`;
+
+      currentSlideIdx = idx;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlideIdx < totalSlides - 1 ? currentSlideIdx + 1 : 0);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlideIdx > 0 ? currentSlideIdx - 1 : totalSlides - 1);
+    }
+
+    function toggleAllSlides() {
+      isShowAll = !isShowAll;
+      document.body.classList.toggle('show-all', isShowAll);
+      const btn = document.getElementById('btn-view-mode');
+      if (btn) btn.textContent = isShowAll ? 'โหมดสไลด์' : 'ดูทั้งหมด';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); nextSlide(); }
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevSlide(); }
+      if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
+      if (e.key === 'End') { e.preventDefault(); goToSlide(totalSlides - 1); }
+    });
+
+    // Slide 4: Multi-Role Simulator
+    function simulateActiveRole(role) {
+      ['nurse', 'pharmacist', 'stock', 'admin'].forEach(r => {
+        const el = document.getElementById('role-box-' + r);
+        if (el) el.classList.toggle('active', r === role);
+      });
+
+      const titleEl = document.getElementById('simulator-role-title');
+      const reqEl = document.getElementById('simulator-req-tag');
+      const contentEl = document.getElementById('simulator-content');
+
+      const map = {
+        nurse: {
+          title: 'พยาบาล (Nurse): หน้าจอจำลองการลงทะเบียนจองยา & รับยา Double Check',
+          color: '#38bdf8',
+          req: 'REQ-02 · REQ-03 · REQ-09 · REQ-14/15',
+          html: '1) Login รหัสประจำแผนก &rarr; เปิดหน้า <strong>Booking Drug</strong> อัตโนมัติ กรอกเฉพาะ ชื่อ, HN, แผนก, ยา (Auto-Suggest), จำนวน, Payor<br/>2) สามารถพิมพ์ <strong>Print Report</strong> ให้คนไข้เช็กราคายา, แจ้ง <strong>ยืมยาข้ามคนไข้</strong> (ระบบจับคิวและจองคืนให้อัตโนมัติ) และกดรับยา <strong>Double Check</strong> พร้อม Timestamp'
+        },
+        pharmacist: {
+          title: 'เภสัชกร (Pharmacist): ทวนสอบ Verify RX + ซูมใบสั่ง + จัดการยาค้างส่ง',
+          color: '#34d399',
+          req: 'REQ-04 · REQ-05 · REQ-06 · REQ-07 · REQ-16',
+          html: '1) เฉพาะ <strong>เภสัชกรเท่านั้น</strong> ที่ทวนสอบ (Verify Rx) บน Dashboard แยกหมวด General / Oncology และหมุนลูกกลิ้งเมาส์ <strong>Zoom รูปใบสั่งยา</strong> ได้ทันที<br/>2) กด <strong>Approve</strong> เพื่อยืนยันเป็น "ยอมรับแล้ว" หรือกด <strong>Not Approved</strong> (บังคับใส่ Note) ส่ง Alert ให้ผู้จองแก้แล้วส่ง <strong>Re-verify Rx</strong> กลับมาโดยข้อมูลไม่สูญหาย'
+        },
+        stock: {
+          title: 'คลังยา (Stock Clerk): กดยืนยัน 2 ขั้นตอน (1/2 สั่งซื้อ → 2/2 ของถึง) + Shortcut Detail',
+          color: '#fbbf24',
+          req: 'REQ-08 · REQ-11 · REQ-12 · REQ-13',
+          html: '1) คลังยา <strong>ไม่ต้องทวนสอบ Stock ซ้ำ</strong>: หลังเภสัชกรทวนสอบแล้ว คลังกด <strong>ยืนยันการสั่งซื้อ (1/2)</strong> &rarr; เมื่อของมาส่งจริงกด <strong>ยืนยันของมาถึง (2/2)</strong> ผ่านหน้า <strong>Shortcut Detail</strong> (ระบุชื่อผู้กด + เลข PO/Lot) พร้อมบันทึก <strong>Timestamp (1. สั่ง: / 2. ถึง:)</strong> บนตารางทันที<br/>2) ติดตามยาค้างส่งในแท็บ <strong>รายการยาค้างส่ง (Owings)</strong> แยกห้องยา และพิมพ์ <strong>Report รายการยา A4</strong> ครบช่อง ☐ + Stock Code ไม่ตกขอบ'
+        },
+        admin: {
+          title: 'ผู้ดูแลระบบ (Admin): อนุมัติบัญชี อนุมัติคลังยา และ Audit Log',
+          color: '#818cf8',
+          req: 'REQ-16 · Powered By Preeyapat P. (Pharmacist)',
+          html: '1) อนุมัติพนักงานสมัครใหม่และตรวจสอบคำขอแก้ไข/ลบ Stock ยาจากเภสัชกรผ่าน Banner แจ้งเตือนก่อนมีผลจริง<br/>2) ตรวจสอบ <strong>Audit Logs</strong> ย้อนหลังได้ครบทุกเหตุการณ์ (รวม Timestamp 1/2 สั่งซื้อ-รับของ) พร้อม Export CSV, สำรอง JSON รายเดือน และล้างข้อมูลเก่าเกิน 6 เดือน'
+        }
+      };
+
+      const item = map[role];
+      titleEl.textContent = item.title;
+      titleEl.style.color = item.color;
+      reqEl.textContent = item.req;
+      contentEl.innerHTML = item.html;
+    }
+
+    // Slide 5: HOLD & Rollover Interactive Sandbox
+    const heldPatientsData = [
+      {
+        id: 0,
+        name: 'นายแพทย์ อังกูร',
+        hn: '02-26-032035',
+        med: 'Oxaliplatin 100mg + 5-FU (mFOLFOX6)',
+        status: 'HOLD',
+        reason: 'เกล็ดเลือดต่ำกว่าเกณฑ์ความปลอดภัย',
+        nurse: 'พยาบาล สมร (OPD Chemo)',
+        active: true
+      },
+      {
+        id: 1,
+        name: 'คุณพัชราภา สงวนงาม',
+        hn: '02-12-345678',
+        med: 'Palset INJ 0.25mg + Mircera 75mcg',
+        status: 'ROLLOVER',
+        reason: 'ผู้ป่วยขอเลื่อนนัดรับยาเป็นสัปดาห์หน้า',
+        nurse: 'พยาบาล ลัดดา (Ward 7B)',
+        active: true
+      }
+    ];
+
+    function triggerMockHold(action) {
+      const idx = parseInt(document.getElementById('mock-held-patient').value, 10);
+      const reason = document.getElementById('mock-held-reason').value.trim() || 'ระบุเหตุผลทางการแพทย์';
+      const nurse = document.getElementById('mock-held-nurse').value.trim() || 'พยาบาลหน้างาน';
+      const logEl = document.getElementById('mock-alert-log');
+
+      if (action === 'hold' || action === 'rollover') {
+        heldPatientsData[idx].active = true;
+        heldPatientsData[idx].status = action === 'hold' ? 'HOLD' : 'ROLLOVER';
+        heldPatientsData[idx].reason = reason;
+        heldPatientsData[idx].nurse = nurse;
+        logEl.innerHTML = `<strong style="color:${action === 'hold' ? '#fb7185' : '#fbbf24'};">[Real-time Alert ส่งคลังยา+เภสัชกรแล้ว]</strong> ${heldPatientsData[idx].name} (${heldPatientsData[idx].hn}) — สถานะ ${heldPatientsData[idx].status}: ${reason} (แจ้งโดย ${nurse})`;
+      } else {
+        heldPatientsData[idx].active = false;
+        logEl.innerHTML = `<strong style="color:#34d399;">[Continue / คืนสถานะ]</strong> ${heldPatientsData[idx].name} พร้อมกลับเข้าสู่กระบวนการจ่ายยาตามปกติ`;
+      }
+      renderMockHoldTable();
+    }
+
+    function renderMockHoldTable() {
+      const tbody = document.getElementById('mock-hold-table-body');
+      const badge = document.getElementById('mock-hold-badge');
+      tbody.innerHTML = '';
+      let count = 0;
+
+      heldPatientsData.forEach(p => {
+        if (!p.active) return;
+        count++;
+        const color = p.status === 'HOLD' ? '#fb7185' : '#fbbf24';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div style="font-weight:700; color:#fff;">${p.name}</div>
+            <div style="font-size:11.5px; color:var(--text-dim);">HN: ${p.hn}</div>
+          </td>
+          <td style="color:#e2e8f0;">${p.med}</td>
+          <td>
+            <div style="font-weight:800; color:${color};">${p.status}</div>
+            <div style="font-size:12px; color:var(--text-muted);">${p.reason}</div>
+          </td>
+          <td style="color:var(--text-muted);">${p.nurse}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      badge.textContent = count;
+      if (count === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:26px; color:var(--teal); font-weight:700;">ไม่มีรายการ Hold / Rollover ค้างอยู่ — ทุกเคสดำเนินการต่อเรียบร้อย</td></tr>`;
+      }
+    }
+
+    // Slide 7: ROI Calculator
+    function calculateSavings() {
+      const courses = parseInt(document.getElementById('range-courses').value, 10);
+      const cost = parseInt(document.getElementById('range-cost').value, 10);
+      const rate = parseInt(document.getElementById('range-rate').value, 10);
+
+      document.getElementById('val-courses').textContent = courses.toLocaleString() + ' เคส/ปี';
+      document.getElementById('val-cost').textContent = cost.toLocaleString() + ' บาท';
+      document.getElementById('val-rate').textContent = rate + '%';
+
+      const savings = Math.round(courses * (rate / 100) * cost * 0.9);
+      const hours = Math.round(courses * 1.5);
+
+      document.getElementById('output-savings').textContent = savings.toLocaleString() + ' บาท/ปี';
+      document.getElementById('output-hours').textContent = '~' + hours.toLocaleString() + ' ชม./ปี';
+    }
+
+    // Slide 8: Lean Canvas vs KPIs
+    function toggleCanvasTab(tab) {
+      const lean = document.getElementById('canvas-tab-lean-content');
+      const kpis = document.getElementById('canvas-tab-kpis-content');
+      const btnLean = document.getElementById('btn-tab-lean');
+      const btnKpis = document.getElementById('btn-tab-kpis');
+
+      if (tab === 'lean') {
+        lean.classList.remove('hidden');
+        kpis.classList.add('hidden');
+        btnLean.classList.add('active');
+        btnKpis.classList.remove('active');
+      } else {
+        lean.classList.add('hidden');
+        kpis.classList.remove('hidden');
+        btnLean.classList.remove('active');
+        btnKpis.classList.add('active');
+      }
+    }
+
+    renderMockHoldTable();
+    calculateSavings();
+  </script>
+</body>
+</html>

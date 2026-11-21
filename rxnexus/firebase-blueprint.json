@@ -1,0 +1,144 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Staff member profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique user identifier" },
+        "username": { "type": "string", "description": "Unique username for authentication" },
+        "name": { "type": "string", "description": "Full display name of the staff member" },
+        "role": { "type": "string", "description": "Primary user authorization role" },
+        "roles": { "type": "array", "description": "List of user authorization roles" },
+        "password": { "type": "string", "description": "User password (hashed or plain)" }
+      },
+      "required": ["id", "username", "name", "role"]
+    },
+    "Drug": {
+      "title": "Drug",
+      "description": "Pharmaceutical medical item details and prices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique drug catalog reference identifier" },
+        "name": { "type": "string", "description": "Detailed name of the drug" },
+        "type": { "type": "string", "enum": ["General", "Oncology"], "description": "Therapeutic class classification" },
+        "stockCode": { "type": "string", "description": "Warehouse stock keep code" },
+        "prices": {
+          "type": "object",
+          "properties": {
+            "employee": { "type": "number" },
+            "opd": { "type": "number" },
+            "ipd": { "type": "number" },
+            "it": { "type": "number" }
+          }
+        }
+      },
+      "required": ["id", "name", "type", "stockCode", "prices"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Medication Queue request booking reservation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Formatted index e.g., RXN-YYYYMMDD-COUNT" },
+        "bookingDate": { "type": "string", "description": "Date of reservation submission in YYYY-MM-DD" },
+        "hn": { "type": "string", "description": "Hospital Number following 02-xx-xxxxxx format" },
+        "patientName": { "type": "string", "description": "Mr. or Mrs. patient full display name" },
+        "dateOfUse": { "type": "string", "description": "Planned target date of clinical medication use" },
+        "department": { "type": "string", "description": "Clinic ward or hospital unit department" },
+        "pharmacyLocation": { "type": "string", "description": "Target pharmacy dispensing room" },
+        "mode": { "type": "string", "enum": ["General", "Oncology"], "description": "Booking class type" },
+        "medications": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "prescriptionImage": { "type": "string", "description": "Uploaded medical recipe slip (Firebase Storage URL or compressed Base64)" },
+        "imageClearedAt": { "type": "string", "description": "ISO timestamp when old image was cleared while keeping booking record" },
+        "imageClearedBy": { "type": "string", "description": "Admin who cleared the old image payload" },
+        "staff": {
+          "type": "object",
+          "properties": {
+            "doctor": { "type": "string" },
+            "nurse": { "type": "string" },
+            "pharmacist": { "type": "string" },
+            "creatorId": { "type": "string" },
+            "creatorName": { "type": "string" }
+          }
+        },
+        "pharmacistVerification": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string", "enum": ["Pending", "Verified"] },
+            "verifiedBy": { "type": "string" },
+            "verifiedAt": { "type": "string" }
+          }
+        },
+        "clerkVerification": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string", "enum": ["Pending", "Ready-to-use"] },
+            "verifiedBy": { "type": "string" },
+            "verifiedAt": { "type": "string" }
+          }
+        },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "bookingDate", "hn", "patientName", "dateOfUse", "mode", "totalAmount"]
+    },
+    "SystemLog": {
+      "title": "SystemLog",
+      "description": "Action traceability event logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique log tracker identifier" },
+        "timestamp": { "type": "string", "description": "ISO timestamp of the change event" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userRole": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "userId", "userName", "userRole", "action", "details"]
+    },
+    "OwingMedication": {
+      "title": "OwingMedication",
+      "description": "Ledger of medications currently owing or not ready for specific patient booking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique owing tracking reference" },
+        "bookingId": { "type": "string", "description": "Reference to the source Booking" },
+        "patientName": { "type": "string" },
+        "hn": { "type": "string" },
+        "pharmacyLocation": { "type": "string" },
+        "medications": {
+          "type": "array",
+          "description": "List of drugs and preparation status"
+        },
+        "reportedBy": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "resolved": { "type": "boolean" }
+      },
+      "required": ["id", "bookingId", "patientName", "hn", "medications", "reportedBy", "createdAt", "resolved"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles of clinical staff/administrators"
+    },
+    "drugs": {
+      "schema": { "$ref": "#/entities/Drug" },
+      "description": "Pharmaceutical medical lookup catalog"
+    },
+    "bookings": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "Patient medication allocation and queue tickets list"
+    },
+    "logs": {
+      "schema": { "$ref": "#/entities/SystemLog" },
+      "description": "Operation audit logs for compliance tracker"
+    },
+    "owing_meds": {
+      "schema": { "$ref": "#/entities/OwingMedication" },
+      "description": "Log of outstanding or owing medications yet to be prepared by stock vault clerks"
+    }
+  }
+}

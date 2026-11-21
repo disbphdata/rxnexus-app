@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RxNexus — คู่มือการใช้งานและสื่อการสอนแยกตามตำแหน่ง (Role-Based User Guide)</title>
+  <link rel="icon" type="image/png" href="/RxNexusLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0f294a;
+      --blue: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --emerald: #059669;
+      --emerald-soft: #ecfdf5;
+      --amber: #d97706;
+      --amber-soft: #fffbeb;
+      --rose: #e11d48;
+      --rose-soft: #fff1f2;
+      --purple: #7c3aed;
+      --purple-soft: #f5f3ff;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-700: #334155;
+      --slate-900: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e2e8f0;
+      color: var(--slate-900);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Control Toolbar (hidden in print) */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .toolbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+
+    .toolbar-brand span.tag {
+      background: #2563eb;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover { background: rgba(255,255,255,0.18); color: #fff; }
+    .btn.active { background: #2563eb; border-color: #3b82f6; color: #fff; }
+    .btn.btn-print { background: #10b981; border-color: #059669; color: #fff; }
+    .btn.btn-print:hover { background: #059669; }
+
+    /* Container */
+    .deck-container {
+      max-width: 1080px;
+      margin: 24px auto 48px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Slide / Manual Page Card */
+    .page-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+      border: 1px solid var(--slate-200);
+      padding: 36px 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deck-container.slide-mode .page-card {
+      display: none;
+    }
+    .deck-container.slide-mode .page-card.active-slide {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Slide Footer Navigation (Slide Mode Only) */
+    .slide-nav {
+      display: none;
+      max-width: 1080px;
+      margin: 0 auto 36px;
+      padding: 0 16px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .slide-nav.visible {
+      display: flex;
+    }
+    .slide-nav .nav-btn {
+      background: #0f172a;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .slide-nav .nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Page Header Strip */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--slate-200);
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+      gap: 16px;
+    }
+
+    .role-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .badge-navy { background: #dbeafe; color: #1e3a8a; border: 1px solid #bfdbfe; }
+    .badge-nurse { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-pharm { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-clerk { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .badge-admin { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--navy); }
+    .page-title { font-size: 24px; font-weight: 800; line-height: 1.25; }
+    .page-subtitle { font-size: 14px; color: var(--slate-500); margin-top: 4px; font-weight: 500; }
+    .page-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--slate-400);
+      background: var(--slate-100);
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    /* Cover Slide */
+    .cover-card {
+      background: linear-gradient(135deg, #0b1e3b 0%, #14366b 55%, #0e7490 100%);
+      color: #ffffff;
+      border: none;
+      padding: 48px 48px;
+    }
+    .cover-card h1 { color: #ffffff; font-size: 36px; font-weight: 800; margin-top: 10px; }
+    .cover-card .subtitle { color: #bae6fd; font-size: 17px; margin-top: 8px; font-weight: 500; }
+    .cover-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .cover-role-box {
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .cover-role-box .r-title { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .cover-role-box .r-desc { font-size: 12.5px; color: #e0f2fe; line-height: 1.45; }
+
+    /* Grids & Step Cards */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .box {
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 16px 18px;
+      background: var(--slate-50);
+    }
+    .box-white { background: #fff; }
+    .box-blue { background: var(--blue-soft); border-color: #bfdbfe; }
+    .box-emerald { background: var(--emerald-soft); border-color: #a7f3d0; }
+    .box-amber { background: var(--amber-soft); border-color: #fde68a; }
+    .box-rose { background: var(--rose-soft); border-color: #fecdd3; }
+    .box-purple { background: var(--purple-soft); border-color: #ddd6fe; }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13.5px;
+      color: var(--slate-700);
+    }
+    ul.clean li { margin-bottom: 5px; }
+    ul.clean li strong { color: var(--slate-900); }
+
+    /* Tables */
+    table.std-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table.std-table th {
+      background: #0f294a;
+      color: #fff;
+      text-align: left;
+      padding: 9px 12px;
+      font-weight: 700;
+      font-size: 12.5px;
+    }
+    table.std-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+      color: var(--slate-700);
+    }
+    table.std-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .req-tag {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #1e293b;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+
+    .callout {
+      border-left: 4px solid var(--amber);
+      background: var(--amber-soft);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 13px;
+      color: #78350f;
+      margin-top: 14px;
+    }
+
+    .callout-rose {
+      border-left-color: var(--rose);
+      background: var(--rose-soft);
+      color: #881337;
+    }
+
+    .callout-emerald {
+      border-left-color: var(--emerald);
+      background: var(--emerald-soft);
+      color: #064e3b;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 820px) {
+      .cover-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .page-card { padding: 22px 18px; }
+    }
+
+    /* Print / PDF Styles */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .toolbar, .slide-nav {
+        display: none !important;
+      }
+      .deck-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+      }
+      .deck-container.slide-mode .page-card,
+      .page-card {
+        display: block !important;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 10px !important;
+        padding: 20px 24px !important;
+        margin-bottom: 12mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .page-card:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Interactive Toolbar for Presentation / Training -->
+  <div class="toolbar">
+    <div class="toolbar-brand">
+      <img src="/RxNexusLogo.png" alt="RxNexus" style="height:28px;width:28px;border-radius:6px;background:#fff;padding:2px;" onerror="this.style.display='none'" />
+      <span>RxNexus Training Deck</span>
+      <span class="tag">คู่มืออบรม 4 ตำแหน่ง (REQ-01–18)</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn active" id="btn-mode-all" onclick="setViewMode('all')">📄 ดูทั้งหมด (Manual)</button>
+      <button class="btn" id="btn-mode-slide" onclick="setViewMode('slide')">📽️ โหมดสไลด์ (Presentation)</button>
+      <button class="btn" onclick="jumpToSlide(2)">👩‍⚕️ พยาบาล</button>
+      <button class="btn" onclick="jumpToSlide(5)">💊 เภสัชกร</button>
+      <button class="btn" onclick="jumpToSlide(7)">📦 คลังยา</button>
+      <button class="btn" onclick="jumpToSlide(9)">🛡️ Admin</button>
+      <button class="btn btn-print" onclick="window.print()">🖨️ พิมพ์ / Save PDF</button>
+    </div>
+  </div>
+
+  <div id="deck" class="deck-container">
+
+    <!-- PAGE 1: COVER & SYSTEM OVERVIEW -->
+    <section class="page-card cover-card" data-slide="0">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://static.bangkokhospital.com/uploads/2025/08/pattaya.svg" alt="Bangkok Hospital Pattaya" style="height:40px;background:#fff;padding:6px 12px;border-radius:8px;" />
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;color:#bae6fd;text-transform:uppercase;">Bangkok Hospital Pattaya • Outpatient Sourcing</span>
+        </div>
+        <span style="background:rgba(255,255,255,0.16);padding:5px 12px;border-radius:8px;font-size:12px;font-weight:700;">ฉบับฝึกอบรมพนักงาน (Standard SOP)</span>
+      </div>
+
+      <h1>คู่มือการใช้งานระบบ RxNexus</h1>
+      <p class="subtitle">ระบบบริหารจัดการการจองยา เวชภัณฑ์สำรอง และการประสานงานแบบ Real-time ระหว่างพยาบาล เภสัชกร คลังยา และผู้ดูแลระบบ (ครอบคลุมมาตรฐาน REQ-01 ถึง REQ-18)</p>
+
+      <div class="cover-grid">
+        <div class="cover-role-box">
+          <div class="r-title">1. พยาบาล (Nurse)</div>
+          <div class="r-desc">เปิดเข้าหน้าจองยาทันที • จองยาแบบรวดเร็ว • แก้ไขเมื่อถูกปฏิเสธ • ยืม/จองคืนยา • รับยา Double Check • แจ้ง Hold / Rollover / Cancel</div>
+        </div>
+        <div class="cover-role-box">
+          <div class="r-title">2. เภสัชกร (Pharmacist)</div>
+          <div class="r-desc">เปิดเข้า Dashboard ทันที • จองยาระบุห้องยา • ทวนสอบ Verify RX (ซูมใบสั่งด้วย Scroll Mouse) • อนุมัติ/ส่งกลับพร้อม Note • จัดการยาค้างส่ง & คำขอยกเลิก</div>
+        </div>
+        <div class="cover-role-box">
+          <div class="r-title">3. คลังยา (Stock Clerk)</div>
+          <div class="r-desc">รับแจ้งเตือน Real-time • ยืนยันรับ Order / Arrived แบบ 2 ขั้นตอน • ติดตามยาค้างจ่าย • พิมพ์ใบจัดเตรียม A4 แยกรายคนไข้พร้อมช่องติ๊กและ Stock Code</div>
+        </div>
+        <div class="cover-role-box">
+          <div class="r-title">4. ผู้ดูแลระบบ (Admin)</div>
+          <div class="r-desc">อนุมัติบัญชีพนักงานใหม่ • อนุมัติคำขอแก้ไข/ลบคลังยา (Stock Alert) • ตรวจสอบ Audit Logs • สำรอง/กู้คืน/ล้างข้อมูลเก่า 6 เดือน</div>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.2);display:flex;justify-content:space-between;font-size:12.5px;color:#cbd5e1;flex-wrap:wrap;gap:8px;">
+        <span>ฟอนต์มาตรฐาน: Sarabun (รองรับการแสดงผลคงที่ทุกขนาดหน้าจอและทุกเครื่องคอมพิวเตอร์)</span>
+        <span>พัฒนาและออกแบบระบบ: ทีมเภสัชกรรมและระบบงาน RxNexus</span>
+      </div>
+    </section>
+
+    <!-- PAGE 2: SYSTEM ARCHITECTURE & ROLE MATRIX (REQ-01, REQ-02, REQ-10) -->
+    <section class="page-card" data-slide="1">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-navy">Overview • REQ-01 / REQ-02 / REQ-10</span>
+          <h2 class="page-title">ภาพรวมระบบ การเข้าสู่ระบบ และหน้าแรกตามตำแหน่ง</h2>
+          <p class="page-subtitle">ทุกตำแหน่งใช้ UI มาตรฐานเดียวกันด้วยฟอนต์ Sarabun และเข้าถึงข้อมูลแบบ Real-time</p>
+        </div>
+        <div class="page-num">หน้า 2 / 11</div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:18px;">
+        <div class="box box-blue">
+          <div class="step-title"><span class="step-num">1</span>การเข้าสู่ระบบ (Login) & หน้าแรกอัตโนมัติ (REQ-01, REQ-02)</div>
+          <ul class="clean">
+            <li><strong>พยาบาล (Nurse):</strong> Login ด้วย <strong>รหัสประจำแผนก</strong> &rarr; ระบบเปิดหน้า <strong>ลงทะเบียนจองยา (Booking Drug)</strong> เป็นหน้าแรกทันที</li>
+            <li><strong>เภสัชกร (Pharmacist):</strong> Login ด้วย <strong>รหัสเฉพาะบุคคล</strong> &rarr; ระบบเปิดหน้า <strong>Dashboard</strong> เป็นหน้าแรกทันที</li>
+            <li><strong>คลังยา (Pharmacy Stock Clerk):</strong> Login เข้ามา &rarr; ระบบเปิดหน้า <strong>Dashboard</strong> เป็นหน้าแรกทันที</li>
+            <li><strong>การสมัครใช้งานใหม่ (Register):</strong> บัญชีใหม่จะมีสถานะรออนุมัติ ต้องรอ <strong>Admin</strong> กดอนุมัติก่อนจึงจะ Login ได้</li>
+          </ul>
+        </div>
+
+        <div class="box box-white">
+          <div class="step-title"><span class="step-num">2</span>ปฏิทินคิวยา (Queue Calendar) — REQ-10</div>
+          <ul class="clean">
+            <li>แยกแท็บและสีชัดเจน: <strong>คิวทั้งหมด</strong> / <strong>คิวยาทั่วไป (General - สีน้ำเงิน)</strong> / <strong>คิวยามะเร็ง (Oncology - สีแดง)</strong></li>
+            <li>สัญลักษณ์สถานะบนปฏิทิน: <strong>⚠️ รอยาพร้อมใช้</strong>, <strong>✅ ยาพร้อมใช้งาน</strong>, <strong>⏸️ HOLD</strong>, <strong>🔄 เลื่อนวัน (Rollover)</strong></li>
+            <li>คลิกที่ชื่อผู้ป่วยบนวันนั้นๆ เพื่อเปิดดู <strong>รายละเอียดยา, Stock Code, ห้องยา (Pharmacy Location), สูตรยา (Regimen) และ Note</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <table class="std-table">
+        <thead>
+          <tr>
+            <th style="width:18%;">ตำแหน่ง (Role)</th>
+            <th style="width:20%;">หน้าแรกหลัง Login</th>
+            <th style="width:38%;">หน้าที่หลักในระบบ (Core Responsibilities)</th>
+            <th style="width:24%;">ช่องทางแจ้งเตือนสำคัญ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>พยาบาล (Nurse)</strong></td>
+            <td>ลงทะเบียนจองยา<br/>(Booking Drug)</td>
+            <td>จองยาแบบ Minimal Fields, แก้ไขใบจองเมื่อโดน Reject, ยืมยา/จองคืน, Double Check รับยา, แจ้ง Hold/Rollover/Cancel, กด Complete ยาค้างส่ง</td>
+            <td>Alert เมื่อเภสัชกร Reject พร้อม Note, Alert เมื่อคลังเตรียมยา Arrived</td>
+          </tr>
+          <tr>
+            <td><strong>เภสัชกร (Pharmacist)</strong></td>
+            <td>Dashboard</td>
+            <td>จองยาระบุห้องยา, ตรวจทวนสอบ Verify RX (ซูมใบสั่งด้วย Scroll Mouse), กด Approve/Not Approved + Note, อนุมัติยกเลิก, ขอปรับแก้ Stock ยา</td>
+            <td>Alert เมื่อมีใบจองใหม่ / ใบจองที่แก้กลับมา Re-verify / Hold / Rollover</td>
+          </tr>
+          <tr>
+            <td><strong>คลังยา (Stock Clerk)</strong></td>
+            <td>Dashboard</td>
+            <td>รับ Order/Arrived (ยืนยัน 2 ขั้นตอน), ติดตามรายการยาค้างส่ง (Owing Meds) แยกตามห้องยา, พิมพ์รายงาน A4 สรุปยอดและรายคนไข้</td>
+            <td>Alert ใบจองใหม่, ยาค้างส่ง, Hold, Rollover, Cancel Request/Approved</td>
+          </tr>
+          <tr>
+            <td><strong>ผู้ดูแลระบบ (Admin)</strong></td>
+            <td>Dashboard</td>
+            <td>อนุมัติผู้ใช้ใหม่, อนุมัติแก้ไข/ลบรายการยาใน Stock, ตรวจ Audit Logs, Export/Import และล้างข้อมูลเก่าเกิน 6 เดือน</td>
+            <td>Banner แจ้งเตือนผู้ใช้รออนุมัติ + Alert/Banner เภสัชกรขอแก้ Stock</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- PAGE 3: NURSE GUIDE PART 1 (REQ-03, REQ-07, REQ-11) -->
+    <section class="page-card" data-slide="2">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-nurse">Role 1: พยาบาล (Nurse) • หน้า 1/3</span>
+          <h2 class="page-title">การจองยา (Booking Drug) และการแก้ไขเมื่อทวนสอบไม่ผ่าน</h2>
+          <p class="page-subtitle">REQ-02, REQ-03, REQ-07, REQ-11: จองไว กรอกเฉพาะข้อมูลจำเป็น ข้อมูลไม่สูญหาย และมี Loop แก้ไขชัดเจน</p>
+        </div>
+        <div class="page-num">หน้า 3 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-blue">
+          <div class="step-title"><span class="step-num">1</span>ขั้นตอนการจองยาโดยพยาบาล (REQ-03)</div>
+          <ul class="clean">
+            <li><strong>Login ด้วยรหัสแผนก:</strong> เข้าสู่ระบบแล้วจะอยู่ที่หน้า <strong>ลงทะเบียนจองยา</strong> ทันที</li>
+            <li><strong>เลือกหมวดหมู่ยา:</strong> ยาทั่วไป (General) หรือ ยาเคมีบำบัด (Oncology)</li>
+            <li><strong>กรอกข้อมูลจำเป็นขั้นต่ำ:</strong>
+              <br/>1) <strong>ชื่อผู้ป่วย</strong> และ <strong>HN</strong>
+              <br/>2) <strong>แผนกที่จอง</strong> (พิมพ์ค้นหาแล้วเลือกได้เลย)
+              <br/>3) <strong>รายการยา</strong> (พิมพ์ชื่อยา ระบบจะแนะนำรายการที่เกี่ยวข้องอัตโนมัติ)
+              <br/>4) <strong>จำนวนยาที่ใช้</strong> และ <strong>ราคาตามสิทธิ (Payor)</strong> เช่น OPD / IPD
+            </li>
+            <li><strong>ข้อมูลเพิ่มเติม (ไม่บังคับ):</strong> ระบุ <strong>Note</strong> แจ้งรายละเอียดสำคัญ และแนบรูปสแกนใบสั่งยา (ถ้ามี)</li>
+            <li><strong>ตรวจสอบ &amp; พิมพ์ใบแจ้งราคา:</strong> กดส่งข้อมูล &rarr; ตรวจสอบรายการได้ทันทีที่ <strong>Dashboard</strong> และกดปุ่ม <strong>Print Report</strong> เพื่อพิมพ์ใบสรุปให้ผู้ป่วยตรวจสอบราคา</li>
+          </ul>
+        </div>
+
+        <div class="box box-rose">
+          <div class="step-title"><span class="step-num">2</span>กรณีจองยาผิด: Reject &amp; Edit Loop (REQ-07)</div>
+          <ul class="clean">
+            <li><strong>รับแจ้งเตือน (Alert):</strong> เมื่อเภสัชกรตรวจพบความผิดพลาด (เช่น ผิดชนิดยา/ผิดคนไข้) เภสัชกรจะกด <code>Not Approved</code> พร้อมบังคับใส่ <strong>Note</strong> ระบุปัญหา</li>
+            <li><strong>พยาบาลกดแก้ไข:</strong> เปิดหน้า <strong>Dashboard</strong> คลิกปุ่ม <strong><code>Edit</code></strong> บนรายการที่ถูกแจ้งเตือน &rarr; อ่าน Note จากเภสัชกร</li>
+            <li><strong>อัปเดตข้อมูล:</strong> แก้ไขตัวยา จำนวน หรือ HN ให้ถูกต้อง แล้วกดปุ่ม <strong><code>Update</code></strong></li>
+            <li><strong>ส่งกลับทวนสอบซ้ำ:</strong> รายการจะเปลี่ยนสถานะกลับเป็นรอตรวจสอบที่ Dashboard พร้อมบันทึก <strong>Timestamp</strong> ให้เภสัชกรกด <code>Verify</code> อีกครั้ง</li>
+          </ul>
+          <div class="callout callout-rose" style="margin-top:12px;">
+            <strong>ข้อดีของระบบ:</strong> ข้อมูลไม่หายระหว่างทาง ไม่ต้องลบจองใหม่ทั้งหมด และมีประวัติเวลา (Timestamp) ตรวจสอบย้อนหลังได้ทุกครั้งที่แก้ไข
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-emerald">
+        <strong>การแจ้งเตือนอัตโนมัติ (REQ-11):</strong> ทันทีที่พยาบาลกดบันทึกการจอง ระบบจะส่ง Real-time Alert และเสียงแจ้งเตือนไปยังหน้าจอของ <strong>เภสัชกร</strong> และ <strong>เจ้าหน้าที่คลังยา</strong> ทันทีโดยไม่ Lag
+      </div>
+    </section>
+
+    <!-- PAGE 4: NURSE GUIDE PART 2 (REQ-09, REQ-12, REQ-14, REQ-15) -->
+    <section class="page-card" data-slide="3">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-nurse">Role 1: พยาบาล (Nurse) • หน้า 2/3</span>
+          <h2 class="page-title">การรับยา Double Check, ยืมยาข้ามคนไข้ และปิดงานยาค้างส่ง</h2>
+          <p class="page-subtitle">REQ-09, REQ-12, REQ-14, REQ-15: ตรวจรับยาปลอดภัย ติดตามยาที่ยืม และหยุด Alert เมื่อได้รับยาครบ</p>
+        </div>
+        <div class="page-num">หน้า 4 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-emerald">
+          <div class="step-title"><span class="step-num">3</span>การรับยาและ Double Check (REQ-09)</div>
+          <ul class="clean">
+            <li><strong>สถานะพร้อมจ่าย:</strong> เมื่อคลังยากดยืนยันของมาถึงแล้ว (<code>Ready-to-use / Arrived</code>) จะมี Alert แจ้งมาที่พยาบาล</li>
+            <li><strong>กดรับยา &amp; Double Check:</strong> ตรวจสอบตัวยาจริงกับใบสั่งยา แล้วกดปุ่ม <strong>รับยา / Double Check</strong> บน Dashboard</li>
+            <li><strong>Popup ยืนยัน:</strong> กดยืนยันในหน้าต่าง Double Check &rarr; ระบบบันทึกชื่อผู้รับยาและ <strong>Timestamp</strong> ลงใน Audit Log ทันที</li>
+          </ul>
+
+          <div class="step-title" style="margin-top:16px;"><span class="step-num">4</span>ปิดงานยาค้างส่ง (Complete Owing — REQ-12)</div>
+          <ul class="clean">
+            <li>หากมีรายการยาค้างจ่ายที่คลังยาแจ้งไว้ เมื่อพยาบาลได้รับยาครบเรียบร้อยแล้ว</li>
+            <li>ไปที่เมนู <strong>รายการยาค้างส่ง (Owings List)</strong> &rarr; กดปุ่ม <strong><code>Complete (ได้รับยาครบแล้ว)</code></strong></li>
+            <li><strong>ผลลัพธ์:</strong> Alert แจ้งเตือนด่วนฝั่งคลังยาสำหรับเคสนี้จะ <strong>หยุดทำงานทันที</strong></li>
+          </ul>
+        </div>
+
+        <div class="box box-amber">
+          <div class="step-title"><span class="step-num">5</span>ระบบยืมยาข้ามคนไข้ &amp; การจองคืน (REQ-14, REQ-15)</div>
+          <ul class="clean">
+            <li><strong>การบันทึกยืมยา:</strong> ในหน้า <strong>Booking Drug</strong> เปิดสวิตช์ <strong>"ยืมยาจากคนไข้รายอื่น"</strong></li>
+            <li><strong>ตรวจจับอัตโนมัติ (Auto-Detect):</strong> เมื่อเลือกยาที่ต้องการยืม ระบบจะดึงรายชื่อคนไข้ที่มียานั้นจองอยู่ (Active Orders) มาให้คลิกเลือกได้ทันที หรือพิมพ์ HN เอง</li>
+            <li><strong>บันทึก Note อัตโนมัติ:</strong> ระบบจะเขียนรายละเอียด <code>[ยืมยา] ชื่อยา x จำนวน จาก ชื่อผู้ป่วย (HN: ...)</code> ลงใน Note ให้อัตโนมัติ</li>
+            <li><strong>การติดตามและจองคืน (REQ-15):</strong>
+              <br/>• แถวของคนไข้ต้นทาง (ผู้ให้ยืม) บน Dashboard จะขึ้นป้าย <strong><code>ถูกยืมยาไปใช้ (รอจองคืน)</code></strong> พร้อมปุ่ม <strong><code>จองยาคืนให้ HN นี้</code></strong>
+              <br/>• <strong>Auto-Resolve:</strong> เมื่อกดจองยาใหม่ให้ HN ต้นทางด้วยรายการยาที่ตรงกัน ระบบจะปลดสถานะเป็น <strong>"คืนแล้ว"</strong> และลบ Alert ค้างคืนให้อัตโนมัติ
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: NURSE GUIDE PART 3 (REQ-17, REQ-18) -->
+    <section class="page-card" data-slide="4">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-nurse">Role 1: พยาบาล (Nurse) • หน้า 3/3</span>
+          <h2 class="page-title">การแจ้ง Hold, เลื่อนวันใช้ยา (Rollover) และขอยกเลิก (Cancel)</h2>
+          <p class="page-subtitle">REQ-17, REQ-18: ป้องกันการผสมยาหรือเตรียมยาเกินความจำเป็น พร้อมแจ้งเตือนเภสัชกรและคลังยาทันที</p>
+        </div>
+        <div class="page-num">หน้า 5 / 11</div>
+      </div>
+
+      <div class="grid-3">
+        <div class="box box-amber">
+          <div class="step-title"><span class="step-num">A</span>ระงับชั่วคราว (HOLD)</div>
+          <ul class="clean">
+            <li>ใช้เมื่อผู้ป่วยมีไข้ ผลเลือดไม่ผ่าน หรือแพทย์สั่งชะลอการให้ยา</li>
+            <li>กดปุ่ม <strong><code>Hold</code></strong> บน Dashboard &rarr; กรอก <strong>เหตุผล</strong> และ <strong>ชื่อพยาบาลผู้แจ้ง</strong></li>
+            <li>ระบบแจ้ง Alert ถึง <strong>คลังยา + เภสัชกร</strong> ทันที พร้อมชื่อ-สกุล, HN, <strong>รายการยาครบทุกตัว</strong>, เหตุผล และ Timestamp</li>
+            <li>เมื่อพร้อมให้ยาต่อ กดปุ่ม <strong><code>Continue / Unhold</code></strong> เพื่อคืนสถานะปกติ</li>
+          </ul>
+        </div>
+
+        <div class="box box-purple">
+          <div class="step-title"><span class="step-num">B</span>เลื่อนวันใช้ยา (Rollover)</div>
+          <ul class="clean">
+            <li>ใช้เมื่อผู้ป่วยเลื่อนนัดรับยาไปวันอื่น</li>
+            <li>กดปุ่ม <strong><code>Rollover</code></strong> &rarr; เลือก <strong>วันที่ใช้ยาใหม่</strong> + ระบุเหตุผล + ชื่อพยาบาลผู้แจ้ง</li>
+            <li>รายการยาจะย้ายไปแสดงบน <strong>ปฏิทินวันใหม่</strong> พร้อมป้าย <strong>🔄 เปลี่ยนวัน + Timestamp</strong></li>
+            <li>ระบบแจ้ง Alert ถึงคลังยาและเภสัชกรทันที พร้อมส่งสถานะกลับมา Verify ใหม่ตามวันนัดใหม่</li>
+          </ul>
+        </div>
+
+        <div class="box box-rose">
+          <div class="step-title"><span class="step-num">C</span>ขอยกเลิก (Cancel Request)</div>
+          <ul class="clean">
+            <li>ใช้เมื่อแพทย์สั่งหยุดยา/ยกเลิกคอร์สการรักษา</li>
+            <li>กดปุ่ม <strong><code>Cancel</code></strong> &rarr; ระบุ <strong>เหตุผลการยกเลิก</strong></li>
+            <li>ระบบส่ง <strong>Alert คำขอยกเลิก</strong> ไปหาเภสัชกร/Admin และคลังยาทันที พร้อมรายละเอียดผู้ป่วยและรายการยา</li>
+            <li>เมื่อเภสัชกร/Admin กดอนุมัติยกเลิก คลังยาจะได้รับ Alert แจ้งยกเลิกสมบูรณ์ทันที</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>หลักสำคัญหน้างาน:</strong> หากมีการเปลี่ยนแผนการรักษา (Hold / Rollover / Cancel) ให้กดแจ้งใน RxNexus ทันที เพื่อป้องกันความสูญเสียของยาเคมีบำบัดหรือยาราคาสูงจากการเตรียมผสมล่วงหน้า
+      </div>
+    </section>
+
+    <!-- PAGE 6: PHARMACIST GUIDE PART 1 (REQ-02, REQ-04, REQ-05, REQ-06, REQ-07) -->
+    <section class="page-card" data-slide="5">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-pharm">Role 2: เภสัชกร (Pharmacist) • หน้า 1/2</span>
+          <h2 class="page-title">การจองยาระบุห้องยา และการทวนสอบใบสั่งยา (Verify RX)</h2>
+          <p class="page-subtitle">REQ-02, REQ-04, REQ-05, REQ-06, REQ-07: จัดการคิว Dashboard ซูมใบสั่งยา และอนุมัติ/ส่งกลับ</p>
+        </div>
+        <div class="page-num">หน้า 6 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-emerald">
+          <div class="step-title"><span class="step-num">1</span>การจองยาโดยเภสัชกร (REQ-04)</div>
+          <ul class="clean">
+            <li><strong>Login ด้วยรหัสเฉพาะตัว:</strong> ระบบพามาหน้า <strong>Dashboard</strong> เป็นหน้าแรก หากต้องการจองยาให้คลิกเมนู <strong>ลงทะเบียนจองยา</strong></li>
+            <li><strong>ข้อมูลจำเป็นที่ต้องกรอก:</strong>
+              <br/>• ชื่อผู้ป่วย, HN, แผนกที่จอง
+              <br/>• <strong>ห้องยาที่ใช้ยา (Pharmacy Location) — บังคับเลือก</strong> (เช่น Phar IV, Phar A1, Phar E3, Phar E6, Phar D)
+              <br/>• รายการยาและจำนวนยาที่ใช้ + Note (ถ้ามี)
+            </li>
+            <li>บันทึกข้อมูลแล้วตรวจสอบที่ Dashboard และสั่ง <strong>Print Report</strong> ให้คนไข้หรือเก็บเป็นหลักฐานได้</li>
+          </ul>
+        </div>
+
+        <div class="box box-blue">
+          <div class="step-title"><span class="step-num">2</span>การทวนสอบผ่าน Dashboard &amp; Verify RX (REQ-05)</div>
+          <ul class="clean">
+            <li><strong>แยกหมวดหมู่ชัดเจน:</strong> Dashboard แสดง 2 หมวดให้ทุก User เห็นร่วมกันคือ <strong>1) รายการจองยาทั่วไป</strong> และ <strong>2) รายการจองยา Oncology</strong></li>
+            <li><strong>ซูมใบสั่งยา (Mouse Wheel Zoom):</strong> เมื่อคลิกเปิดดูรูปใบสั่งยาในหน้า <code>Verify RX</code> หรือ Modal รูปภาพ สามารถ <strong>หมุนลูกกลิ้งเมาส์ (Scroll Mouse) เพื่อย่อ-ขยายดูรายละเอียดได้ทันที</strong></li>
+            <li><strong>กรณีถูกต้อง (Approve — REQ-06):</strong> กดปุ่มทบทวนสำเร็จ &rarr; สถานะเปลี่ยนเป็น <strong><code>"ยอมรับแล้ว"</code></strong> พร้อมแสดงชื่อ Pharmacist ผู้อนุมัติและ Timestamp</li>
+            <li><strong>กรณีไม่ถูกต้อง (Not Approved — REQ-07):</strong> กดปุ่มทบทวนไม่ผ่าน &rarr; <strong>ระบบบังคับกรอก Note ระบุปัญหา</strong> &rarr; ส่ง Alert กลับไปยังผู้จองให้ <code>Edit</code> &rarr; <code>Update</code> กลับมาให้ Verify ใหม่</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: PHARMACIST GUIDE PART 2 (REQ-12, REQ-16, REQ-18) -->
+    <section class="page-card" data-slide="6">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-pharm">Role 2: เภสัชกร (Pharmacist) • หน้า 2/2</span>
+          <h2 class="page-title">การจัดการยาค้างส่ง, ปรับปรุงคลังยา และอนุมัติคำขอยกเลิก</h2>
+          <p class="page-subtitle">REQ-12, REQ-16, REQ-18: ประสานงานคลังยาแบบ Real-time และควบคุมมาตรฐาน Master Stock</p>
+        </div>
+        <div class="page-num">หน้า 7 / 11</div>
+      </div>
+
+      <div class="grid-3">
+        <div class="box box-rose">
+          <div class="step-title"><span class="step-num">3</span>จัดการยาค้างส่ง (REQ-12)</div>
+          <ul class="clean">
+            <li>เข้าเมนู <strong>รายการยาค้างส่ง (Owings List)</strong></li>
+            <li>ใช้ตัวกรอง <strong>Pharmacy Location</strong> เพื่อดูเฉพาะห้องยาที่รับผิดชอบ</li>
+            <li>ติ๊กหน้าชื่อยาที่ยังไม่ได้รับจากคลัง &rarr; ส่ง Alert ด่วนไปฝั่งคลังยาทันที</li>
+            <li>เมื่อได้รับยาครบ กดปุ่ม <strong><code>Complete</code></strong> เพื่อปิดงานและหยุด Alert ฝั่งคลังยา</li>
+          </ul>
+        </div>
+
+        <div class="box box-purple">
+          <div class="step-title"><span class="step-num">4</span>แก้ไข/เพิ่มคลังยา (REQ-16)</div>
+          <ul class="clean">
+            <li>เข้าเมนู <strong>จัดการคลังยา (Stock Manager)</strong></li>
+            <li>สามารถขอเพิ่มยาใหม่ หรือกดขอแก้ไขข้อมูลยา/ราคา/Stock Code</li>
+            <li>เมื่อส่งคำขอแก้ไข ระบบจะส่ง <strong>Alert + Banner แจ้งเตือนไปหา Admin</strong> เพื่อตรวจสอบและกดอนุมัติทันที</li>
+          </ul>
+        </div>
+
+        <div class="box box-amber">
+          <div class="step-title"><span class="step-num">5</span>อนุมัติยกเลิก (REQ-18)</div>
+          <ul class="clean">
+            <li>เมื่อพยาบาลส่งคำขอยกเลิก (Cancel Request) เภสัชกรจะได้รับ Alert พร้อมเหตุผลและรายการยา</li>
+            <li>ตรวจสอบความถูกต้องแล้วกด <strong><code>Approve Cancel</code></strong> (หรือ Reject พร้อม Note)</li>
+            <li>เมื่ออนุมัติแล้ว ระบบจะแจ้ง Alert ไปยัง <strong>คลังยา</strong> ทันที</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: STOCK CLERK GUIDE PART 1 (REQ-02, REQ-08, REQ-11, REQ-12) -->
+    <section class="page-card" data-slide="7">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-clerk">Role 3: เจ้าหน้าที่คลังยา (Stock Clerk) • หน้า 1/2</span>
+          <h2 class="page-title">การรับ Order, ยืนยันของ Arrived (2-Step) และติดตามยาค้างส่ง</h2>
+          <p class="page-subtitle">REQ-02, REQ-08, REQ-11, REQ-12: ควบคุมสถานะจัดซื้อ-จัดส่งด้วย Popup ยืนยันป้องกันการกดพลาด</p>
+        </div>
+        <div class="page-num">หน้า 8 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-amber">
+          <div class="step-title"><span class="step-num">1</span>รับแจ้งเตือน &amp; ยืนยัน 2 ขั้นตอน (REQ-08, REQ-11)</div>
+          <ul class="clean">
+            <li><strong>หน้าแรก Dashboard:</strong> Login เข้ามาจะอยู่ที่ Dashboard ทันที พร้อม Notification Bell แจ้งเตือนแบบ Real-time เมื่อมีใบจองใหม่, Hold, Rollover, ยาค้างส่ง หรือคำขอยกเลิก</li>
+            <li><strong>ขั้นตอนที่ 1 — รับ Order / สั่งซื้อ:</strong> กดปุ่ม <strong><code>รับ Order / สั่งซื้อ</code></strong> &rarr; ยืนยันใน <strong>Popup Confirm</strong> &rarr; สถานะเปลี่ยนเป็น <strong>Ordered</strong> พร้อม Timestamp <code>Ordered At</code></li>
+            <li><strong>ขั้นตอนที่ 2 — ยืนยันของ Arrived:</strong> เมื่อยาเดินทางมาถึงคลังแล้ว กดปุ่ม <strong><code>ยืนยันของ Arrived</code></strong> &rarr; ยืนยันใน <strong>Popup Confirm</strong> &rarr; สถานะเปลี่ยนเป็น <strong>Ready-to-use</strong> พร้อม Timestamp <code>Arrived At</code> และส่ง Alert แจ้งทีมหอผู้ป่วย/เภสัชกรทันที</li>
+          </ul>
+        </div>
+
+        <div class="box box-rose">
+          <div class="step-title"><span class="step-num">2</span>ศูนย์จัดการยาค้างส่ง (Owings Desk — REQ-12)</div>
+          <ul class="clean">
+            <li>หากมีรายการยาค้างจ่าย หน้าจอคลังยาจะขึ้น <strong>Banner แจ้งเตือนด่วนสีแดง-ส้ม</strong> ด้านบน พร้อมจำนวนเคสค้างส่ง</li>
+            <li>คลิกที่ Banner หรือเมนู <strong>รายการยาค้างส่ง (Owings List)</strong> สามารถกรองดูตาม <strong>Pharmacy Location</strong> (Phar IV, A1, E3, E6, D)</li>
+            <li>ตรวจสอบรายการยาที่ขาด พร้อม <strong>Stock Code</strong> และจำนวนเพื่อจัดส่งเพิ่มเติม</li>
+            <li>Alert จะทำงานต่อเนื่องจนกว่าเภสัชกรหรือผู้จองได้รับยาครบและกดปุ่ม <strong><code>Complete</code></strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 9: STOCK CLERK GUIDE PART 2 (REQ-13, REQ-17, REQ-18) -->
+    <section class="page-card" data-slide="8">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-clerk">Role 3: เจ้าหน้าที่คลังยา (Stock Clerk) • หน้า 2/2</span>
+          <h2 class="page-title">การพิมพ์ใบจัดเตรียมยา (Report Printer) และการรับมือ Hold / Cancel</h2>
+          <p class="page-subtitle">REQ-13, REQ-17, REQ-18: พิมพ์ใบจัดยาแยกรายคนไข้พร้อมช่องติ๊กหน้างาน และติดตามการระงับ/เลื่อนวัน</p>
+        </div>
+        <div class="page-num">หน้า 9 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-blue">
+          <div class="step-title"><span class="step-num">3</span>การดึงและพิมพ์รายงานจัดเตรียมยา A4 (REQ-13)</div>
+          <ul class="clean">
+            <li>เข้าเมนู <strong>รายงานสรุปยอด (Reports)</strong></li>
+            <li>เลือกตัวกรอง: <strong>Date of Use / Order Date</strong>, ช่วงวันที่, ประเภทยา (General/Oncology) และ <strong>ห้องยา (Pharmacy Location)</strong></li>
+            <li><strong>ข้อมูลที่แสดงทั้งหน้า Preview และหน้าพิมพ์ PDF:</strong>
+              <br/>1) <strong>ตารางสรุปยอดเบิกรวม (Summary Totals):</strong> ชื่อยา, Stock Code, ยอดรวม และช่อง <code>☐</code>
+              <br/>2) <strong>ตารางรายละเอียดแยกรายคนไข้ (Individual Allocations):</strong> มีช่อง <code>☐</code> สำหรับติ๊กเช็คหน้างาน, ลำดับ, <strong>HN</strong>, <strong>ชื่อผู้ป่วย</strong> (พร้อมป้าย Hold/Rollover), <strong>วันที่ต้องใช้</strong>, <strong>ชื่อยา</strong>, <strong>Stock Code</strong> และ <strong>Qty</strong>
+            </li>
+            <li>กดปุ่ม <strong>พิมพ์รายงาน / Save PDF</strong> — จัดหน้า A4 พอดีขอบ ไม่ตกขอบขวา</li>
+          </ul>
+        </div>
+
+        <div class="box box-purple">
+          <div class="step-title"><span class="step-num">4</span>การติดตาม Hold, Rollover และ Cancel (REQ-17, REQ-18)</div>
+          <ul class="clean">
+            <li><strong>กรณี Hold:</strong> คลังยาจะได้รับ Alert ระบุ <em>ชื่อผู้ป่วย, HN, รายการยาทั้งหมด, เหตุผล และชื่อพยาบาลผู้แจ้ง</em> ทันที ให้ชะลอการจ่าย/จัดเตรียม</li>
+            <li><strong>กรณี Rollover:</strong> ได้รับ Alert แจ้งวันเดิม &rarr; วันใหม่ พร้อมรายการยาและ Timestamp</li>
+            <li><strong>กรณี Cancel:</strong> ได้รับ Alert ทั้งตอนพยาบาลส่ง <em>ขอยกเลิก</em> และตอนเภสัชกร/Admin <em>อนุมัติยกเลิก</em> เพื่อหยุดการจัดซื้อหรือดึงยากลับเข้าสต็อกทันที</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 10: ADMIN GUIDE (REQ-16, REQ-18, SYSTEM GOVERNANCE) -->
+    <section class="page-card" data-slide="9">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-admin">Role 4: ผู้ดูแลระบบ (Admin)</span>
+          <h2 class="page-title">การอนุมัติผู้ใช้, อนุมัติแก้ไขคลังยา, Audit Log และสำรองข้อมูล</h2>
+          <p class="page-subtitle">REQ-16, REQ-18 &amp; Governance: ควบคุมสิทธิ์ความปลอดภัยและเสถียรภาพของฐานข้อมูล</p>
+        </div>
+        <div class="page-num">หน้า 10 / 11</div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box box-purple">
+          <div class="step-title"><span class="step-num">1</span>อนุมัติผู้ใช้งาน &amp; คำขอแก้ไขคลังยา (REQ-16)</div>
+          <ul class="clean">
+            <li><strong>อนุมัติพนักงานใหม่ (Users):</strong> เมื่อมีผู้สมัครสมาชิกใหม่ จะมี <strong>Banner สีน้ำเงิน-ม่วง</strong> แจ้งจำนวนบัญชีที่รออนุมัติ กดเข้าไปตรวจ Role แล้วกด <strong>Approve</strong></li>
+            <li><strong>อนุมัติแก้ไข/ลบคลังยา (Stock Manager):</strong> เมื่อเภสัชกรกดขอแก้ไขหรือลบรายการยา ระบบจะแสดง <strong>Banner แจ้งเตือนสีชมพู-ส้ม + Alert กระดิ่ง</strong> ให้ Admin คลิกเข้าไปตรวจเทียบค่าเดิม-ค่าใหม่ แล้วกดอนุมัติหรือปฏิเสธ</li>
+          </ul>
+        </div>
+
+        <div class="box box-white">
+          <div class="step-title"><span class="step-num">2</span>Audit Logs &amp; การจัดการฐานข้อมูล</div>
+          <ul class="clean">
+            <li><strong>ประวัติการทำงาน (Logs):</strong> ตรวจสอบทุกการกระทำย้อนหลังได้ทั้งหมด (ใคร Login, จอง, Verify, Hold, Rollover, ลบ/แก้ไข) พร้อมเวลาและ Operator ID</li>
+            <li><strong>จัดการฐานข้อมูล (Database Maintenance):</strong>
+              <br/>• <strong>Export CSV:</strong> ดาวน์โหลดข้อมูลการจองทั้งหมดเป็นไฟล์ Excel/CSV
+              <br/>• <strong>Monthly Archive (JSON):</strong> สำรองข้อมูลรายเดือนและ Import กู้คืนข้อมูลกลับเข้าระบบได้
+              <br/>• <strong>Batch Clear (6+ Months):</strong> ล้างข้อมูลเก่าเกิน 6 เดือนเพื่อประหยัดพื้นที่ Cloud
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 11: END-TO-END WORKFLOW & 18-REQ CHECKLIST -->
+    <section class="page-card" data-slide="10">
+      <div class="page-header">
+        <div>
+          <span class="role-badge badge-navy">Summary • Workflow &amp; Master Checklist</span>
+          <h2 class="page-title">ภาพรวม Flow การทำงานตั้งแต่ต้นจนจบ และ Checklist มาตรฐาน (REQ-01–18)</h2>
+          <p class="page-subtitle">ใช้ประกอบการสรุปการอบรมและตรวจสอบความเข้าใจของแต่ละตำแหน่ง</p>
+        </div>
+        <div class="page-num">หน้า 11 / 11</div>
+      </div>
+
+      <!-- Inline SVG Workflow Diagram -->
+      <div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:16px;margin-bottom:18px;">
+        <svg viewBox="0 0 960 175" width="100%" style="display:block;height:auto;">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#475569" />
+            </marker>
+            <marker id="arrow-rose" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#e11d48" />
+            </marker>
+          </defs>
+
+          <!-- Step 1 -->
+          <rect x="10" y="25" width="165" height="72" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="92" y="50" text-anchor="middle" font-size="13" font-weight="800" fill="#1e3a8a">1. จองยา (Booking)</text>
+          <text x="92" y="68" text-anchor="middle" font-size="11" fill="#1e40af">พยาบาล / เภสัชกร</text>
+          <text x="92" y="84" text-anchor="middle" font-size="10" fill="#3b82f6">แจ้ง Alert เภสัช + คลังทันที</text>
+
+          <line x1="175" y1="61" x2="210" y2="61" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Step 2 -->
+          <rect x="214" y="25" width="175" height="72" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="301" y="50" text-anchor="middle" font-size="13" font-weight="800" fill="#065f46">2. ทวนสอบ (Verify RX)</text>
+          <text x="301" y="68" text-anchor="middle" font-size="11" fill="#047857">เภสัชกร (Scroll Zoom)</text>
+          <text x="301" y="84" text-anchor="middle" font-size="10" fill="#059669">Approve &rarr; "ยอมรับแล้ว"</text>
+
+          <!-- Reject Loop -->
+          <path d="M 301 97 L 301 142 L 92 142 L 92 103" fill="none" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#arrow-rose)" />
+          <rect x="120" y="130" width="155" height="22" rx="5" fill="#fff1f2" stroke="#fecdd3" />
+          <text x="197" y="145" text-anchor="middle" font-size="10.5" font-weight="700" fill="#be123c">Not Approved + Note &rarr; Edit</text>
+
+          <line x1="389" y1="61" x2="424" y2="61" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Step 3 -->
+          <rect x="428" y="25" width="175" height="72" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="515" y="50" text-anchor="middle" font-size="13" font-weight="800" fill="#92400e">3. จัดซื้อ/รับเข้าคลัง</text>
+          <text x="515" y="68" text-anchor="middle" font-size="11" fill="#b45309">Stock Clerk (2-Step)</text>
+          <text x="515" y="84" text-anchor="middle" font-size="10" fill="#d97706">รับ Order &rarr; ยืนยัน Arrived</text>
+
+          <line x1="603" y1="61" x2="638" y2="61" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Step 4 -->
+          <rect x="642" y="25" width="150" height="72" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="717" y="50" text-anchor="middle" font-size="13" font-weight="800" fill="#075985">4. รับยาหน้างาน</text>
+          <text x="717" y="68" text-anchor="middle" font-size="11" fill="#0369a1">พยาบาล Double Check</text>
+          <text x="717" y="84" text-anchor="middle" font-size="10" fill="#0284c7">บันทึกเวลา &amp; Audit Log</text>
+
+          <line x1="792" y1="61" x2="822" y2="61" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Step 5 -->
+          <rect x="826" y="25" width="124" height="72" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="888" y="50" text-anchor="middle" font-size="12.5" font-weight="800" fill="#5b21b6">5. ข้อยกเว้น</text>
+          <text x="888" y="68" text-anchor="middle" font-size="10.5" fill="#6d28d9">Hold / Rollover</text>
+          <text x="888" y="84" text-anchor="middle" font-size="10.5" fill="#6d28d9">Borrow / Owing</text>
+        </svg>
+      </div>
+
+      <table class="std-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">หมวดความต้องการ (REQ-01 – REQ-09)</th>
+            <th style="width:50%;">หมวดความต้องการ (REQ-10 – REQ-18)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="req-tag">REQ-01</span> Login คงที่ทุกหน้าจอ + ฟอนต์ Sarabun ทั้งระบบ<br/>
+              <span class="req-tag">REQ-02</span> Landing Page: พยาบาล&rarr;จองยา, เภสัช/คลัง&rarr;Dashboard<br/>
+              <span class="req-tag">REQ-03</span> พยาบาลจองยาแบบ Minimal + Payor + Note + Print<br/>
+              <span class="req-tag">REQ-04</span> เภสัชกรจองยา + บังคับเลือก Pharmacy Location<br/>
+              <span class="req-tag">REQ-05</span> Dashboard แยก General/Onco + Verify RX Scroll Zoom<br/>
+              <span class="req-tag">REQ-06</span> Approve สถานะ "ยอมรับแล้ว" + ชื่อเภสัชกร &amp; เวลา<br/>
+              <span class="req-tag">REQ-07</span> Reject บังคับ Note &rarr; Alert &rarr; Edit &rarr; Update &rarr; Verify<br/>
+              <span class="req-tag">REQ-08</span> คลังยากดรับ Order / Arrived พร้อม Popup ยืนยัน + เวลา<br/>
+              <span class="req-tag">REQ-09</span> พยาบาลรับยา + Double Check + Timestamp + Log
+            </td>
+            <td>
+              <span class="req-tag">REQ-10</span> ปฏิทินคิวยา แยกหมวด ดู Location / Stock Code / Note<br/>
+              <span class="req-tag">REQ-11</span> แจ้งเตือน Real-time ทันทีที่จอง (เภสัชกร + คลังยา)<br/>
+              <span class="req-tag">REQ-12</span> ยาค้างส่ง กรอง Location + กด Complete หยุด Alert คลัง<br/>
+              <span class="req-tag">REQ-13</span> พิมพ์รายงาน A4 สำหรับคลังยา มีรายคนไข้ + Stock Code + <code>☐</code><br/>
+              <span class="req-tag">REQ-14</span> ยืมยาข้ามคนไข้ Auto-Detect คิว + Auto Note + ป้ายฝั่งให้ยืม<br/>
+              <span class="req-tag">REQ-15</span> จองคืนยา HN ต้นทาง ปิดสถานะ "คืนแล้ว" &amp; หยุด Alert อัตโนมัติ<br/>
+              <span class="req-tag">REQ-16</span> เภสัชกรขอแก้ Stock &rarr; ส่ง Alert + Banner ไป Admin อนุมัติ<br/>
+              <span class="req-tag">REQ-17</span> Hold / Rollover แจ้ง Alert คลังครบรายการยา + Timestamp<br/>
+              <span class="req-tag">REQ-18</span> Cancel Request &amp; Approved แจ้ง Alert คลังยาครบรายละเอียด
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <!-- Slide Navigation Controls (Visible in Slide Mode) -->
+  <div id="slide-nav" class="slide-nav">
+    <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)">⬅️ สไลด์ก่อนหน้า</button>
+    <span id="slide-indicator" style="font-weight:800;font-size:14px;color:#0f172a;">หน้า 1 / 11</span>
+    <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">สไลด์ถัดไป ➡️</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    let viewMode = 'all';
+    const slides = Array.from(document.querySelectorAll('.page-card'));
+    const deck = document.getElementById('deck');
+    const slideNav = document.getElementById('slide-nav');
+    const indicator = document.getElementById('slide-indicator');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function setViewMode(mode) {
+      viewMode = mode;
+      document.getElementById('btn-mode-all').classList.toggle('active', mode === 'all');
+      document.getElementById('btn-mode-slide').classList.toggle('active', mode === 'slide');
+
+      if (mode === 'slide') {
+        deck.classList.add('slide-mode');
+        slideNav.classList.add('visible');
+        renderSlide();
+      } else {
+        deck.classList.remove('slide-mode');
+        slideNav.classList.remove('visible');
+        slides.forEach(s => s.classList.remove('active-slide'));
+      }
+    }
+
+    function renderSlide() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active-slide', idx === currentSlide);
+      });
+      indicator.textContent = `หน้า ${currentSlide + 1} / ${slides.length}`;
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === slides.length - 1;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function changeSlide(delta) {
+      const next = currentSlide + delta;
+      if (next >= 0 && next < slides.length) {
+        currentSlide = next;
+        renderSlide();
+      }
+    }
+
+    function jumpToSlide(idx) {
+      currentSlide = idx;
+      if (viewMode === 'slide') {
+        renderSlide();
+      } else {
+        slides[idx]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (viewMode !== 'slide') return;
+      if (e.key === 'ArrowRight') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
