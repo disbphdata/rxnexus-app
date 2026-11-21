@@ -1,0 +1,4670 @@
+[
+  {
+    "id": "drg-1779895037937",
+    "name": "Akynzeo CAPSULE (300/0.5 mg)By case",
+    "type": "General",
+    "stockCode": "51001040101001",
+    "prices": {
+      "employee": 3170,
+      "opd": 4300,
+      "ipd": 4300,
+      "it": 5500
+    }
+  },
+  {
+    "id": "drg-1779895592065",
+    "name": "TPIAO (15,000 IU/1 mL) INJ[By Case]",
+    "type": "General",
+    "stockCode": "51002010124009",
+    "prices": {
+      "employee": 4708,
+      "opd": 5693,
+      "ipd": 5693,
+      "it": 5693
+    }
+  },
+  {
+    "id": "drg-1779895930422",
+    "name": "Revolade TABLET(25 mg) [**]By Case",
+    "type": "General",
+    "stockCode": "51002020224001",
+    "prices": {
+      "employee": 824,
+      "opd": 997,
+      "ipd": 997,
+      "it": 997
+    }
+  },
+  {
+    "id": "drg-1779896233618",
+    "name": "Romiplate 250 mcg INJ (250 mcg/0.5 mL)By Case",
+    "type": "General",
+    "stockCode": "51002020224003",
+    "prices": {
+      "employee": 22010,
+      "opd": 28800,
+      "ipd": 28800,
+      "it": 28800
+    }
+  },
+  {
+    "id": "drg-1779896271851",
+    "name": "Mircera Inj (75 Mcg/0.3 Ml) Prefilled By Case",
+    "type": "General",
+    "stockCode": "51002032401002",
+    "prices": {
+      "employee": 5700,
+      "opd": 8500,
+      "ipd": 10000,
+      "it": 12000
+    }
+  },
+  {
+    "id": "drg-1779896313994",
+    "name": "Sybrava INJ. [284mg/1.5mL] Prefill-Syringe [By Case]",
+    "type": "General",
+    "stockCode": "51003100124012",
+    "prices": {
+      "employee": 52000,
+      "opd": 58000,
+      "ipd": 62000,
+      "it": 66000
+    }
+  },
+  {
+    "id": "drg-1779897915140",
+    "name": "Dupixent INJ (300 mg/2 mL) Prefilled Syringe(By Case)",
+    "type": "General",
+    "stockCode": "51004110108001",
+    "prices": {
+      "employee": 26500,
+      "opd": 31000,
+      "ipd": 31000,
+      "it": 31000
+    }
+  },
+  {
+    "id": "drg-1779897967011",
+    "name": "Pergoveris INJ (450/225 IU) Prefilled Pen [**]By Case",
+    "type": "General",
+    "stockCode": "51007030701011",
+    "prices": {
+      "employee": 9100,
+      "opd": 13464,
+      "ipd": 15300,
+      "it": 17000
+    }
+  },
+  {
+    "id": "drg-1779898029274",
+    "name": "Somatuline Autogel INJ (120 mg) PFS[ByCase]",
+    "type": "General",
+    "stockCode": "51008010302001",
+    "prices": {
+      "employee": 51000,
+      "opd": 66300,
+      "ipd": 66300,
+      "it": 66300
+    }
+  },
+  {
+    "id": "drg-1779898064163",
+    "name": "Myhep ALL (400/100 mg) Tab[BOX 28'S][By case]",
+    "type": "General",
+    "stockCode": "51010050116002",
+    "prices": {
+      "employee": 12880,
+      "opd": 17707,
+      "ipd": 17707,
+      "it": 17707
+    }
+  },
+  {
+    "id": "drg-1779912546630",
+    "name": "Cladribine INJ 10 mg/10 mL (Leustatin) [By case]",
+    "type": "General",
+    "stockCode": "51012010202002",
+    "prices": {
+      "employee": 41000,
+      "opd": 50000,
+      "ipd": 50000,
+      "it": 50000
+    }
+  },
+  {
+    "id": "drg-1781210335784",
+    "name": "UFUR Cap (Tegafur 100 mg + uracil 224 mg)By Case",
+    "type": "General",
+    "stockCode": "51012010203003",
+    "prices": {
+      "employee": 91,
+      "opd": 133,
+      "ipd": 133,
+      "it": 130
+    }
+  },
+  {
+    "id": "drg-1781210363848",
+    "name": "Lonsurf (15/6.14 mg) Tablet  [..By Case..]",
+    "type": "Oncology",
+    "stockCode": "51012010203005",
+    "prices": {
+      "employee": 2300,
+      "opd": 2400,
+      "ipd": 2400,
+      "it": 2400
+    }
+  },
+  {
+    "id": "drg-1781210402000",
+    "name": "Lonsurf FC TABLET (20/8.19 mg) (BOX=20'S) By case",
+    "type": "Oncology",
+    "stockCode": "51012010203007",
+    "prices": {
+      "employee": 48400,
+      "opd": 50400,
+      "ipd": 50400,
+      "it": 50400
+    }
+  },
+  {
+    "id": "drg-1781210450792",
+    "name": "Azacitidine INJ 100 mg (Azadine)...[By…case]",
+    "type": "Oncology",
+    "stockCode": "51012010203008",
+    "prices": {
+      "employee": 10000,
+      "opd": 14000,
+      "ipd": 14000,
+      "it": 14000
+    }
+  },
+  {
+    "id": "drg-1781210496064",
+    "name": "Calquence 100 mg CAPSULE (Box 60'S) [By Case]",
+    "type": "Oncology",
+    "stockCode": "51012010512001",
+    "prices": {
+      "employee": 247800,
+      "opd": 264000,
+      "ipd": 264000,
+      "it": 264000
+    }
+  },
+  {
+    "id": "drg-1781210530840",
+    "name": "Yervoy INJECTION (50mg/10mL).....[By case]",
+    "type": "Oncology",
+    "stockCode": "51012012403012",
+    "prices": {
+      "employee": 69914,
+      "opd": 84533,
+      "ipd": 84533,
+      "it": 84533
+    }
+  },
+  {
+    "id": "drg-1781210575240",
+    "name": "Darzalex INJ (100 mg/5 mL) VIAL (**)(By case)",
+    "type": "Oncology",
+    "stockCode": "51012012403017",
+    "prices": {
+      "employee": 15649,
+      "opd": 18921,
+      "ipd": 18921,
+      "it": 18921
+    }
+  },
+  {
+    "id": "drg-1781211091176",
+    "name": "Darzalex INJ (400 mg/20 mL) VIAL (By case)",
+    "type": "Oncology",
+    "stockCode": "51012012403018",
+    "prices": {
+      "employee": 61204,
+      "opd": 74002,
+      "ipd": 74002,
+      "it": 74002
+    }
+  },
+  {
+    "id": "drg-1781211379921",
+    "name": "Adcetris I.V.(50 mg) Vial....[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012403028",
+    "prices": {
+      "employee": 127000,
+      "opd": 135000,
+      "ipd": 135000,
+      "it": 135000
+    }
+  },
+  {
+    "id": "drg-1781211427568",
+    "name": "Imfinzi INJ (500 mg/10 mL) Vial (By Case)",
+    "type": "Oncology",
+    "stockCode": "51012012403029",
+    "prices": {
+      "employee": 120000,
+      "opd": 124000,
+      "ipd": 124000,
+      "it": 124000
+    }
+  },
+  {
+    "id": "drg-1781211522984",
+    "name": "Adcetris I.V.(50 mg) Vial....[By Case]{FREE}",
+    "type": "Oncology",
+    "stockCode": "51012012403031",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781211575528",
+    "name": "Ninlaro CAPSULE 4 mg (BOX=3'S) [By case]",
+    "type": "Oncology",
+    "stockCode": "51012012403032",
+    "prices": {
+      "employee": 85100,
+      "opd": 92100,
+      "ipd": 92100,
+      "it": 92100
+    }
+  },
+  {
+    "id": "drg-1781211628631",
+    "name": "Darzalex SC INJ (1800 mg/15 mL) VIAL....[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012403040",
+    "prices": {
+      "employee": 154000,
+      "opd": 164000,
+      "ipd": 164000,
+      "it": 164000
+    }
+  },
+  {
+    "id": "drg-1781211692639",
+    "name": "Gyvexia I.V. (100 mg/4mL) [Avastin -SS] By Case",
+    "type": "Oncology",
+    "stockCode": "51012012403043",
+    "prices": {
+      "employee": 5700,
+      "opd": 6600,
+      "ipd": 6600,
+      "it": 6600
+    }
+  },
+  {
+    "id": "drg-1781211764208",
+    "name": "Votrient 400 mg Tablet […By case…]",
+    "type": "Oncology",
+    "stockCode": "51012012405009",
+    "prices": {
+      "employee": 1400,
+      "opd": 1690,
+      "ipd": 1690,
+      "it": 1690
+    }
+  },
+  {
+    "id": "drg-1781211789079",
+    "name": "Jakavi TABLET (5 mg) (14'S) (><)--By case",
+    "type": "Oncology",
+    "stockCode": "51012012405018",
+    "prices": {
+      "employee": 21900,
+      "opd": 25410,
+      "ipd": 25410,
+      "it": 25410
+    }
+  },
+  {
+    "id": "drg-1781211815432",
+    "name": "Jakavi TABLET (15 mg) (Box 14'S)(**) (><) -- By case",
+    "type": "Oncology",
+    "stockCode": "51012012405019",
+    "prices": {
+      "employee": 43800,
+      "opd": 50820,
+      "ipd": 50820,
+      "it": 50820
+    }
+  },
+  {
+    "id": "drg-1781211856200",
+    "name": "Zykadia CAPSULE (150 mg)...[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012405023",
+    "prices": {
+      "employee": 1399,
+      "opd": 2244,
+      "ipd": 2244,
+      "it": 2860
+    }
+  },
+  {
+    "id": "drg-1781211889672",
+    "name": "Alecensa CAPSULE (150 mg) [By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012405027",
+    "prices": {
+      "employee": 1050,
+      "opd": 1530,
+      "ipd": 1530,
+      "it": 1500
+    }
+  },
+  {
+    "id": "drg-1781212428792",
+    "name": "Imbruvica [IBRUTINIB] (140 mg)(120's) [By case]",
+    "type": "Oncology",
+    "stockCode": "51012012405032",
+    "prices": {
+      "employee": 329560,
+      "opd": 353528,
+      "ipd": 353528,
+      "it": 353528
+    }
+  },
+  {
+    "id": "drg-1781212762432",
+    "name": "Tagrisso 80 mg Tab. (Box 30's)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012405033",
+    "prices": {
+      "employee": 153000,
+      "opd": 159000,
+      "ipd": 159000,
+      "it": 159000
+    }
+  },
+  {
+    "id": "drg-1781213257872",
+    "name": "Ibrance 100 mg CAP. (Box = 7'S) By Case",
+    "type": "Oncology",
+    "stockCode": "51012012405036",
+    "prices": {
+      "employee": 36500,
+      "opd": 42700,
+      "ipd": 42700,
+      "it": 42700
+    }
+  },
+  {
+    "id": "drg-1781213318841",
+    "name": "Sprycel TABLET (20 mg)(60's)(BOT) …(By Case)",
+    "type": "Oncology",
+    "stockCode": "51012012405039",
+    "prices": {
+      "employee": 52000,
+      "opd": 70380,
+      "ipd": 70380,
+      "it": 70380
+    }
+  },
+  {
+    "id": "drg-1781213352848",
+    "name": "Imbruvica CAPSULE(140 mg)(120's) [By case] *Free*",
+    "type": "Oncology",
+    "stockCode": "51012012405047",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781213385048",
+    "name": "Tafinlar CAPSULE (75 mg) [By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012405050",
+    "prices": {
+      "employee": 1150,
+      "opd": 1220,
+      "ipd": 1220,
+      "it": 1220
+    }
+  },
+  {
+    "id": "drg-1781213454128",
+    "name": "Votrient 200 Mg Tab [BOX 30'S][By case]",
+    "type": "Oncology",
+    "stockCode": "51012012405052",
+    "prices": {
+      "employee": 21010,
+      "opd": 25403,
+      "ipd": 25403,
+      "it": 25403
+    }
+  },
+  {
+    "id": "drg-1781213486609",
+    "name": "Ofev CAPSULE (150 mg) (60's) [Box] By Case",
+    "type": "Oncology",
+    "stockCode": "51012012405055",
+    "prices": {
+      "employee": 86000,
+      "opd": 99000,
+      "ipd": 99000,
+      "it": 99000
+    }
+  },
+  {
+    "id": "drg-1781213521584",
+    "name": "Cabometyx 60 mg TABLET (30'S) By case",
+    "type": "Oncology",
+    "stockCode": "51012012405059",
+    "prices": {
+      "employee": 175000,
+      "opd": 189000,
+      "ipd": 189000,
+      "it": 189000
+    }
+  },
+  {
+    "id": "drg-1781213560736",
+    "name": "Gavreto 100 mg (Box 60'S) [By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012405069",
+    "prices": {
+      "employee": 10800,
+      "opd": 113400,
+      "ipd": 113400,
+      "it": 113400
+    }
+  },
+  {
+    "id": "drg-1781213782641",
+    "name": "Stivarga 40 mg (BOT = 28'S)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012012424010",
+    "prices": {
+      "employee": 69090,
+      "opd": 74000,
+      "ipd": 74000,
+      "it": 74000
+    }
+  },
+  {
+    "id": "drg-1781213953832",
+    "name": "Lynparza CAP (50 mg) (Box 448's) [By..Case]",
+    "type": "Oncology",
+    "stockCode": "51012012424018",
+    "prices": {
+      "employee": 221760,
+      "opd": 296820,
+      "ipd": 296820,
+      "it": 232960
+    }
+  },
+  {
+    "id": "drg-1781214046512",
+    "name": "Giotrif TABLET (40 mg)(28'S) (BOX)...By Case...",
+    "type": "Oncology",
+    "stockCode": "51012012424027",
+    "prices": {
+      "employee": 38973,
+      "opd": 57120,
+      "ipd": 57120,
+      "it": 56000
+    }
+  },
+  {
+    "id": "drg-1781214095025",
+    "name": "Lynparza CAP (150 mg) (Box 56's) [By..Case]",
+    "type": "Oncology",
+    "stockCode": "51012012424032",
+    "prices": {
+      "employee": 110880,
+      "opd": 148410,
+      "ipd": 148410,
+      "it": 117600
+    }
+  },
+  {
+    "id": "drg-1781214141160",
+    "name": "Lumakras 120 mg TABLET (56'S) (BY CASE)",
+    "type": "Oncology",
+    "stockCode": "51012012424037",
+    "prices": {
+      "employee": 198800,
+      "opd": 210560,
+      "ipd": 210560,
+      "it": 210560
+    }
+  },
+  {
+    "id": "drg-1781214266185",
+    "name": "ZYTIGA (Abiraterone) 250 mg tablet (By Case) (1 box=120'S)",
+    "type": "Oncology",
+    "stockCode": "51012020224001",
+    "prices": {
+      "employee": 550,
+      "opd": 640,
+      "ipd": 640,
+      "it": 640
+    }
+  },
+  {
+    "id": "drg-1781214312536",
+    "name": "Firmagon INJ (80 mg) Vial [**]...By Case",
+    "type": "Oncology",
+    "stockCode": "51012020224002",
+    "prices": {
+      "employee": 7239,
+      "opd": 14280,
+      "ipd": 14280,
+      "it": 18200
+    }
+  },
+  {
+    "id": "drg-1781214352537",
+    "name": "Firmagon INJ (120 mg) Vial [**]...By Case",
+    "type": "Oncology",
+    "stockCode": "51012020224003",
+    "prices": {
+      "employee": 7239,
+      "opd": 14280,
+      "ipd": 14280,
+      "it": 18200
+    }
+  },
+  {
+    "id": "drg-1781214408665",
+    "name": "Zytiga FC (Abiraterone) 500 mg(By Case) (1 box=60'S)",
+    "type": "Oncology",
+    "stockCode": "51012020224006",
+    "prices": {
+      "employee": 1100,
+      "opd": 1280,
+      "ipd": 1280,
+      "it": 1280
+    }
+  },
+  {
+    "id": "drg-1781214480289",
+    "name": "Erleada TABLET 60 mg (Box=120'S)By case",
+    "type": "Oncology",
+    "stockCode": "51012020224008",
+    "prices": {
+      "employee": 127000,
+      "opd": 135000,
+      "ipd": 135000,
+      "it": 135000
+    }
+  },
+  {
+    "id": "drg-1781214547089",
+    "name": "Abiraterone 250 mg [Zytiga -SS] (120's)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51012020224011",
+    "prices": {
+      "employee": 15000,
+      "opd": 17400,
+      "ipd": 17400,
+      "it": 17400
+    }
+  },
+  {
+    "id": "drg-1781214585633",
+    "name": "Gilenya Capsule (0.5 Mg)[By Case]",
+    "type": "General",
+    "stockCode": "51012040101005",
+    "prices": {
+      "employee": 2532,
+      "opd": 3264,
+      "ipd": 3264,
+      "it": 3264
+    }
+  },
+  {
+    "id": "drg-1781214708169",
+    "name": "Entyvio INJECTION (300 Mg) Vial (By Case)",
+    "type": "General",
+    "stockCode": "51012040101012",
+    "prices": {
+      "employee": 58500,
+      "opd": 70000,
+      "ipd": 70000,
+      "it": 70000
+    }
+  },
+  {
+    "id": "drg-1781214894153",
+    "name": "Afinitor TABLET (10 mg)(Box 10'S)(**)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51012040101013",
+    "prices": {
+      "employee": 38200,
+      "opd": 44000,
+      "ipd": 44000,
+      "it": 44000
+    }
+  },
+  {
+    "id": "drg-1781214922610",
+    "name": "Afinitor Tablet (5 mg) (Box 10'S)(**)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51012040101017",
+    "prices": {
+      "employee": 26800,
+      "opd": 30500,
+      "ipd": 30500,
+      "it": 30500
+    }
+  },
+  {
+    "id": "drg-1781215047305",
+    "name": "Olumiant Film-Coated TAB 4 mg (Box 28'S)[By Case]",
+    "type": "General",
+    "stockCode": "51012040101026",
+    "prices": {
+      "employee": 32200,
+      "opd": 37520,
+      "ipd": 37520,
+      "it": 37520
+    }
+  },
+  {
+    "id": "drg-1781215156257",
+    "name": "Enbrel 50 mg (Pre-Filled Syringe) [By Case]",
+    "type": "General",
+    "stockCode": "51012040102007",
+    "prices": {
+      "employee": 15000,
+      "opd": 17500,
+      "ipd": 17500,
+      "it": 17500
+    }
+  },
+  {
+    "id": "drg-1781215196457",
+    "name": "Stelara PFS (45 mg/0.5 mL)(**) [By case]",
+    "type": "General",
+    "stockCode": "51012040103001",
+    "prices": {
+      "employee": 94000,
+      "opd": 109000,
+      "ipd": 109000,
+      "it": 109000
+    }
+  },
+  {
+    "id": "drg-1781215244105",
+    "name": "Actemra Infusion (400 Mg/20 Ml) Vial [By case]",
+    "type": "General",
+    "stockCode": "51012040103003",
+    "prices": {
+      "employee": 34000,
+      "opd": 34000,
+      "ipd": 34000,
+      "it": 34000
+    }
+  },
+  {
+    "id": "drg-1781215293217",
+    "name": "Stelara PFS (45 mg/0.5 mL)(**)[FREE][By Case]",
+    "type": "General",
+    "stockCode": "51012040103009",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781215322041",
+    "name": "Stelara PFS(90 mg / 1 mL)(**) [By Case]",
+    "type": "General",
+    "stockCode": "51012040103010",
+    "prices": {
+      "employee": 132758,
+      "opd": 142220,
+      "ipd": 142220,
+      "it": 142220
+    }
+  },
+  {
+    "id": "drg-1781215361762",
+    "name": "Stelara PFS (90 mg / 1 mL)(**)[FREE][By Case]",
+    "type": "General",
+    "stockCode": "51012040103011",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781215385362",
+    "name": "Stelara INJ (130 mg/26 mL)(**) [By case]",
+    "type": "General",
+    "stockCode": "51012040103012",
+    "prices": {
+      "employee": 139240,
+      "opd": 149366,
+      "ipd": 149366,
+      "it": 149366
+    }
+  },
+  {
+    "id": "drg-1781215433394",
+    "name": "Taltz (80mg/mL) Autoinjection(By case)",
+    "type": "General",
+    "stockCode": "51012040103013",
+    "prices": {
+      "employee": 22900,
+      "opd": 26500,
+      "ipd": 26500,
+      "it": 26500
+    }
+  },
+  {
+    "id": "drg-1781215560378",
+    "name": "Tremfya INJ (100 mg/mL) PFS(By Case)",
+    "type": "General",
+    "stockCode": "51012040103014",
+    "prices": {
+      "employee": 67531,
+      "opd": 75000,
+      "ipd": 75000,
+      "it": 75000
+    }
+  },
+  {
+    "id": "drg-1781215591121",
+    "name": "Tremfya INJ (100 mg/mL) PFS(By Case)(FREE)",
+    "type": "General",
+    "stockCode": "51012040103015",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781215635554",
+    "name": "Stelara INJ (130 mg/26 mL)(**)[FREE][By Case]",
+    "type": "General",
+    "stockCode": "51012040103016",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781216264322",
+    "name": "Revlimid Capsule (15 Mg)(**)(By case)",
+    "type": "Oncology",
+    "stockCode": "51012040124002",
+    "prices": {
+      "employee": 13242,
+      "opd": 16010,
+      "ipd": 16010,
+      "it": 16010
+    }
+  },
+  {
+    "id": "drg-1781216310946",
+    "name": "Revlimid CAPSULE (5 mg)(**)(By case)",
+    "type": "Oncology",
+    "stockCode": "51012040124006",
+    "prices": {
+      "employee": 3311,
+      "opd": 4003,
+      "ipd": 4003,
+      "it": 4003
+    }
+  },
+  {
+    "id": "drg-1781216368570",
+    "name": "Revlimid CAPSULE 10 mg (Box 21's) กล่อง [By Case]",
+    "type": "Oncology",
+    "stockCode": "51012040124018",
+    "prices": {
+      "employee": 69517,
+      "opd": 84052,
+      "ipd": 84052,
+      "it": 84052
+    }
+  },
+  {
+    "id": "drg-1781216416490",
+    "name": "Revlimid CAPSULE 25 mg (Box 21's) (**)(By case)",
+    "type": "Oncology",
+    "stockCode": "51012040124020",
+    "prices": {
+      "employee": 70707,
+      "opd": 85491,
+      "ipd": 85491,
+      "it": 85491
+    }
+  },
+  {
+    "id": "drg-1781216458083",
+    "name": "Actemra INJ (162 mg/0.9 mL)(PFS)(BY CASE)",
+    "type": "General",
+    "stockCode": "51012040124009",
+    "prices": {
+      "employee": 9000,
+      "opd": 10500,
+      "ipd": 10500,
+      "it": 10500
+    }
+  },
+  {
+    "id": "drg-1781216542002",
+    "name": "Scapho (150 mg/mL) Pre-filled Pen By Case",
+    "type": "General",
+    "stockCode": "51012040124029",
+    "prices": {
+      "employee": 9000,
+      "opd": 11500,
+      "ipd": 11500,
+      "it": 11500
+    }
+  },
+  {
+    "id": "drg-1781216607522",
+    "name": "Pomalyst 2 mg CAPSULE (21'S)By case",
+    "type": "Oncology",
+    "stockCode": "51012040124040",
+    "prices": {
+      "employee": 132000,
+      "opd": 138600,
+      "ipd": 138600,
+      "it": 138600
+    }
+  },
+  {
+    "id": "drg-1781216660115",
+    "name": "Xgeva INJ (120 mg/1.7 mL) Vial[By Case] (**,><)",
+    "type": "Oncology",
+    "stockCode": "51013050224008",
+    "prices": {
+      "employee": 18832,
+      "opd": 26010,
+      "ipd": 26010,
+      "it": 26010
+    }
+  },
+  {
+    "id": "drg-1781216764994",
+    "name": "Evenity (105 mg/1.17mL) [Box=2 PFS](By Case)",
+    "type": "General",
+    "stockCode": "51013050224009",
+    "prices": {
+      "employee": 23500,
+      "opd": 30000,
+      "ipd": 30000,
+      "it": 30000
+    }
+  },
+  {
+    "id": "drg-1781216840035",
+    "name": "Vyndamax 61 mg (CAP) (By case)",
+    "type": "General",
+    "stockCode": "51014072424001",
+    "prices": {
+      "employee": 7000,
+      "opd": 7500,
+      "ipd": 7500,
+      "it": 7500
+    }
+  },
+  {
+    "id": "drg-1781216868059",
+    "name": "Vyndamax 61 mg (BOX=30's)(FREE)By case",
+    "type": "General",
+    "stockCode": "51014072424002",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781217052099",
+    "name": "Xolair 150 mg/mL INJ PFS[By Case]",
+    "type": "General",
+    "stockCode": "51018030424034",
+    "prices": {
+      "employee": 21000,
+      "opd": 24480,
+      "ipd": 24480,
+      "it": 24480
+    }
+  },
+  {
+    "id": "drg-1781217124507",
+    "name": "Pagenax INJ (0.23 ml /27.6 mg) Vial[By case]",
+    "type": "General",
+    "stockCode": "51019011201016",
+    "prices": {
+      "employee": 19000,
+      "opd": 24500,
+      "ipd": 24500,
+      "it": 24500
+    }
+  },
+  {
+    "id": "drg-1781217162859",
+    "name": "Vabysmo (Faricimab)(6mg/0.05mL) Inj[By case]",
+    "type": "General",
+    "stockCode": "51019011201018",
+    "prices": {
+      "employee": 45000,
+      "opd": 52400,
+      "ipd": 52400,
+      "it": 52400
+    }
+  },
+  {
+    "id": "drg-1781217296291",
+    "name": "Allerg Clustek 10000 TU/mLVial [BY CASE]",
+    "type": "General",
+    "stockCode": "51022040324064",
+    "prices": {
+      "employee": 28500,
+      "opd": 37500,
+      "ipd": 39500,
+      "it": 41500
+    }
+  },
+  {
+    "id": "drg-1781217373627",
+    "name": "Ribavirin TABLET (200 mg) [BY CASE]",
+    "type": "General",
+    "stockCode": "51102312000005",
+    "prices": {
+      "employee": 18,
+      "opd": 35,
+      "ipd": 45,
+      "it": 55
+    }
+  },
+  {
+    "id": "drg-1781217425587",
+    "name": "ZOLOTEM-250 mg (Temozolomide) By case (**)",
+    "type": "Oncology",
+    "stockCode": "51111519000005",
+    "prices": {
+      "employee": 9100,
+      "opd": 11730,
+      "ipd": 11730,
+      "it": 11730
+    }
+  },
+  {
+    "id": "drg-1781217472075",
+    "name": "ZOLOTEM-20 mg (Temozolomide) By case (BOX 5'S) (**)",
+    "type": "Oncology",
+    "stockCode": "51111519000006",
+    "prices": {
+      "employee": 3950,
+      "opd": 5100,
+      "ipd": 5100,
+      "it": 4550
+    }
+  },
+  {
+    "id": "drg-1781217530355",
+    "name": "ZOLOTEM-100 mg (Temozolomide) By case (BOX 5'S) (**)",
+    "type": "Oncology",
+    "stockCode": "51111519000007",
+    "prices": {
+      "employee": 18500,
+      "opd": 30090,
+      "ipd": 30090,
+      "it": 21500
+    }
+  },
+  {
+    "id": "drg-1781217562563",
+    "name": "Capecitabine -SS (Intacape) 500 mg[By case]",
+    "type": "Oncology",
+    "stockCode": "51111616000003",
+    "prices": {
+      "employee": 91,
+      "opd": 112,
+      "ipd": 112,
+      "it": 110
+    }
+  },
+  {
+    "id": "drg-1781217600948",
+    "name": "Bleocin (15 mg) Inj.Vial (><)By Case",
+    "type": "Oncology",
+    "stockCode": "51111701000002",
+    "prices": {
+      "employee": 1000,
+      "opd": 2000,
+      "ipd": 2000,
+      "it": 2000
+    }
+  },
+  {
+    "id": "drg-1781218676085",
+    "name": "Kadcyla INJ (T-DM1) 160 mg (By case)",
+    "type": "Oncology",
+    "stockCode": "51111717000006",
+    "prices": {
+      "employee": 128000,
+      "opd": 132500,
+      "ipd": 132500,
+      "it": 132500
+    }
+  },
+  {
+    "id": "drg-1781218713853",
+    "name": "Piqray TABLET (250 mg)(28's)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51111717000023",
+    "prices": {
+      "employee": 65000,
+      "opd": 69000,
+      "ipd": 69000,
+      "it": 69000
+    }
+  },
+  {
+    "id": "drg-1781218747941",
+    "name": "Piqray TABLET (300 mg)(28'S)(#) [By case]",
+    "type": "Oncology",
+    "stockCode": "51111717000024",
+    "prices": {
+      "employee": 65000,
+      "opd": 69000,
+      "ipd": 69000,
+      "it": 69000
+    }
+  },
+  {
+    "id": "drg-1781219366030",
+    "name": "Phesgo INJ (600 mg/600 mg)(10mL)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111717000025",
+    "prices": {
+      "employee": 121000,
+      "opd": 128000,
+      "ipd": 128000,
+      "it": 128000
+    }
+  },
+  {
+    "id": "drg-1781219395534",
+    "name": "Phesgo INJ (1200 mg/600mg)(15mL)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111717000027",
+    "prices": {
+      "employee": 179000,
+      "opd": 190000,
+      "ipd": 190000,
+      "it": 190000
+    }
+  },
+  {
+    "id": "drg-1781219450087",
+    "name": "Lenvima CAPSULE (4 mg)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111722000003",
+    "prices": {
+      "employee": 1648,
+      "opd": 1993,
+      "ipd": 1993,
+      "it": 1993
+    }
+  },
+  {
+    "id": "drg-1781219471262",
+    "name": "Lenvima CAPSULE (10 mg)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111722000004",
+    "prices": {
+      "employee": 2590,
+      "opd": 3131,
+      "ipd": 3131,
+      "it": 3131
+    }
+  },
+  {
+    "id": "drg-1781219500750",
+    "name": "Mekinist TABLET (2 mg)[By case]",
+    "type": "Oncology",
+    "stockCode": "51111722000005",
+    "prices": {
+      "employee": 4600,
+      "opd": 4900,
+      "ipd": 4900,
+      "it": 4900
+    }
+  },
+  {
+    "id": "drg-1781219549534",
+    "name": "Imatinib 400 mg(Glivec-SS)[30'S] By CASE",
+    "type": "Oncology",
+    "stockCode": "51111722000006",
+    "prices": {
+      "employee": 345,
+      "opd": 395,
+      "ipd": 395,
+      "it": 395
+    }
+  },
+  {
+    "id": "drg-1781219628342",
+    "name": "Kisqali 200 Mg(Box =21's Tab)By Case",
+    "type": "Oncology",
+    "stockCode": "51111722000008",
+    "prices": {
+      "employee": 21000,
+      "opd": 24500,
+      "ipd": 24500,
+      "it": 24500
+    }
+  },
+  {
+    "id": "drg-1781219672862",
+    "name": "Glivec 400 mg(BOX = 30'S)(**)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51111722000010",
+    "prices": {
+      "employee": 120996,
+      "opd": 129796,
+      "ipd": 129796,
+      "it": 129796
+    }
+  },
+  {
+    "id": "drg-1781219727126",
+    "name": "Vargatef CAPSULE (100 mg)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51111722000013",
+    "prices": {
+      "employee": 758,
+      "opd": 893,
+      "ipd": 893,
+      "it": 875
+    }
+  },
+  {
+    "id": "drg-1781219791686",
+    "name": "Yulareb (150 mg)(Box 14'S)(By case)",
+    "type": "Oncology",
+    "stockCode": "51111722000040",
+    "prices": {
+      "employee": 15200,
+      "opd": 17500,
+      "ipd": 17500,
+      "it": 17500
+    }
+  },
+  {
+    "id": "drg-1781219831455",
+    "name": "Eligard INJ (45 mg) SET(BY CASE)",
+    "type": "Oncology",
+    "stockCode": "51111723000004",
+    "prices": {
+      "employee": 29425,
+      "opd": 43350,
+      "ipd": 43350,
+      "it": 43350
+    }
+  },
+  {
+    "id": "drg-1781219857118",
+    "name": "Eligard INJ (22.5 mg) SET(BY CASE)",
+    "type": "Oncology",
+    "stockCode": "51111723000005",
+    "prices": {
+      "employee": 17067,
+      "opd": 25500,
+      "ipd": 25500,
+      "it": 25500
+    }
+  },
+  {
+    "id": "drg-1781219898862",
+    "name": "Bicalutamide(50 Mg)(Casodex-SS)(**)(By Case)",
+    "type": "Oncology",
+    "stockCode": "51111802000002",
+    "prices": {
+      "employee": 140,
+      "opd": 180,
+      "ipd": 240,
+      "it": 280
+    }
+  },
+  {
+    "id": "drg-1781219942478",
+    "name": "Xtandi (enzalutamide 40mg)[Box 112'S][by case]",
+    "type": "Oncology",
+    "stockCode": "51111802000006",
+    "prices": {
+      "employee": 141240,
+      "opd": 161840,
+      "ipd": 161840,
+      "it": 161840
+    }
+  },
+  {
+    "id": "drg-1781220000206",
+    "name": "Xtandi (FOC)(enzalutamide 40mg)(112's) [by case]",
+    "type": "Oncology",
+    "stockCode": "51111802000009",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781220043158",
+    "name": "Faslodex Inj (250 Mg/5Ml)(BOX 2 Set)[By case]",
+    "type": "Oncology",
+    "stockCode": "51111819000002",
+    "prices": {
+      "employee": 40300,
+      "opd": 40300,
+      "ipd": 40300,
+      "it": 40300
+    }
+  },
+  {
+    "id": "drg-1781220105671",
+    "name": "Fulvestrant INJ PFS(250 mg/5 mL)(By case)(Faslodex-ss)",
+    "type": "Oncology",
+    "stockCode": "51111819000003",
+    "prices": {
+      "employee": 7600,
+      "opd": 9000,
+      "ipd": 9000,
+      "it": 9000
+    }
+  },
+  {
+    "id": "drg-1781220136999",
+    "name": "Inlyta (Axitinib 5 mg)[BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111833000002",
+    "prices": {
+      "employee": 2876,
+      "opd": 3477,
+      "ipd": 3477,
+      "it": 3477
+    }
+  },
+  {
+    "id": "drg-1781220158175",
+    "name": "Cyramza INJ (100 mg/10 mL) Vial (by case)",
+    "type": "Oncology",
+    "stockCode": "51111904000020",
+    "prices": {
+      "employee": 30800,
+      "opd": 39000,
+      "ipd": 39000,
+      "it": 39000
+    }
+  },
+  {
+    "id": "drg-1781220191535",
+    "name": "Cyramza INJ (500 mg/50 mL) Vial (by case)",
+    "type": "Oncology",
+    "stockCode": "51111904000021",
+    "prices": {
+      "employee": 73800,
+      "opd": 85000,
+      "ipd": 85000,
+      "it": 85000
+    }
+  },
+  {
+    "id": "drg-1781220246167",
+    "name": "NESP 40 mcg INJ [Darbepoetin alfa] (40 mcg/0.5mL)[By Case][**]",
+    "type": "General",
+    "stockCode": "51131507000001",
+    "prices": {
+      "employee": 4200,
+      "opd": 6120,
+      "ipd": 6630,
+      "it": 7000
+    }
+  },
+  {
+    "id": "drg-1781220290119",
+    "name": "NESP 30 mcg INJ [Darbepoetin alfa] (30 mcg/0.5mL)[By Case][**]",
+    "type": "General",
+    "stockCode": "51131507000002",
+    "prices": {
+      "employee": 3151,
+      "opd": 4590,
+      "ipd": 4590,
+      "it": 5850
+    }
+  },
+  {
+    "id": "drg-1781220352463",
+    "name": "NESP 120 mcg INJ [Darbepoetin alfa] (120 mcg/0.5mL) [By Case][**]",
+    "type": "General",
+    "stockCode": "51131507000004",
+    "prices": {
+      "employee": 11100,
+      "opd": 14280,
+      "ipd": 15300,
+      "it": 16000
+    }
+  },
+  {
+    "id": "drg-1781222221258",
+    "name": "Cytosar U-100 Mg Injection (**,><)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51111602000001",
+    "prices": {
+      "employee": 356,
+      "opd": 643,
+      "ipd": 643,
+      "it": 819
+    }
+  },
+  {
+    "id": "drg-1781222266569",
+    "name": "Cytosar U-500 Mg Injection (**,><) [By Case]",
+    "type": "Oncology",
+    "stockCode": "51111602000002",
+    "prices": {
+      "employee": 1385,
+      "opd": 1958,
+      "ipd": 1958,
+      "it": 2496
+    }
+  },
+  {
+    "id": "drg-1781222315994",
+    "name": "Hemax 10,000 IU (by case)",
+    "type": "General",
+    "stockCode": "51131508000006",
+    "prices": {
+      "employee": 1850,
+      "opd": 3900,
+      "ipd": 3900,
+      "it": 3900
+    }
+  },
+  {
+    "id": "drg-1781222356282",
+    "name": "ADVATE INJ (500 IU) Vial [By Case]",
+    "type": "General",
+    "stockCode": "51131802000013",
+    "prices": {
+      "employee": 7000,
+      "opd": 9078,
+      "ipd": 9078,
+      "it": 9078
+    }
+  },
+  {
+    "id": "drg-1781222401330",
+    "name": "Amgevita (40 mg/0.8 mL) Autoinjector [By Case]",
+    "type": "General",
+    "stockCode": "51142145000004",
+    "prices": {
+      "employee": 9800,
+      "opd": 11400,
+      "ipd": 11400,
+      "it": 11400
+    }
+  },
+  {
+    "id": "drg-1781222442866",
+    "name": "Hyrimoz (40 mg/0.8 mL) PFS[By case]",
+    "type": "General",
+    "stockCode": "51142145000006",
+    "prices": {
+      "employee": 3650,
+      "opd": 4350,
+      "ipd": 4350,
+      "it": 4350
+    }
+  },
+  {
+    "id": "drg-1781222481354",
+    "name": "Opsumit 10 mg Tablet [By case]",
+    "type": "General",
+    "stockCode": "51161626000003",
+    "prices": {
+      "employee": 3650,
+      "opd": 4280,
+      "ipd": 4280,
+      "it": 4280
+    }
+  },
+  {
+    "id": "drg-1781222555442",
+    "name": "Zoledronic Acid Inj (4 Mg/5 Ml) [Zometa-SS] (By case)",
+    "type": "General",
+    "stockCode": "51182415000003",
+    "prices": {
+      "employee": 2900,
+      "opd": 3876,
+      "ipd": 3876,
+      "it": 4200
+    }
+  },
+  {
+    "id": "drg-1781222592802",
+    "name": "Zometa INJECTION (4 mg/100 mL) Vial [By case]",
+    "type": "General",
+    "stockCode": "51182415000004",
+    "prices": {
+      "employee": 13700,
+      "opd": 21313,
+      "ipd": 27311,
+      "it": 28350
+    }
+  },
+  {
+    "id": "drg-1781222630930",
+    "name": "Sandimmun Oral SOLUTION (100 mg/mL)(50mL)[By Case]",
+    "type": "General",
+    "stockCode": "51201502000005",
+    "prices": {
+      "employee": 9000,
+      "opd": 11730,
+      "ipd": 11730,
+      "it": 11730
+    }
+  },
+  {
+    "id": "drg-1781222664186",
+    "name": "Advagraf Pr Capsule (1 Mg)[By case]",
+    "type": "General",
+    "stockCode": "51201504000003",
+    "prices": {
+      "employee": 160,
+      "opd": 193,
+      "ipd": 193,
+      "it": 193
+    }
+  },
+  {
+    "id": "drg-1781222692186",
+    "name": "Rapamune Tab 1 Mg (By case)",
+    "type": "General",
+    "stockCode": "51201515000001",
+    "prices": {
+      "employee": 320,
+      "opd": 428,
+      "ipd": 428,
+      "it": 420
+    }
+  },
+  {
+    "id": "drg-1781222728450",
+    "name": "Nivestim INJ 300 mcg/0.5mL PFS [By case]",
+    "type": "General",
+    "stockCode": "51201802000009",
+    "prices": {
+      "employee": 900,
+      "opd": 1530,
+      "ipd": 1836,
+      "it": 2000
+    }
+  },
+  {
+    "id": "drg-1781222770403",
+    "name": "Pegkine (6 mg/0.6 mL) PFS [By case]",
+    "type": "General",
+    "stockCode": "51201803000003",
+    "prices": {
+      "employee": 9200,
+      "opd": 12350,
+      "ipd": 12350,
+      "it": 12350
+    }
+  },
+  {
+    "id": "drg-1781222804555",
+    "name": "FulPHila (6 mg/0.6mL)PFS [By case]",
+    "type": "General",
+    "stockCode": "51201803000004",
+    "prices": {
+      "employee": 9000,
+      "opd": 12240,
+      "ipd": 12240,
+      "it": 12240
+    }
+  },
+  {
+    "id": "drg-1781222867163",
+    "name": "Betaferon 250 Mcg Injection [By case]",
+    "type": "General",
+    "stockCode": "51201809000007",
+    "prices": {
+      "employee": 3600,
+      "opd": 4896,
+      "ipd": 5916,
+      "it": 6800
+    }
+  },
+  {
+    "id": "drg-1781276341309",
+    "name": "Enantone L.P.(1.88 Mg) Inj (By Case)",
+    "type": "General",
+    "stockCode": "51111723000001",
+    "prices": {
+      "employee": 5900,
+      "opd": 7344,
+      "ipd": 11220,
+      "it": 13500
+    }
+  },
+  {
+    "id": "drg-1781289243697",
+    "name": "Enantone L.P. Inj (3.75 Mg) (X,**)(By Case)",
+    "type": "General",
+    "stockCode": "51111723000002",
+    "prices": {
+      "employee": 8500,
+      "opd": 9690,
+      "ipd": 12750,
+      "it": 15500
+    }
+  },
+  {
+    "id": "drg-1781289284441",
+    "name": "Enantone L.P. Inj (11.25 Mg) (X,**)(By Case)",
+    "type": "General",
+    "stockCode": "51111723000003",
+    "prices": {
+      "employee": 22400,
+      "opd": 24000,
+      "ipd": 34000,
+      "it": 44000
+    }
+  },
+  {
+    "id": "drg-1781289343178",
+    "name": "Zavedos 10 Mg Inj. [By Case]",
+    "type": "Oncology",
+    "stockCode": "51111719000004",
+    "prices": {
+      "employee": 8000,
+      "opd": 11067,
+      "ipd": 11067,
+      "it": 10850
+    }
+  },
+  {
+    "id": "drg-1781289414514",
+    "name": "Avastin Inj 100 Mg (By Case) ><",
+    "type": "Oncology",
+    "stockCode": "51012012403003",
+    "prices": {
+      "employee": 15301,
+      "opd": 18501,
+      "ipd": 18501,
+      "it": 18501
+    }
+  },
+  {
+    "id": "drg-1781289478913",
+    "name": "Rebif Syringe 22mcg (By Case)",
+    "type": "General",
+    "stockCode": "51201809000003",
+    "prices": {
+      "employee": 3500,
+      "opd": 5034,
+      "ipd": 6319,
+      "it": 7350
+    }
+  },
+  {
+    "id": "drg-1781289530674",
+    "name": "Rebif Syringe 44mcg (By Case)",
+    "type": "General",
+    "stockCode": "51201809000004",
+    "prices": {
+      "employee": 5500,
+      "opd": 7650,
+      "ipd": 9588,
+      "it": 11000
+    }
+  },
+  {
+    "id": "drg-1781289580042",
+    "name": "Recormon Inj 5000 Iu (By Case)",
+    "type": "General",
+    "stockCode": "51131506000006",
+    "prices": {
+      "employee": 1900,
+      "opd": 3162,
+      "ipd": 3978,
+      "it": 4700
+    }
+  },
+  {
+    "id": "drg-1781289636066",
+    "name": "Zoladex Depot Inj 3.6 Mg(By Case)",
+    "type": "General",
+    "stockCode": "51111805000001",
+    "prices": {
+      "employee": 9093,
+      "opd": 12852,
+      "ipd": 12852,
+      "it": 12852
+    }
+  },
+  {
+    "id": "drg-1781289667611",
+    "name": "Zoladex-LA 10.8 Mg Inj (By Case)",
+    "type": "General",
+    "stockCode": "51111805000002",
+    "prices": {
+      "employee": 28300,
+      "opd": 39780,
+      "ipd": 39780,
+      "it": 39780
+    }
+  },
+  {
+    "id": "drg-1781289916370",
+    "name": "AROMASIN 25 MG [BY CASE]",
+    "type": "Oncology",
+    "stockCode": "51111824000001",
+    "prices": {
+      "employee": 235,
+      "opd": 270,
+      "ipd": 270,
+      "it": 270
+    }
+  },
+  {
+    "id": "drg-1781289968610",
+    "name": "Prograf (1 Mg) Tablet[By Case]",
+    "type": "General",
+    "stockCode": "51201504000001",
+    "prices": {
+      "employee": 160,
+      "opd": 193,
+      "ipd": 193,
+      "it": 189
+    }
+  },
+  {
+    "id": "drg-1781290009386",
+    "name": "Prograf (0.5 Mg) Cap[By Case]",
+    "type": "General",
+    "stockCode": "51201504000002",
+    "prices": {
+      "employee": 85,
+      "opd": 161,
+      "ipd": 161,
+      "it": 158
+    }
+  },
+  {
+    "id": "drg-1781290060330",
+    "name": "Puri-Nethol (50 Mg) Tab [By case]",
+    "type": "Oncology",
+    "stockCode": "51111609000002",
+    "prices": {
+      "employee": 50,
+      "opd": 64,
+      "ipd": 75,
+      "it": 74
+    }
+  },
+  {
+    "id": "drg-1781290099403",
+    "name": "Sutent 12.5 Mg Cap (BY CASE)",
+    "type": "Oncology",
+    "stockCode": "51012012405001",
+    "prices": {
+      "employee": 1260,
+      "opd": 1480,
+      "ipd": 1480,
+      "it": 1480
+    }
+  },
+  {
+    "id": "drg-1781290142708",
+    "name": "Tarceva 100Mg Tab(By Case)",
+    "type": "Oncology",
+    "stockCode": "51111825000001",
+    "prices": {
+      "employee": 1600,
+      "opd": 1800,
+      "ipd": 1800,
+      "it": 1800
+    }
+  },
+  {
+    "id": "drg-1781290178106",
+    "name": "Tarceva 150Mg Tab(By Case)",
+    "type": "Oncology",
+    "stockCode": "51111825000002",
+    "prices": {
+      "employee": 1230,
+      "opd": 1420,
+      "ipd": 1420,
+      "it": 1420
+    }
+  },
+  {
+    "id": "drg-1781290500907",
+    "name": "5-FU 1000 Mg Fluouracil Inj",
+    "type": "Oncology",
+    "stockCode": "51111605000003",
+    "prices": {
+      "employee": 177,
+      "opd": 214,
+      "ipd": 214,
+      "it": 214
+    }
+  },
+  {
+    "id": "drg-1781290726475",
+    "name": "Abraxane 100 mg (Albumin-bound Paclitaxel)",
+    "type": "Oncology",
+    "stockCode": "51111904000019",
+    "prices": {
+      "employee": 18244,
+      "opd": 30000,
+      "ipd": 30000,
+      "it": 30000
+    }
+  },
+  {
+    "id": "drg-1781290820715",
+    "name": "Kadcyla INJ (160 mg) VIAL (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012010604001",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781291058452",
+    "name": "Padcev 20 mg INJ Vial",
+    "type": "Oncology",
+    "stockCode": "51012012403045",
+    "prices": {
+      "employee": 28500,
+      "opd": 33500,
+      "ipd": 33500,
+      "it": 33500
+    }
+  },
+  {
+    "id": "drg-1781291108844",
+    "name": "Padcev 30 mg INJ Vial",
+    "type": "Oncology",
+    "stockCode": "51012012403046",
+    "prices": {
+      "employee": 43000,
+      "opd": 50500,
+      "ipd": 50500,
+      "it": 50500
+    }
+  },
+  {
+    "id": "drg-1781291166564",
+    "name": "Velcade Inj (1 Mg) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51012012424001",
+    "prices": {
+      "employee": 23482,
+      "opd": 25200,
+      "ipd": 25200,
+      "it": 25200
+    }
+  },
+  {
+    "id": "drg-1781291190965",
+    "name": "Velcade 3.5 Mg INJ [FREE](**,><)",
+    "type": "Oncology",
+    "stockCode": "51012012424016",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781291226349",
+    "name": "Bortezomib INJ  3.5 mg VIAL [MYBORTE] (Velcade -SS)",
+    "type": "Oncology",
+    "stockCode": "51012012424028",
+    "prices": {
+      "employee": 13536,
+      "opd": 16366,
+      "ipd": 16366,
+      "it": 16366
+    }
+  },
+  {
+    "id": "drg-1781291257317",
+    "name": "Erleada TABLET 60 mg (120'S) (=FREE=)",
+    "type": "Oncology",
+    "stockCode": "51012020224009",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781291337668",
+    "name": "Kadcyla INJ 100 mg (T-DM1) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111717000005",
+    "prices": {
+      "employee": 79000,
+      "opd": 82000,
+      "ipd": 82000,
+      "it": 82000
+    }
+  },
+  {
+    "id": "drg-1781291402764",
+    "name": "Adriblastina (10 Mg) Injection (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111711000002",
+    "prices": {
+      "employee": 1140,
+      "opd": 1900,
+      "ipd": 1900,
+      "it": 1900
+    }
+  },
+  {
+    "id": "drg-1781291453213",
+    "name": "Adriblastina (50 Mg) Injection (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111711000004",
+    "prices": {
+      "employee": 5500,
+      "opd": 7250,
+      "ipd": 7250,
+      "it": 7250
+    }
+  },
+  {
+    "id": "drg-1781291490685",
+    "name": "Remicade (Infliximab) 100 Mg Inj [Original]  ><",
+    "type": "General",
+    "stockCode": "51111720000001",
+    "prices": {
+      "employee": 22727,
+      "opd": 31000,
+      "ipd": 31000,
+      "it": 31000
+    }
+  },
+  {
+    "id": "drg-1781291665629",
+    "name": "Vinblastin (10 Mg) Inj. Vial (><)",
+    "type": "Oncology",
+    "stockCode": "51000000000074",
+    "prices": {
+      "employee": 751,
+      "opd": 1040,
+      "ipd": 1040,
+      "it": 1040
+    }
+  },
+  {
+    "id": "drg-1781291833334",
+    "name": "Jevtana Inj (60 Mg/1.5 Ml) Vial ><",
+    "type": "Oncology",
+    "stockCode": "51012010304001",
+    "prices": {
+      "employee": 194205,
+      "opd": 255000,
+      "ipd": 255000,
+      "it": 255000
+    }
+  },
+  {
+    "id": "drg-1781292053294",
+    "name": "Dacogen INJ  50 mg ><",
+    "type": "Oncology",
+    "stockCode": "51012010403002",
+    "prices": {
+      "employee": 41800,
+      "opd": 50540,
+      "ipd": 50540,
+      "it": 50540
+    }
+  },
+  {
+    "id": "drg-1781292078830",
+    "name": "Dacogen INJ (50mg/10mL) Vial FOC",
+    "type": "Oncology",
+    "stockCode": "51012010403006",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292134926",
+    "name": "Decinject 50 mg IV",
+    "type": "Oncology",
+    "stockCode": "51012010403007",
+    "prices": {
+      "employee": 8000,
+      "opd": 11000,
+      "ipd": 11000,
+      "it": 11000
+    }
+  },
+  {
+    "id": "drg-1781292172046",
+    "name": "Vizimpro (15 mg) TABLET (30'S)",
+    "type": "Oncology",
+    "stockCode": "51012010502002",
+    "prices": {
+      "employee": 10800,
+      "opd": 12750,
+      "ipd": 12750,
+      "it": 12750
+    }
+  },
+  {
+    "id": "drg-1781292196686",
+    "name": "Calquence 100 mg CAPSULE (60'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012010512002",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292247830",
+    "name": "Bevacizumab INJ (1.25 mg/0.05mL) PFS",
+    "type": "Oncology",
+    "stockCode": "51012012403002",
+    "prices": {
+      "employee": 1200,
+      "opd": 3060,
+      "ipd": 3570,
+      "it": 3570
+    }
+  },
+  {
+    "id": "drg-1781292327726",
+    "name": "Tagrisso 80 mg Tab. (Box=30’s)[FOC]",
+    "type": "Oncology",
+    "stockCode": "51012012405046",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292456662",
+    "name": "Olumiant TABLET 4 mg",
+    "type": "General",
+    "stockCode": "51012040101022",
+    "prices": {
+      "employee": 1100,
+      "opd": 1340,
+      "ipd": 1340,
+      "it": 1340
+    }
+  },
+  {
+    "id": "drg-1781292485255",
+    "name": "Olumiant 4 mg TAB (FOC)",
+    "type": "General",
+    "stockCode": "51012040101030",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292544511",
+    "name": "Keytruda INJ (25 mg/mL) Single-use Vial ><",
+    "type": "Oncology",
+    "stockCode": "51012012403014",
+    "prices": {
+      "employee": 131824,
+      "opd": 141412,
+      "ipd": 141412,
+      "it": 141412
+    }
+  },
+  {
+    "id": "drg-1781292588639",
+    "name": "Opdivo INJ (100 mg/10 mL) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51012012403015",
+    "prices": {
+      "employee": 64735,
+      "opd": 69200,
+      "ipd": 69200,
+      "it": 69200
+    }
+  },
+  {
+    "id": "drg-1781292623719",
+    "name": "OPDIVO INJ 40MG(4ML) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51012012403016",
+    "prices": {
+      "employee": 25894,
+      "opd": 27700,
+      "ipd": 27700,
+      "it": 27700
+    }
+  },
+  {
+    "id": "drg-1781292650455",
+    "name": "Erbitux INJ (100 mg/20mL) VIAL [FOC]",
+    "type": "Oncology",
+    "stockCode": "51012012403020",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292691167",
+    "name": "Opdivo INJ (40 mg/4 mL) Vial (**)(><) (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012403023",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292725847",
+    "name": "Opdivo INJ (100 mg/10 mL) Vial (**)(><)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012403024",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292750791",
+    "name": "Keytruda INJ (100 mg/4 mL) Vial (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012403027",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292785143",
+    "name": "MVASI - bevacizumab (100 mg/4 mL) [Avastin -SS]",
+    "type": "Oncology",
+    "stockCode": "51012012403033",
+    "prices": {
+      "employee": 9181,
+      "opd": 11101,
+      "ipd": 11101,
+      "it": 11101
+    }
+  },
+  {
+    "id": "drg-1781292806175",
+    "name": "Imfinzi INJ (500 mg/10 mL) Vial (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012403034",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292837015",
+    "name": "Polivy INJ (140 mg) Vial",
+    "type": "Oncology",
+    "stockCode": "51012012403038",
+    "prices": {
+      "employee": 400000,
+      "opd": 430000,
+      "ipd": 430000,
+      "it": 430000
+    }
+  },
+  {
+    "id": "drg-1781292874999",
+    "name": "Darzalex SC INJ (1800mg/15mL) VIAL (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012403042",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292901095",
+    "name": "Cabometyx 60 mg TABLET (30'S) (FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012405066",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292922607",
+    "name": "Ibrance 100 mg CAP. (Box = 7'S) ….[FOC]",
+    "type": "Oncology",
+    "stockCode": "51012012405075",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781292976088",
+    "name": "Ibrance 125 mg TABLET (7'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012405076",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293041368",
+    "name": "Xalkori CAPSULE (250 mg)**",
+    "type": "Oncology",
+    "stockCode": "51012012424005",
+    "prices": {
+      "employee": 3700,
+      "opd": 3900,
+      "ipd": 3900,
+      "it": 3900
+    }
+  },
+  {
+    "id": "drg-1781293087112",
+    "name": "Xalkori  CAPSULE (200 mg)**",
+    "type": "Oncology",
+    "stockCode": "51012012424013",
+    "prices": {
+      "employee": 3700,
+      "opd": 3900,
+      "ipd": 3900,
+      "it": 3900
+    }
+  },
+  {
+    "id": "drg-1781293114256",
+    "name": "Perjeta INJ (420 mg/14mL) Vial",
+    "type": "Oncology",
+    "stockCode": "51012012424008",
+    "prices": {
+      "employee": 116376,
+      "opd": 124840,
+      "ipd": 124840,
+      "it": 124840
+    }
+  },
+  {
+    "id": "drg-1781293170111",
+    "name": "Stivarga TABLET (40 mg)(28'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012012424034",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293225601",
+    "name": "Entyvio (300 Mg) INJ Vial (FOC)",
+    "type": "General",
+    "stockCode": "51012040101019",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293257432",
+    "name": "Casirivimab/Imdevimab INJ [600/600mg=2 Box]",
+    "type": "General",
+    "stockCode": "51012040103020",
+    "prices": {
+      "employee": 50000,
+      "opd": 50000,
+      "ipd": 50000,
+      "it": 50000
+    }
+  },
+  {
+    "id": "drg-1781293357864",
+    "name": "Simponi INJ (50 mg) PFP (1's)",
+    "type": "General",
+    "stockCode": "51012040124004",
+    "prices": {
+      "employee": 58500,
+      "opd": 67000,
+      "ipd": 67000,
+      "it": 67000
+    }
+  },
+  {
+    "id": "drg-1781293391320",
+    "name": "Simponi INJ (50 mg) PFP (1's) (FOC)",
+    "type": "General",
+    "stockCode": "51012040124010",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293447992",
+    "name": "Lenalidomide 25 mg (Alvogen) CAP (21'S)",
+    "type": "Oncology",
+    "stockCode": "51012040124025",
+    "prices": {
+      "employee": 71500,
+      "opd": 84000,
+      "ipd": 84000,
+      "it": 84000
+    }
+  },
+  {
+    "id": "drg-1781293488864",
+    "name": "Lenalidomide 10 mg (Alvogen) CAP (21'S)",
+    "type": "Oncology",
+    "stockCode": "51012040124026",
+    "prices": {
+      "employee": 71500,
+      "opd": 84000,
+      "ipd": 84000,
+      "it": 84000
+    }
+  },
+  {
+    "id": "drg-1781293527457",
+    "name": "Lenalidomide 10 mg CAP (21'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012040124031",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293557992",
+    "name": "Lenalidomide 25 mg CAP (21'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51012040124035",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293597433",
+    "name": "Prolia INJ (60 mg/1mL) PFS",
+    "type": "General",
+    "stockCode": "51013050224006",
+    "prices": {
+      "employee": 11500,
+      "opd": 15810,
+      "ipd": 15810,
+      "it": 15810
+    }
+  },
+  {
+    "id": "drg-1781293640537",
+    "name": "Ajovy (225mg/1.5mL) PFP[Fremanezumab]",
+    "type": "General",
+    "stockCode": "51014020301006",
+    "prices": {
+      "employee": 11500,
+      "opd": 14600,
+      "ipd": 14600,
+      "it": 14600
+    }
+  },
+  {
+    "id": "drg-1781293665760",
+    "name": "Pontevia INJ (120 mg/mL) PFS",
+    "type": "General",
+    "stockCode": "51014020304001",
+    "prices": {
+      "employee": 9400,
+      "opd": 12000,
+      "ipd": 12000,
+      "it": 12000
+    }
+  },
+  {
+    "id": "drg-1781293791480",
+    "name": "Aimovig INJ (70 mg/mL) Pre-filled Pen",
+    "type": "General",
+    "stockCode": "51014020324005",
+    "prices": {
+      "employee": 9500,
+      "opd": 12600,
+      "ipd": 12600,
+      "it": 12600
+    }
+  },
+  {
+    "id": "drg-1781293852505",
+    "name": "Tecentriq INJ (1,200 mg)(20 mL) VIAL (><)",
+    "type": "Oncology",
+    "stockCode": "51018030424017",
+    "prices": {
+      "employee": 139034,
+      "opd": 149145,
+      "ipd": 149145,
+      "it": 149145
+    }
+  },
+  {
+    "id": "drg-1781293882457",
+    "name": "Tecentriq(FOC) INJ (1,200 mg)(20mL)",
+    "type": "Oncology",
+    "stockCode": "51018030424020",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293919041",
+    "name": "Eylea intravitreal INJ (40 mg/mL)Vial",
+    "type": "General",
+    "stockCode": "51019011201004",
+    "prices": {
+      "employee": 48300,
+      "opd": 65000,
+      "ipd": 65000,
+      "it": 65000
+    }
+  },
+  {
+    "id": "drg-1781293954330",
+    "name": "Eylea Intraviteal INJ (40 mg/mL) Vial (FOC)",
+    "type": "General",
+    "stockCode": "51019011201012",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781293989985",
+    "name": "Lucentis INJ (10 mg/mL) (0.23 mL)(FOC)",
+    "type": "General",
+    "stockCode": "51019011201007",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781294100265",
+    "name": "Lucentis INJ (10 mg/mL) (0.23 mL)",
+    "type": "General",
+    "stockCode": "51019011201002",
+    "prices": {
+      "employee": 55000,
+      "opd": 70000,
+      "ipd": 70000,
+      "it": 70000
+    }
+  },
+  {
+    "id": "drg-1781294165729",
+    "name": "Praxbind INJ (2.5 g/ 50 mL)(Box 2'S)",
+    "type": "General",
+    "stockCode": "51022030102007",
+    "prices": {
+      "employee": 71500,
+      "opd": 95000,
+      "ipd": 95000,
+      "it": 95000
+    }
+  },
+  {
+    "id": "drg-1781294215233",
+    "name": "DaCARbazine INJ (200 mg) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111508000002",
+    "prices": {
+      "employee": 4440,
+      "opd": 7000,
+      "ipd": 7000,
+      "it": 7000
+    }
+  },
+  {
+    "id": "drg-1781294383074",
+    "name": "Pemetrexed INJ (500 mg) Vial [Alimta-ss] (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111600000003",
+    "prices": {
+      "employee": 13800,
+      "opd": 16000,
+      "ipd": 16000,
+      "it": 16000
+    }
+  },
+  {
+    "id": "drg-1781294521282",
+    "name": "Alimta Inj (100 Mg) Vial (FOC)",
+    "type": "Oncology",
+    "stockCode": "51111600000004",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781294551130",
+    "name": "Pemetrexed INJ (100 mg) Vial [Alimta-ss] (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111600000006",
+    "prices": {
+      "employee": 2300,
+      "opd": 2700,
+      "ipd": 2700,
+      "it": 2700
+    }
+  },
+  {
+    "id": "drg-1781294581666",
+    "name": "Cytosar (2gm/20 mL)  Inj",
+    "type": "Oncology",
+    "stockCode": "51111602000003",
+    "prices": {
+      "employee": 4803,
+      "opd": 6834,
+      "ipd": 6834,
+      "it": 8710
+    }
+  },
+  {
+    "id": "drg-1781294607162",
+    "name": "Hydroxycarbamide CAP (500 mg) [Hydrea-SS]",
+    "type": "Oncology",
+    "stockCode": "51111606000003",
+    "prices": {
+      "employee": 20,
+      "opd": 32,
+      "ipd": 38,
+      "it": 45
+    }
+  },
+  {
+    "id": "drg-1781294630059",
+    "name": "Lipo-Dox 2 Mg/mL Inj (10 ml) ><",
+    "type": "Oncology",
+    "stockCode": "51111714000001",
+    "prices": {
+      "employee": 17000,
+      "opd": 20000,
+      "ipd": 20000,
+      "it": 20000
+    }
+  },
+  {
+    "id": "drg-1781294666698",
+    "name": "Mabthera INJ [SC] (1400 mg/11.7 mL) VIAL (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111716000004",
+    "prices": {
+      "employee": 64718,
+      "opd": 78250,
+      "ipd": 78250,
+      "it": 78250
+    }
+  },
+  {
+    "id": "drg-1781294690530",
+    "name": "Rituximab INJ (500 mg)(Truxima) Vial",
+    "type": "Oncology",
+    "stockCode": "51111716000009",
+    "prices": {
+      "employee": 12000,
+      "opd": 14200,
+      "ipd": 14200,
+      "it": 14200
+    }
+  },
+  {
+    "id": "drg-1781294711146",
+    "name": "Rituximab INJ (100 mg)(Truxima)",
+    "type": "Oncology",
+    "stockCode": "51111716000010",
+    "prices": {
+      "employee": 5600,
+      "opd": 6550,
+      "ipd": 6550,
+      "it": 6550
+    }
+  },
+  {
+    "id": "drg-1781294744266",
+    "name": "Herceptin 150 Mg Inj (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111717000002",
+    "prices": {
+      "employee": 32800,
+      "opd": 33000,
+      "ipd": 33000,
+      "it": 33000
+    }
+  },
+  {
+    "id": "drg-1781294772866",
+    "name": "Vectibix INJ (100 mg/5mL) VIAL ><",
+    "type": "Oncology",
+    "stockCode": "51111717000007",
+    "prices": {
+      "employee": 14800,
+      "opd": 17000,
+      "ipd": 17000,
+      "it": 17000
+    }
+  },
+  {
+    "id": "drg-1781294796322",
+    "name": "Gazyva INJ (1000 mg/40 mL) VIAL ><",
+    "type": "Oncology",
+    "stockCode": "51111717000008",
+    "prices": {
+      "employee": 152721,
+      "opd": 163828,
+      "ipd": 163828,
+      "it": 163828
+    }
+  },
+  {
+    "id": "drg-1781294828186",
+    "name": "HERCEPTIN SC INJ (600mg/5mL) VIAL [**]",
+    "type": "Oncology",
+    "stockCode": "51111717000009",
+    "prices": {
+      "employee": 67065,
+      "opd": 88000,
+      "ipd": 88000,
+      "it": 88000
+    }
+  },
+  {
+    "id": "drg-1781294864811",
+    "name": "Herceptin INJ (440 mg) VIAL (**)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51111717000010",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781294886914",
+    "name": "Herceptin INJ (150 mg) VIAL (**)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51111717000011",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781294910155",
+    "name": "HERCEPTIN SC INJ (600mg/5mL) VIAL (FOC)",
+    "type": "Oncology",
+    "stockCode": "51111717000015",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781294935460",
+    "name": "Herzuma INJ (150 mg) Vial(><)(**)",
+    "type": "Oncology",
+    "stockCode": "51111717000019",
+    "prices": {
+      "employee": 4100,
+      "opd": 4700,
+      "ipd": 4700,
+      "it": 4700
+    }
+  },
+  {
+    "id": "drg-1781294964098",
+    "name": "Herzuma INJ (440 mg) Vial (><)(**)",
+    "type": "Oncology",
+    "stockCode": "51111717000022",
+    "prices": {
+      "employee": 15500,
+      "opd": 17800,
+      "ipd": 17800,
+      "it": 17800
+    }
+  },
+  {
+    "id": "drg-1781295070507",
+    "name": "Infliximab INJ (100 mg) [Local] (><)",
+    "type": "General",
+    "stockCode": "51111720000002",
+    "prices": {
+      "employee": 10711,
+      "opd": 15810,
+      "ipd": 15810,
+      "it": 20150
+    }
+  },
+  {
+    "id": "drg-1781295097859",
+    "name": "Imatinib 100 mg TAB (Glivec -SS) [60'S]",
+    "type": "Oncology",
+    "stockCode": "51111722000015",
+    "prices": {
+      "employee": 360,
+      "opd": 425,
+      "ipd": 425,
+      "it": 425
+    }
+  },
+  {
+    "id": "drg-1781295127147",
+    "name": "Lenvima CAPSULE (10 mg) [FOC] (**)",
+    "type": "Oncology",
+    "stockCode": "51111722000017",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781295148123",
+    "name": "Lenvima CAPSULE (4 mg) [FOC](20 'S)",
+    "type": "Oncology",
+    "stockCode": "51111722000029",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781295185987",
+    "name": "Yulareb (100 mg) TABLET (14'S)",
+    "type": "Oncology",
+    "stockCode": "51111722000039",
+    "prices": {
+      "employee": 14300,
+      "opd": 16500,
+      "ipd": 16500,
+      "it": 16500
+    }
+  },
+  {
+    "id": "drg-1781295990304",
+    "name": "Yulareb (100 mg) TABLET (14'S)(FOC)",
+    "type": "Oncology",
+    "stockCode": "51111722000041",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781296186126",
+    "name": "Letrozole Alvogen TABLET (2.5 mg)",
+    "type": "Oncology",
+    "stockCode": "51111820000004",
+    "prices": {
+      "employee": 100,
+      "opd": 120,
+      "ipd": 120,
+      "it": 120
+    }
+  },
+  {
+    "id": "drg-1781296355749",
+    "name": "Tamoxifen 10 Mg Tab (Mamofen)",
+    "type": "Oncology",
+    "stockCode": "51111821000001",
+    "prices": {
+      "employee": 15,
+      "opd": 18,
+      "ipd": 18,
+      "it": 18
+    }
+  },
+  {
+    "id": "drg-1781298419143",
+    "name": "Tamoxifen SANDOZ 20 Mg Tab",
+    "type": "Oncology",
+    "stockCode": "51111821000002",
+    "prices": {
+      "employee": 15,
+      "opd": 18,
+      "ipd": 18,
+      "it": 18
+    }
+  },
+  {
+    "id": "drg-1781298727695",
+    "name": "Oxaliplatin [Oxitan] INJ (50 mg/10mL) Vial",
+    "type": "Oncology",
+    "stockCode": "51111822000005",
+    "prices": {
+      "employee": 2943,
+      "opd": 3558,
+      "ipd": 3558,
+      "it": 3558
+    }
+  },
+  {
+    "id": "drg-1781298746852",
+    "name": "Oxaliplatin INJ (100 mg/20mL) Vial",
+    "type": "Oncology",
+    "stockCode": "51111822000006",
+    "prices": {
+      "employee": 5886,
+      "opd": 7116,
+      "ipd": 7116,
+      "it": 7116
+    }
+  },
+  {
+    "id": "drg-1781298765756",
+    "name": "Erlotinib TABLET (150 mg)",
+    "type": "Oncology",
+    "stockCode": "51111825000009",
+    "prices": {
+      "employee": 225,
+      "opd": 260,
+      "ipd": 260,
+      "it": 260
+    }
+  },
+  {
+    "id": "drg-1781298823164",
+    "name": "AndroCUR TAB 50 mg",
+    "type": "Oncology",
+    "stockCode": "51111828000001",
+    "prices": {
+      "employee": 73,
+      "opd": 102,
+      "ipd": 140,
+      "it": 137
+    }
+  },
+  {
+    "id": "drg-1781299671415",
+    "name": "Taxotere  Inj (20Mg/1 Ml) Vial",
+    "type": "Oncology",
+    "stockCode": "51111902000001",
+    "prices": {
+      "employee": 9693,
+      "opd": 11000,
+      "ipd": 11000,
+      "it": 11000
+    }
+  },
+  {
+    "id": "drg-1781299691680",
+    "name": "Taxotere  Inj (80Mg/4 Ml) Vial",
+    "type": "Oncology",
+    "stockCode": "51111902000002",
+    "prices": {
+      "employee": 34310,
+      "opd": 42000,
+      "ipd": 42000,
+      "it": 42000
+    }
+  },
+  {
+    "id": "drg-1781300161359",
+    "name": "Docetaxel 20 Mg Inj (**,><,//)",
+    "type": "Oncology",
+    "stockCode": "51111902000003",
+    "prices": {
+      "employee": 1200,
+      "opd": 1450,
+      "ipd": 1450,
+      "it": 1450
+    }
+  },
+  {
+    "id": "drg-1781300199484",
+    "name": "Docetaxel 80 Mg Inj (**,><,//)",
+    "type": "Oncology",
+    "stockCode": "51111902000004",
+    "prices": {
+      "employee": 4520,
+      "opd": 5465,
+      "ipd": 5465,
+      "it": 5465
+    }
+  },
+  {
+    "id": "drg-1781300367005",
+    "name": "Cyramza INJ (500 mg/50 mL) VIAL (FOC)",
+    "type": "Oncology",
+    "stockCode": "51111904000028",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781300826361",
+    "name": "Hyrimoz (40 mg/0.8 mL) PFP (Box=2'S)",
+    "type": "General",
+    "stockCode": "51142145000009",
+    "prices": {
+      "employee": 9800,
+      "opd": 11500,
+      "ipd": 11500,
+      "it": 11500
+    }
+  },
+  {
+    "id": "drg-1781300948065",
+    "name": "Ribomustin INJ(25 mg) (**,><,!!)",
+    "type": "Oncology",
+    "stockCode": "51191513000001",
+    "prices": {
+      "employee": 4200,
+      "opd": 7000,
+      "ipd": 7000,
+      "it": 7000
+    }
+  },
+  {
+    "id": "drg-1781301508511",
+    "name": "Ribomustin INJ (100 mg) (**,><,!!)",
+    "type": "Oncology",
+    "stockCode": "51191513000002",
+    "prices": {
+      "employee": 15237,
+      "opd": 18423,
+      "ipd": 18423,
+      "it": 18423
+    }
+  },
+  {
+    "id": "drg-1781301528919",
+    "name": "Ribomustin INJ (25 mg) FOC",
+    "type": "Oncology",
+    "stockCode": "51191513000003",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781301547855",
+    "name": "Ribomustin INJ (100 mg) FOC",
+    "type": "Oncology",
+    "stockCode": "51191513000004",
+    "prices": {
+      "employee": 0,
+      "opd": 0,
+      "ipd": 0,
+      "it": 0
+    }
+  },
+  {
+    "id": "drg-1781301605159",
+    "name": "Aclasta INFusion(5mg/100 mL) VIAL",
+    "type": "General",
+    "stockCode": "51182415000002",
+    "prices": {
+      "employee": 19000,
+      "opd": 28050,
+      "ipd": 28050,
+      "it": 28050
+    }
+  },
+  {
+    "id": "drg-1781304952903",
+    "name": "Neutromax 300 mcg PFS",
+    "type": "General",
+    "stockCode": "51201802000008",
+    "prices": {
+      "employee": 1266,
+      "opd": 3053,
+      "ipd": 3053,
+      "it": 3053
+    }
+  },
+  {
+    "id": "drg-1781305024150",
+    "name": "Calcium Folinate(500 mg/50 mL) INJ",
+    "type": "Oncology",
+    "stockCode": "51211617000010",
+    "prices": {
+      "employee": 750,
+      "opd": 4515,
+      "ipd": 4515,
+      "it": 4515
+    }
+  },
+  {
+    "id": "drg-1781305128438",
+    "name": "Doxorubicin Hcl Inj 50 Mg (><,!!)",
+    "type": "Oncology",
+    "stockCode": "51111711000003",
+    "prices": {
+      "employee": 858,
+      "opd": 2448,
+      "ipd": 2448,
+      "it": 3120
+    }
+  },
+  {
+    "id": "drg-1781305175912",
+    "name": "AlimTA INJ (100 mg) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111600000001",
+    "prices": {
+      "employee": 9208,
+      "opd": 11133,
+      "ipd": 11133,
+      "it": 11133
+    }
+  },
+  {
+    "id": "drg-1781305208342",
+    "name": "Alimta 500 Mg. Injection (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111600000002",
+    "prices": {
+      "employee": 40042,
+      "opd": 49382,
+      "ipd": 49382,
+      "it": 49382
+    }
+  },
+  {
+    "id": "drg-1781305284774",
+    "name": "ANZATAX (300MG/50ML) INJ(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111904000003",
+    "prices": {
+      "employee": 26500,
+      "opd": 26500,
+      "ipd": 26500,
+      "it": 26500
+    }
+  },
+  {
+    "id": "drg-1781305379174",
+    "name": "Irinotecan (40 Mg/2ml) Infusion(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111806000001",
+    "prices": {
+      "employee": 2354,
+      "opd": 2847,
+      "ipd": 2847,
+      "it": 2847
+    }
+  },
+  {
+    "id": "drg-1781305427814",
+    "name": "Irinotecan (100 Mg/5ml) Infusion (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111806000003",
+    "prices": {
+      "employee": 3923,
+      "opd": 4745,
+      "ipd": 4745,
+      "it": 4745
+    }
+  },
+  {
+    "id": "drg-1781305486894",
+    "name": "Campto Infusion (40 Mg/2ml)(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111806000004",
+    "prices": {
+      "employee": 7769,
+      "opd": 9393,
+      "ipd": 9393,
+      "it": 9393
+    }
+  },
+  {
+    "id": "drg-1781305531902",
+    "name": "Campto (300 mg/15 mL) INFUSION(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111806000004",
+    "prices": {
+      "employee": 47080,
+      "opd": 56924,
+      "ipd": 56924,
+      "it": 56924
+    }
+  },
+  {
+    "id": "drg-1781305587854",
+    "name": "Campto Infusion(100 Mg/5 ml)(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111806000005",
+    "prices": {
+      "employee": 17800,
+      "opd": 21500,
+      "ipd": 21500,
+      "it": 21500
+    }
+  },
+  {
+    "id": "drg-1781305629749",
+    "name": "DaCARbazine INJ (100 mg) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111508000001",
+    "prices": {
+      "employee": 2220,
+      "opd": 3500,
+      "ipd": 3500,
+      "it": 3500
+    }
+  },
+  {
+    "id": "drg-1781305654125",
+    "name": "DaCARbazine INJ (500 mg) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111508000003",
+    "prices": {
+      "employee": 8828,
+      "opd": 16320,
+      "ipd": 16320,
+      "it": 20800
+    }
+  },
+  {
+    "id": "drg-1781305716085",
+    "name": "Eloxatin 50 Mg Solution Inj (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111822000001",
+    "prices": {
+      "employee": 15301,
+      "opd": 18501,
+      "ipd": 18501,
+      "it": 18501
+    }
+  },
+  {
+    "id": "drg-1781305741462",
+    "name": "Eloxatin INfusion(200 mg/40mL) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111822000004",
+    "prices": {
+      "employee": 74000,
+      "opd": 74000,
+      "ipd": 74000,
+      "it": 74000
+    }
+  },
+  {
+    "id": "drg-1781305861957",
+    "name": "Oxalip 50 Mg Inj",
+    "type": "Oncology",
+    "stockCode": "51111822000002",
+    "prices": {
+      "employee": 9900,
+      "opd": 12000,
+      "ipd": 12000,
+      "it": 12000
+    }
+  },
+  {
+    "id": "drg-1781305900365",
+    "name": "Endoxan Inj 200 Mg(**,><)",
+    "type": "Oncology",
+    "stockCode": "51111507000002",
+    "prices": {
+      "employee": 250,
+      "opd": 380,
+      "ipd": 380,
+      "it": 380
+    }
+  },
+  {
+    "id": "drg-1781305948317",
+    "name": "Endoxan Inj 1 Gm (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111507000004",
+    "prices": {
+      "employee": 470,
+      "opd": 1400,
+      "ipd": 1400,
+      "it": 1400
+    }
+  },
+  {
+    "id": "drg-1781307833587",
+    "name": "Epirubicin 50 Mg/25 Ml Inj (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111715000002",
+    "prices": {
+      "employee": 3220,
+      "opd": 5049,
+      "ipd": 5049,
+      "it": 6435
+    }
+  },
+  {
+    "id": "drg-1781307857715",
+    "name": "Epirubicin (10 Mg/5ml) Inj (**,><,!!)",
+    "type": "Oncology",
+    "stockCode": "51111715000005",
+    "prices": {
+      "employee": 828,
+      "opd": 2550,
+      "ipd": 2550,
+      "it": 3250
+    }
+  },
+  {
+    "id": "drg-1781307901467",
+    "name": "Gemcitabine INJ(200 mg)Vial (Gemcit)",
+    "type": "Oncology",
+    "stockCode": "51111617000001",
+    "prices": {
+      "employee": 937,
+      "opd": 1133,
+      "ipd": 1133,
+      "it": 1133
+    }
+  },
+  {
+    "id": "drg-1781307937115",
+    "name": "Gemzar-200 Mg Injection (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111617000002",
+    "prices": {
+      "employee": 2389,
+      "opd": 2888,
+      "ipd": 2888,
+      "it": 2888
+    }
+  },
+  {
+    "id": "drg-1781308044235",
+    "name": "Gemcitabine INJ (1 g) Vial (Gemcit) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111617000003",
+    "prices": {
+      "employee": 3473,
+      "opd": 4199,
+      "ipd": 4199,
+      "it": 4199
+    }
+  },
+  {
+    "id": "drg-1781308069357",
+    "name": "Gemzar-1 Gm Injection  (**, ><)",
+    "type": "Oncology",
+    "stockCode": "51111617000004",
+    "prices": {
+      "employee": 11400,
+      "opd": 15000,
+      "ipd": 15000,
+      "it": 15000
+    }
+  },
+  {
+    "id": "drg-1781308112380",
+    "name": "Holoxan (1 Gm) Injection",
+    "type": "Oncology",
+    "stockCode": "51111509000002",
+    "prices": {
+      "employee": 1400,
+      "opd": 1938,
+      "ipd": 1938,
+      "it": 1938
+    }
+  },
+  {
+    "id": "drg-1781351593241",
+    "name": "Intaxel Inj 30 Mg (**)",
+    "type": "Oncology",
+    "stockCode": "51111904000008",
+    "prices": {
+      "employee": 942,
+      "opd": 1139,
+      "ipd": 1139,
+      "it": 1139
+    }
+  },
+  {
+    "id": "drg-1781351623120",
+    "name": "Intaxel Inj 100 Mg (**)",
+    "type": "Oncology",
+    "stockCode": "51111904000012",
+    "prices": {
+      "employee": 2943,
+      "opd": 3558,
+      "ipd": 3558,
+      "it": 3558
+    }
+  },
+  {
+    "id": "drg-1781351697501",
+    "name": "Mabthera (100mg/10ml)  Inj (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111716000001",
+    "prices": {
+      "employee": 16000,
+      "opd": 20000,
+      "ipd": 20000,
+      "it": 20000
+    }
+  },
+  {
+    "id": "drg-1781351758020",
+    "name": "MABthera (500mg/50mL) Vial (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111716000002",
+    "prices": {
+      "employee": 60459,
+      "opd": 73101,
+      "ipd": 73101,
+      "it": 73101
+    }
+  },
+  {
+    "id": "drg-1781352662873",
+    "name": "Methotrexate INJ (50 mg/2mL)",
+    "type": "Oncology",
+    "stockCode": "51111610000006",
+    "prices": {
+      "employee": 420,
+      "opd": 800,
+      "ipd": 1200,
+      "it": 1600
+    }
+  },
+  {
+    "id": "drg-1781452636234",
+    "name": "Mitomycin-C Inj (2 Mg) (**)(><)",
+    "type": "Oncology",
+    "stockCode": "51111704000003",
+    "prices": {
+      "employee": 276,
+      "opd": 536,
+      "ipd": 536,
+      "it": 683
+    }
+  },
+  {
+    "id": "drg-1781452675097",
+    "name": "Mitomycin-C Inj (10 Mg) (**)(><)",
+    "type": "Oncology",
+    "stockCode": "51111704000004",
+    "prices": {
+      "employee": 817,
+      "opd": 1938,
+      "ipd": 1938,
+      "it": 2470
+    }
+  },
+  {
+    "id": "drg-1781452830658",
+    "name": "Paraplatin 50 Mg Inj",
+    "type": "Oncology",
+    "stockCode": "51111503000001",
+    "prices": {
+      "employee": 1484,
+      "opd": 2040,
+      "ipd": 2040,
+      "it": 2600
+    }
+  },
+  {
+    "id": "drg-1781452935098",
+    "name": "Carboplatin  Inj (150 Mg/15ml) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111503000002",
+    "prices": {
+      "employee": 448,
+      "opd": 541,
+      "ipd": 541,
+      "it": 541
+    }
+  },
+  {
+    "id": "drg-1781453008068",
+    "name": "Paraplatin Inj 150 Mg",
+    "type": "Oncology",
+    "stockCode": "51111503000003",
+    "prices": {
+      "employee": 4000,
+      "opd": 5355,
+      "ipd": 5355,
+      "it": 5250
+    }
+  },
+  {
+    "id": "drg-1781453058068",
+    "name": "Carboplatin (450 Mg/45ml) Inj (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111503000004",
+    "prices": {
+      "employee": 1060,
+      "opd": 1281,
+      "ipd": 1281,
+      "it": 1281
+    }
+  },
+  {
+    "id": "drg-1781453103799",
+    "name": "Cisplatin Inj (50mg/50ml) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111506000005",
+    "prices": {
+      "employee": 605,
+      "opd": 732,
+      "ipd": 732,
+      "it": 732
+    }
+  },
+  {
+    "id": "drg-1781453187459",
+    "name": "Remicade (Infliximab) 100 Mg Inj [Original]  ><",
+    "type": "General",
+    "stockCode": "51111720000001",
+    "prices": {
+      "employee": 22727,
+      "opd": 31000,
+      "ipd": 31000,
+      "it": 31000
+    }
+  },
+  {
+    "id": "drg-1781453239711",
+    "name": "Hycamtin 4 Mg Inj ><",
+    "type": "Oncology",
+    "stockCode": "51111811000003",
+    "prices": {
+      "employee": 17100,
+      "opd": 25500,
+      "ipd": 25500,
+      "it": 25500
+    }
+  },
+  {
+    "id": "drg-1781453302289",
+    "name": "Etoposid (100 Mg/5 Ml) (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111614000004",
+    "prices": {
+      "employee": 500,
+      "opd": 1320,
+      "ipd": 1320,
+      "it": 1320
+    }
+  },
+  {
+    "id": "drg-1781453402160",
+    "name": "VidaZA INJ (100 mg) Vial",
+    "type": "Oncology",
+    "stockCode": "51012010203004",
+    "prices": {
+      "employee": 22246,
+      "opd": 26897,
+      "ipd": 26897,
+      "it": 26897
+    }
+  },
+  {
+    "id": "drg-1781453439212",
+    "name": "Visudyne",
+    "type": "Oncology",
+    "stockCode": "51019011201001",
+    "prices": {
+      "employee": 55084,
+      "opd": 65000,
+      "ipd": 65000,
+      "it": 65000
+    }
+  },
+  {
+    "id": "drg-1781453586633",
+    "name": "Diphereline 0.1 Mg (Triptorelin) Inj",
+    "type": "General",
+    "stockCode": "51111818000001",
+    "prices": {
+      "employee": 1100,
+      "opd": 1607,
+      "ipd": 2142,
+      "it": 2415
+    }
+  },
+  {
+    "id": "drg-1781453915875",
+    "name": "Erbitux INJ (100 mg/20mL) Vial ><",
+    "type": "Oncology",
+    "stockCode": "51012012403005",
+    "prices": {
+      "employee": 15772,
+      "opd": 19070,
+      "ipd": 19070,
+      "it": 19070
+    }
+  },
+  {
+    "id": "drg-1781453945326",
+    "name": "Flebogamma (IVIG) 5% DIF INJ(10 g/200 mL)Vial [**]",
+    "type": "General",
+    "stockCode": "51201806000004",
+    "prices": {
+      "employee": 30000,
+      "opd": 35000,
+      "ipd": 38500,
+      "it": 45000
+    }
+  },
+  {
+    "id": "drg-1781454072226",
+    "name": "Gonal-F (450 Iu) Inj[**]",
+    "type": "General",
+    "stockCode": "51181912000003",
+    "prices": {
+      "employee": 7500,
+      "opd": 12240,
+      "ipd": 13260,
+      "it": 14000
+    }
+  },
+  {
+    "id": "drg-1781454123486",
+    "name": "Granocyte Inj 100 Mcg",
+    "type": "General",
+    "stockCode": "51111613000002",
+    "prices": {
+      "employee": 2100,
+      "opd": 3060,
+      "ipd": 3060,
+      "it": 3000
+    }
+  },
+  {
+    "id": "drg-1781454171437",
+    "name": "HemoFIL M(250 IU) Vial",
+    "type": "General",
+    "stockCode": "51131802000005",
+    "prices": {
+      "employee": 3235,
+      "opd": 4845,
+      "ipd": 6069,
+      "it": 5950
+    }
+  },
+  {
+    "id": "drg-1781454209327",
+    "name": "Herceptin Inj 440 Mg (**,><)",
+    "type": "Oncology",
+    "stockCode": "51111717000003",
+    "prices": {
+      "employee": 93500,
+      "opd": 94000,
+      "ipd": 94000,
+      "it": 94000
+    }
+  },
+  {
+    "id": "drg-1781454258089",
+    "name": "Intron-A Multidose Pen 30 Mu",
+    "type": "Oncology",
+    "stockCode": "51201809000002",
+    "prices": {
+      "employee": 16400,
+      "opd": 20000,
+      "ipd": 20000,
+      "it": 20000
+    }
+  },
+  {
+    "id": "drg-1781454282968",
+    "name": "Bioferon (3 miu) Injection",
+    "type": "Oncology",
+    "stockCode": "51201809000005",
+    "prices": {
+      "employee": 1000,
+      "opd": 1530,
+      "ipd": 1530,
+      "it": 1500
+    }
+  },
+  {
+    "id": "drg-1781454340592",
+    "name": "Bioferon (5 miu) Injection",
+    "type": "Oncology",
+    "stockCode": "51201809000006",
+    "prices": {
+      "employee": 1610,
+      "opd": 1800,
+      "ipd": 1800,
+      "it": 1800
+    }
+  },
+  {
+    "id": "drg-1781454368829",
+    "name": "Leucovorin Inj  50 Mg/ 5ml",
+    "type": "Oncology",
+    "stockCode": "51211617000003",
+    "prices": {
+      "employee": 248,
+      "opd": 969,
+      "ipd": 969,
+      "it": 1072
+    }
+  },
+  {
+    "id": "drg-1781454411999",
+    "name": "Calcium Folinate (300 Mg/30ml) Inj",
+    "type": "Oncology",
+    "stockCode": "51211617000005",
+    "prices": {
+      "employee": 750,
+      "opd": 4515,
+      "ipd": 4515,
+      "it": 4515
+    }
+  },
+  {
+    "id": "drg-1781455804718",
+    "name": "Leunase-10,000U Injection",
+    "type": "Oncology",
+    "stockCode": "51111901000001",
+    "prices": {
+      "employee": 1400,
+      "opd": 2142,
+      "ipd": 2142,
+      "it": 2100
+    }
+  },
+  {
+    "id": "drg-1781455852638",
+    "name": "LucenTIS INJ (10 mg/mL) (0.23mL) Via",
+    "type": "General",
+    "stockCode": "51019011201002",
+    "prices": {
+      "employee": 55000,
+      "opd": 70000,
+      "ipd": 70000,
+      "it": 70000
+    }
+  },
+  {
+    "id": "drg-1781455913127",
+    "name": "Neulastim Pps (6 Mg./0.6 Ml)(Roche)",
+    "type": "General",
+    "stockCode": "51201803000001",
+    "prices": {
+      "employee": 20600,
+      "opd": 37026,
+      "ipd": 37026,
+      "it": 37026
+    }
+  },
+  {
+    "id": "drg-1781455943046",
+    "name": "Orgalutran (0.25 Mg) Inj",
+    "type": "General",
+    "stockCode": "51008010303001",
+    "prices": {
+      "employee": 1700,
+      "opd": 3123,
+      "ipd": 4017,
+      "it": 4725
+    }
+  },
+  {
+    "id": "drg-1781455977807",
+    "name": "Ovidrel 250 Mcg. Inj",
+    "type": "General",
+    "stockCode": "51181901000001",
+    "prices": {
+      "employee": 1400,
+      "opd": 2570,
+      "ipd": 3213,
+      "it": 3675
+    }
+  },
+  {
+    "id": "drg-1781456007816",
+    "name": "Peg Intron Redipen 100 Mcg Inj",
+    "type": "General",
+    "stockCode": "51201513000007",
+    "prices": {
+      "employee": 14500,
+      "opd": 20400,
+      "ipd": 25500,
+      "it": 25500
+    }
+  },
+  {
+    "id": "drg-1781456040507",
+    "name": "IVF-C (Hcg Inj 5000 Iu) (**) (Pregnly inj.-ss)",
+    "type": "General",
+    "stockCode": "51181901000003",
+    "prices": {
+      "employee": 600,
+      "opd": 1018,
+      "ipd": 1392,
+      "it": 1470
+    }
+  },
+  {
+    "id": "drg-1781456087837",
+    "name": "Profilnine Sd 500 unit (Factors IX Complex) Injection",
+    "type": "General",
+    "stockCode": "51131802000007",
+    "prices": {
+      "employee": 7200,
+      "opd": 11220,
+      "ipd": 11220,
+      "it": 11220
+    }
+  },
+  {
+    "id": "drg-1781456160138",
+    "name": "Puregon Cartridge 300 Iu Inj",
+    "type": "General",
+    "stockCode": "51181912000007",
+    "prices": {
+      "employee": 5200,
+      "opd": 7854,
+      "ipd": 9690,
+      "it": 11500
+    }
+  },
+  {
+    "id": "drg-1781456204488",
+    "name": "Puregon Cartridge 600 Iu Inj",
+    "type": "General",
+    "stockCode": "51181912000008",
+    "prices": {
+      "employee": 10300,
+      "opd": 15300,
+      "ipd": 19380,
+      "it": 23000
+    }
+  },
+  {
+    "id": "drg-1781456344021",
+    "name": "Recormon injection 10000 I.U.",
+    "type": "General",
+    "stockCode": "51131506000001",
+    "prices": {
+      "employee": 3600,
+      "opd": 5508,
+      "ipd": 5814,
+      "it": 5700
+    }
+  },
+  {
+    "id": "drg-1781456406001",
+    "name": "Recormon Inj 30000 Iu",
+    "type": "General",
+    "stockCode": "51131506000002",
+    "prices": {
+      "employee": 11000,
+      "opd": 14025,
+      "ipd": 20502,
+      "it": 20100
+    }
+  },
+  {
+    "id": "drg-1781456439671",
+    "name": "Recormon injection 2000 I.U. [PFS]",
+    "type": "General",
+    "stockCode": "51131506000003",
+    "prices": {
+      "employee": 900,
+      "opd": 1683,
+      "ipd": 2040,
+      "it": 2450
+    }
+  },
+  {
+    "id": "drg-1781456582632",
+    "name": "Clotinab (AbcixiMAB) INJ (10mg/5ml) Vial(><)",
+    "type": "Oncology",
+    "stockCode": "51131701000001",
+    "prices": {
+      "employee": 12000,
+      "opd": 21420,
+      "ipd": 21420,
+      "it": 21000
+    }
+  },
+  {
+    "id": "drg-1781456617562",
+    "name": "SANDostatin INJ 100 mcg (100 mcg/mL) Amp",
+    "type": "Oncology",
+    "stockCode": "51182304000001",
+    "prices": {
+      "employee": 795,
+      "opd": 1296,
+      "ipd": 1633,
+      "it": 1943
+    }
+  },
+  {
+    "id": "drg-1781456655863",
+    "name": "Vincristin Inj (1 Mg) (><,!!)",
+    "type": "Oncology",
+    "stockCode": "51111709000001",
+    "prices": {
+      "employee": 202,
+      "opd": 836,
+      "ipd": 836,
+      "it": 1066
+    }
+  },
+  {
+    "id": "drg-1781456695773",
+    "name": "LeuKeRan (2 Mg) Tablet",
+    "type": "Oncology",
+    "stockCode": "51111505000001",
+    "prices": {
+      "employee": 20,
+      "opd": 33,
+      "ipd": 33,
+      "it": 32
+    }
+  },
+  {
+    "id": "drg-1781456721474",
+    "name": "NeraVIR Oral SUSP (50 mg/5mL)(60mL)",
+    "type": "General",
+    "stockCode": "51102311000004",
+    "prices": {
+      "employee": 85,
+      "opd": 510,
+      "ipd": 510,
+      "it": 500
+    }
+  },
+  {
+    "id": "drg-1781456755573",
+    "name": "Alkeran (2 Mg) Tablet",
+    "type": "Oncology",
+    "stockCode": "51111512000001",
+    "prices": {
+      "employee": 85,
+      "opd": 153,
+      "ipd": 184,
+      "it": 250
+    }
+  },
+  {
+    "id": "drg-1781456788723",
+    "name": "ARIMIDEX (1 MG)TAB",
+    "type": "Oncology",
+    "stockCode": "51111801000001",
+    "prices": {
+      "employee": 263,
+      "opd": 338,
+      "ipd": 338,
+      "it": 431
+    }
+  },
+  {
+    "id": "drg-1781456982776",
+    "name": "Celvista Tab 60 Mg",
+    "type": "Oncology",
+    "stockCode": "51182424000001",
+    "prices": {
+      "employee": 70,
+      "opd": 107,
+      "ipd": 135,
+      "it": 145
+    }
+  },
+  {
+    "id": "drg-1781457037657",
+    "name": "Endoxan Tab 50 Mg",
+    "type": "Oncology",
+    "stockCode": "51111507000001",
+    "prices": {
+      "employee": 10,
+      "opd": 20,
+      "ipd": 26,
+      "it": 30
+    }
+  },
+  {
+    "id": "drg-1781457206868",
+    "name": "Farlutal (500 Mg) Tablet",
+    "type": "Oncology",
+    "stockCode": "51181827000001",
+    "prices": {
+      "employee": 144,
+      "opd": 204,
+      "ipd": 204,
+      "it": 260
+    }
+  },
+  {
+    "id": "drg-1781457274628",
+    "name": "Femara  Tab 2.5 Mg",
+    "type": "Oncology",
+    "stockCode": "51111820000001",
+    "prices": {
+      "employee": 280,
+      "opd": 333,
+      "ipd": 428,
+      "it": 504
+    }
+  },
+  {
+    "id": "drg-1781457308458",
+    "name": "Fludara 10 Mg Tab",
+    "type": "Oncology",
+    "stockCode": "51111604000001",
+    "prices": {
+      "employee": 1900,
+      "opd": 2295,
+      "ipd": 3774,
+      "it": 3700
+    }
+  },
+  {
+    "id": "drg-1781457352669",
+    "name": "Flutan 250 Mg Tab (Fugerel)",
+    "type": "Oncology",
+    "stockCode": "51111804000001",
+    "prices": {
+      "employee": 47,
+      "opd": 115,
+      "ipd": 115,
+      "it": 147
+    }
+  },
+  {
+    "id": "drg-1781457385009",
+    "name": "Hycamtin CAPSULE (1 mg)",
+    "type": "Oncology",
+    "stockCode": "51111811000001",
+    "prices": {
+      "employee": 1792,
+      "opd": 2448,
+      "ipd": 2448,
+      "it": 3120
+    }
+  },
+  {
+    "id": "drg-1781457411719",
+    "name": "Hydrea Cap 500 Mg",
+    "type": "Oncology",
+    "stockCode": "51111606000001",
+    "prices": {
+      "employee": 33,
+      "opd": 54,
+      "ipd": 69,
+      "it": 74
+    }
+  },
+  {
+    "id": "drg-1781457462977",
+    "name": "Nexavar 200 Mg Tab",
+    "type": "Oncology",
+    "stockCode": "51012012405003",
+    "prices": {
+      "employee": 1800,
+      "opd": 2100,
+      "ipd": 2100,
+      "it": 2100
+    }
+  },
+  {
+    "id": "drg-1781625406598",
+    "name": "Citra Lock 30% (Trisodium Citrate 5 mL./Vial) [By case]",
+    "type": "General",
+    "stockCode": "42272505000058",
+    "prices": {
+      "employee": 150,
+      "opd": 357,
+      "ipd": 439,
+      "it": 550
+    }
+  },
+  {
+    "id": "drg-1781625454586",
+    "name": "CREON-40,000 Units CAP (**) By CASE",
+    "type": "General",
+    "stockCode": "51001090101006",
+    "prices": {
+      "employee": 73,
+      "opd": 109.99,
+      "ipd": 130,
+      "it": 150
+    }
+  },
+  {
+    "id": "drg-1781625508096",
+    "name": "Livact Granules (4.15 g)(Box = 84'S)By Case ($)",
+    "type": "General",
+    "stockCode": "51001160101002",
+    "prices": {
+      "employee": 7750,
+      "opd": 11220,
+      "ipd": 11220,
+      "it": 11220
+    }
+  },
+  {
+    "id": "drg-1781630993568",
+    "name": "Repatha INJ (140 mg/1mL) Prefilled Pen[By Case]",
+    "type": "General",
+    "stockCode": "51003100201008",
+    "prices": {
+      "employee": 11000,
+      "opd": 16830,
+      "ipd": 18360,
+      "it": 19500
+    }
+  },
+  {
+    "id": "drg-1781631059713",
+    "name": "Tractocile (7.5 mg/mL) 5 ML Inj.By Case",
+    "type": "General",
+    "stockCode": "51007020324002",
+    "prices": {
+      "employee": 5400,
+      "opd": 7650,
+      "ipd": 8670,
+      "it": 9500
+    }
+  },
+  {
+    "id": "drg-1781631129934",
+    "name": "Flucytosine Cap. 500 mg (Tozene) [By case]",
+    "type": "General",
+    "stockCode": "51010020124008",
+    "prices": {
+      "employee": 92,
+      "opd": 160,
+      "ipd": 180,
+      "it": 210
+    }
+  },
+  {
+    "id": "drg-1781631172564",
+    "name": "Synagis 100 mg/mL INJ Vial (By Case)",
+    "type": "General",
+    "stockCode": "51010060204002",
+    "prices": {
+      "employee": 17500,
+      "opd": 25500,
+      "ipd": 29500,
+      "it": 33500
+    }
+  },
+  {
+    "id": "drg-1781631213415",
+    "name": "Pomalidomide 3 mg CAP( By Case)",
+    "type": "Oncology",
+    "stockCode": "51012040124039",
+    "prices": {
+      "employee": 41500,
+      "opd": 48500,
+      "ipd": 48500,
+      "it": 48500
+    }
+  },
+  {
+    "id": "drg-1781631424135",
+    "name": "Fycompa Tablet (4 mg)[By Case]",
+    "type": "General",
+    "stockCode": "51014030124005",
+    "prices": {
+      "employee": 100,
+      "opd": 153,
+      "ipd": 184,
+      "it": 220
+    }
+  },
+  {
+    "id": "drg-1781631470287",
+    "name": "Invega Trinza INJ(350 mg/1.75 mL) PFS [By Case] (**)",
+    "type": "General",
+    "stockCode": "51014050124009",
+    "prices": {
+      "employee": 27000,
+      "opd": 36720,
+      "ipd": 38760,
+      "it": 40000
+    }
+  },
+  {
+    "id": "drg-1781631497357",
+    "name": "Symbicort Rapihaler (160/4.5 mcg)(120 D)[By case]",
+    "type": "General",
+    "stockCode": "51018030424013",
+    "prices": {
+      "employee": 1000,
+      "opd": 1600,
+      "ipd": 2100,
+      "it": 2600
+    }
+  },
+  {
+    "id": "drg-1781631533916",
+    "name": "Jadenu TABLET (180 mg)(Deferasirox FCT)[BY CASE]",
+    "type": "General",
+    "stockCode": "51022030103008",
+    "prices": {
+      "employee": 290,
+      "opd": 398,
+      "ipd": 398,
+      "it": 390
+    }
+  },
+  {
+    "id": "drg-1781631587067",
+    "name": "Exsirox (Deferasirox)(250 mg)(Box 28's)(Exjade -SS)By Case",
+    "type": "General",
+    "stockCode": "51022030103011",
+    "prices": {
+      "employee": 980,
+      "opd": 1400,
+      "ipd": 1680,
+      "it": 1960
+    }
+  },
+  {
+    "id": "drg-1781631641888",
+    "name": "Valcyte 450 Mg Tab (By Case)",
+    "type": "General",
+    "stockCode": "51102333000001",
+    "prices": {
+      "employee": 1220,
+      "opd": 1836,
+      "ipd": 1836,
+      "it": 1836
+    }
+  },
+  {
+    "id": "drg-1781631683818",
+    "name": "Amantadine TABLET(100 mg)(BY CASE)",
+    "type": "General",
+    "stockCode": "51102338000031",
+    "prices": {
+      "employee": 30,
+      "opd": 55,
+      "ipd": 70,
+      "it": 85
+    }
+  },
+  {
+    "id": "drg-1781631724587",
+    "name": "Navelbine Capsule (20 Mg) [BY CASE] (**)",
+    "type": "Oncology",
+    "stockCode": "51111814000001",
+    "prices": {
+      "employee": 5532,
+      "opd": 7140,
+      "ipd": 7140,
+      "it": 9100
+    }
+  },
+  {
+    "id": "drg-1781631754620",
+    "name": "Navelbine Capsule (30 Mg) [BY CASE](**)",
+    "type": "Oncology",
+    "stockCode": "51111814000002",
+    "prices": {
+      "employee": 8298,
+      "opd": 10200,
+      "ipd": 10200,
+      "it": 13000
+    }
+  },
+  {
+    "id": "drg-1781632118450",
+    "name": "OlmeTEC 20 Mg Tab [By Case]",
+    "type": "General",
+    "stockCode": "51121759000001",
+    "prices": {
+      "employee": 25,
+      "opd": 36,
+      "ipd": 46,
+      "it": 55
+    }
+  },
+  {
+    "id": "drg-1781632149840",
+    "name": "Leuco Plus 480 mcg/1.6 mL INJ Vial [By Case]",
+    "type": "General",
+    "stockCode": "51131508000074",
+    "prices": {
+      "employee": 1350,
+      "opd": 2500,
+      "ipd": 2500,
+      "it": 3000
+    }
+  },
+  {
+    "id": "drg-1781632192580",
+    "name": "Alteplase (Actilyse) INJ (2 mg)[by case](><)",
+    "type": "General",
+    "stockCode": "51131702000004",
+    "prices": {
+      "employee": 2200,
+      "opd": 2856,
+      "ipd": 3366,
+      "it": 3800
+    }
+  },
+  {
+    "id": "drg-1781632268490",
+    "name": "Abilify Maintena 400mg PFS [By Case]",
+    "type": "General",
+    "stockCode": "51141600000001",
+    "prices": {
+      "employee": 8000,
+      "opd": 12240,
+      "ipd": 13770,
+      "it": 15000
+    }
+  },
+  {
+    "id": "drg-1781632306392",
+    "name": "Abilify Maintena 300 mg PFS [By Case]",
+    "type": "General",
+    "stockCode": "51141600000002",
+    "prices": {
+      "employee": 8000,
+      "opd": 12240,
+      "ipd": 13770,
+      "it": 15000
+    }
+  },
+  {
+    "id": "drg-1781632414803",
+    "name": "Indometacin INJ(1 mg) VIAL [By case]",
+    "type": "General",
+    "stockCode": "51142107000006",
+    "prices": {
+      "employee": 1400,
+      "opd": 2244,
+      "ipd": 2856,
+      "it": 3500
+    }
+  },
+  {
+    "id": "drg-1781632444802",
+    "name": "Azilect Tablet 1 Mg (BY CASE)",
+    "type": "General",
+    "stockCode": "51142513000001",
+    "prices": {
+      "employee": 250,
+      "opd": 482,
+      "ipd": 697,
+      "it": 893
+    }
+  },
+  {
+    "id": "drg-1781632471971",
+    "name": "Sinemet 25/100 Mg Tab [By case]",
+    "type": "General",
+    "stockCode": "51142514000001",
+    "prices": {
+      "employee": 10,
+      "opd": 22,
+      "ipd": 27,
+      "it": 32
+    }
+  },
+  {
+    "id": "drg-1781632561853",
+    "name": "Nuvigil TAB 250 mg By case]($)",
+    "type": "General",
+    "stockCode": "51142618000016",
+    "prices": {
+      "employee": 190,
+      "opd": 306,
+      "ipd": 347,
+      "it": 380
+    }
+  },
+  {
+    "id": "drg-1781632618713",
+    "name": "Palset INJ (0.25 mg/5 mL) Vial [Aloxi -SS]By Case",
+    "type": "Oncology",
+    "stockCode": "51171822000002",
+    "prices": {
+      "employee": 1150,
+      "opd": 1836,
+      "ipd": 2397,
+      "it": 3055
+    }
+  },
+  {
+    "id": "drg-1781632654874",
+    "name": "GIGA (Megestrol acetate 40 mg/mL) SUSP 120 mL (BY CASE)",
+    "type": "Oncology",
+    "stockCode": "51181806000003",
+    "prices": {
+      "employee": 1900,
+      "opd": 2800,
+      "ipd": 3000,
+      "it": 3200
+    }
+  },
+  {
+    "id": "drg-1781632690374",
+    "name": "Desmopressin Nasal Spray (0.1 mg/mL)(50 Doses)[By Case]",
+    "type": "General",
+    "stockCode": "51182101000007",
+    "prices": {
+      "employee": 1130,
+      "opd": 1700,
+      "ipd": 2000,
+      "it": 2200
+    }
+  },
+  {
+    "id": "drg-1781632724135",
+    "name": "Saizen LIQUID 6 MG (5.83mg/mL)(By Case)",
+    "type": "General",
+    "stockCode": "51182302000009",
+    "prices": {
+      "employee": 10000,
+      "opd": 13300,
+      "ipd": 13300,
+      "it": 13300
+    }
+  },
+  {
+    "id": "drg-1781632765084",
+    "name": "ACD Solution – Formular A 500 ml[By case]",
+    "type": "General",
+    "stockCode": "51191603000047",
+    "prices": {
+      "employee": 650,
+      "opd": 1326,
+      "ipd": 1530,
+      "it": 1700
+    }
+  },
+  {
+    "id": "drg-1781632858906",
+    "name": "AloXI INJ (0.25 mg/5mL) (By  Case)",
+    "type": "Oncology",
+    "stockCode": "51171822000001",
+    "prices": {
+      "employee": 2530,
+      "opd": 3963,
+      "ipd": 3963,
+      "it": 5051
+    }
+  },
+  {
+    "id": "drg-1781632922496",
+    "name": "Invega Sustenna INJ (100 mg) Prefilled [By case](**)",
+    "type": "General",
+    "stockCode": "51014050124005",
+    "prices": {
+      "employee": 9000,
+      "opd": 13770,
+      "ipd": 16830,
+      "it": 18500
+    }
+  },
+  {
+    "id": "drg-1781632954717",
+    "name": "Invega Sustenna INJ (150 mg) Prefilled [By case](**)",
+    "type": "General",
+    "stockCode": "51014050124006",
+    "prices": {
+      "employee": 11000,
+      "opd": 17850,
+      "ipd": 20400,
+      "it": 22000
+    }
+  },
+  {
+    "id": "drg-1781632994886",
+    "name": "Apidra SOLOSTAR (300 units/3mL) Pen By Case",
+    "type": "General",
+    "stockCode": "51181506000015",
+    "prices": {
+      "employee": 340,
+      "opd": 590,
+      "ipd": 697,
+      "it": 788
+    }
+  },
+  {
+    "id": "drg-1781633027427",
+    "name": "Eprex-10000 Injection[By Case]",
+    "type": "General",
+    "stockCode": "51131508000001",
+    "prices": {
+      "employee": 3800,
+      "opd": 5355,
+      "ipd": 5355,
+      "it": 5355
+    }
+  },
+  {
+    "id": "drg-1781633062657",
+    "name": "Eprex Inj (40000 IU/ml)[By Case]",
+    "type": "Oncology",
+    "stockCode": "51131508000007",
+    "prices": {
+      "employee": 12400,
+      "opd": 24633,
+      "ipd": 24633,
+      "it": 24633
+    }
+  },
+  {
+    "id": "drg-1781633104927",
+    "name": "Forteo INJ (600 mcg/2.4 mL) Pen[By case]",
+    "type": "General",
+    "stockCode": "51008050101001",
+    "prices": {
+      "employee": 21200,
+      "opd": 26000,
+      "ipd": 26000,
+      "it": 26000
+    }
+  },
+  {
+    "id": "drg-1781633175768",
+    "name": "Iressa 250 Mg Tab [By Case]",
+    "type": "Oncology",
+    "stockCode": "51111826000001",
+    "prices": {
+      "employee": 650,
+      "opd": 760,
+      "ipd": 760,
+      "it": 760
+    }
+  },
+  {
+    "id": "drg-1781634270246",
+    "name": "Sandimmun (100 Mg) Capsule (By Case)",
+    "type": "General",
+    "stockCode": "51201502000004",
+    "prices": {
+      "employee": 180,
+      "opd": 321,
+      "ipd": 407,
+      "it": 441
+    }
+  },
+  {
+    "id": "drg-1781634306616",
+    "name": "Thromboreductin 0.5 Mg Cap[By Case]",
+    "type": "General",
+    "stockCode": "51131715000002",
+    "prices": {
+      "employee": 115,
+      "opd": 132,
+      "ipd": 132,
+      "it": 132
+    }
+  },
+  {
+    "id": "drg-1781634326337",
+    "name": "TyKERB TABLET (250 mg) (BY  CASE)",
+    "type": "Oncology",
+    "stockCode": "51012012405007",
+    "prices": {
+      "employee": 320,
+      "opd": 375,
+      "ipd": 375,
+      "it": 375
+    }
+  },
+  {
+    "id": "drg-1781634418107",
+    "name": "Puramino Powder (400 g)[By Case]",
+    "type": "General",
+    "stockCode": "51022060402044",
+    "prices": {
+      "employee": 1850,
+      "opd": 2300,
+      "ipd": 2500,
+      "it": 2800
+    }
+  },
+  {
+    "id": "drg-1781634464198",
+    "name": "Fresubin DM Vanilla Drink 200 mL(By case)",
+    "type": "General",
+    "stockCode": "51022060406088",
+    "prices": {
+      "employee": 175,
+      "opd": 240,
+      "ipd": 270,
+      "it": 300
+    }
+  },
+  {
+    "id": "drg-1781634502559",
+    "name": "Prontosan Gel X 50 G.[By case]",
+    "type": "General",
+    "stockCode": "42311513000079",
+    "prices": {
+      "employee": 1200,
+      "opd": 2000,
+      "ipd": 2100,
+      "it": 2200
+    }
+  },
+  {
+    "id": "drg-1781634548278",
+    "name": "Sclera graft (By Case)",
+    "type": "General",
+    "stockCode": "51090000000092",
+    "prices": {
+      "employee": 600,
+      "opd": 3120,
+      "ipd": 3640,
+      "it": 4000
+    }
+  },
+  {
+    "id": "drg-1781634576998",
+    "name": "Amniotic GRAFT(BY Case)",
+    "type": "General",
+    "stockCode": "51090000000010",
+    "prices": {
+      "employee": 600,
+      "opd": 3000,
+      "ipd": 3500,
+      "it": 4000
+    }
+  },
+  {
+    "id": "drg-1781634854901",
+    "name": "BCG-Medac (for Intravescical)Vial",
+    "type": "General",
+    "stockCode": "51012030124001",
+    "prices": {
+      "employee": 7400,
+      "opd": 12000,
+      "ipd": 12000,
+      "it": 12000
+    }
+  },
+  {
+    "id": "drg-1781634916192",
+    "name": "AndroLIC [FIFTY](50 Mg) Tablet",
+    "type": "General",
+    "stockCode": "51131505000001",
+    "prices": {
+      "employee": 27,
+      "opd": 41,
+      "ipd": 41,
+      "it": 40
+    }
+  },
+  {
+    "id": "drg-1781635138283",
+    "name": "Megrol 160 mg Tab (Megace-ss)(X)",
+    "type": "Oncology",
+    "stockCode": "51181806000001",
+    "prices": {
+      "employee": 77,
+      "opd": 112,
+      "ipd": 163,
+      "it": 170
+    }
+  },
+  {
+    "id": "drg-1781635597794",
+    "name": "Natamycin 5% Ophth SUSP (5 mL)",
+    "type": "General",
+    "stockCode": "51101814000002",
+    "prices": {
+      "employee": 860,
+      "opd": 1400,
+      "ipd": 1600,
+      "it": 1800
+    }
+  },
+  {
+    "id": "drg-1781694728461",
+    "name": "Privigen 10% (IVIG)[5 g/50 mL]",
+    "type": "General",
+    "stockCode": "51201806000020",
+    "prices": {
+      "employee": 16250,
+      "opd": 17850,
+      "ipd": 19635,
+      "it": 20000
+    }
+  },
+  {
+    "id": "drg-1781724232218",
+    "name": "Eylea 2 mg/0.05 ml Intravitreal INJ (Dose)",
+    "type": "General",
+    "stockCode": "51019011201022",
+    "prices": {
+      "employee": 11500,
+      "opd": 15000,
+      "ipd": 15000,
+      "it": 15000
+    }
+  },
+  {
+    "id": "drg-1781724291317",
+    "name": "Eylea 8 mg/0.07 ml Intravitreal INJ (Dose)",
+    "type": "General",
+    "stockCode": "51241144150000",
+    "prices": {
+      "employee": 20000,
+      "opd": 25000,
+      "ipd": 25000,
+      "it": 25000
+    }
+  },
+  {
+    "id": "drg-1782817926194",
+    "name": "Vancomycin 125 mg CAPSULE [..By Case..]",
+    "type": "General",
+    "stockCode": "51101591000019",
+    "prices": {
+      "employee": 32,
+      "opd": 80,
+      "ipd": 95,
+      "it": 120
+    }
+  }
+]

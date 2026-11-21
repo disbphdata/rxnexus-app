@@ -606,28 +606,28 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         };
       }
 
-      // Secure authenticaton linkage via standard Firebase Auth virtual emails
+      // Optional Firebase Auth linkage via virtual email (non-blocking if provider is disabled or network-restricted)
       const virtualEmail = `${username.trim().toLowerCase()}@rxnexus.com`;
-      try {
-        await signInWithEmailAndPassword(auth, virtualEmail, password);
-      } catch (authError: any) {
-        // Authenticate new users on their very first sign in dynamically
-        if (authError.code === 'auth/user-not-found' || authError.code === 'auth/invalid-credential') {
-          try {
-            await createUserWithEmailAndPassword(auth, virtualEmail, password);
-          } catch (createError: any) {
-            if (createError.code === 'auth/operation-not-allowed') {
-              console.warn('[Firebase Auth Warn] Email/Password provider is not enabled in the Firebase Console. Seamlesly falling back to Firestore-based verification to prevent blocking.');
-            } else {
-              throw createError;
+      const runOptionalAuthSync = async () => {
+        try {
+          await signInWithEmailAndPassword(auth, virtualEmail, password);
+        } catch (authError: any) {
+          if (authError?.code === 'auth/user-not-found' || authError?.code === 'auth/invalid-credential') {
+            try {
+              await createUserWithEmailAndPassword(auth, virtualEmail, password);
+            } catch (createError: any) {
+              console.warn('[Firebase Auth Warn] Optional Auth account sync skipped:', createError?.code || createError?.message);
             }
+          } else {
+            console.warn('[Firebase Auth Warn] Optional Auth sign-in skipped, continuing with Firestore-verified session:', authError?.code || authError?.message);
           }
-        } else if (authError.code === 'auth/operation-not-allowed') {
-          console.warn('[Firebase Auth Warn] Email/Password provider is not enabled in the Firebase Console. Seamlesly falling back to Firestore-based verification to prevent blocking.');
-        } else {
-          throw authError;
         }
-      }
+      };
+
+      await Promise.race([
+        runOptionalAuthSync(),
+        new Promise<void>((resolve) => setTimeout(resolve, 4000))
+      ]);
 
       setCurrentUser(matchedUser);
       localStorage.setItem('rxnexus_user', JSON.stringify(matchedUser));

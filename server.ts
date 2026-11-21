@@ -13,19 +13,21 @@ const DB_PATH = path.join(process.cwd(), 'rxnexus_db.json');
 function loadDB(): DBState {
   try {
     if (fs.existsSync(DB_PATH)) {
-      const raw = fs.readFileSync(DB_PATH, 'utf-8');
-      const loaded = JSON.parse(raw);
-      if (loaded && loaded.users && Array.isArray(loaded.users)) {
-        loaded.users.forEach((u: any) => {
-          if (!u.roles || !Array.isArray(u.roles)) {
-            u.roles = [u.role || 'Nurse'];
-          }
-        });
+      const raw = fs.readFileSync(DB_PATH, 'utf-8').trim();
+      if (raw) {
+        const loaded = JSON.parse(raw);
+        if (loaded && loaded.users && Array.isArray(loaded.users)) {
+          loaded.users.forEach((u: any) => {
+            if (!u.roles || !Array.isArray(u.roles)) {
+              u.roles = [u.role || 'Nurse'];
+            }
+          });
+        }
+        return loaded;
       }
-      return loaded;
     }
   } catch (error) {
-    console.error('Error reading database file, using fallback state:', error);
+    console.warn('Database file could not be parsed, initializing default state:', error instanceof Error ? error.message : error);
   }
 
   // Fallback initial database state
@@ -107,10 +109,12 @@ function loadDB(): DBState {
   return newState;
 }
 
-// Helper to save database state
+// Helper to save database state atomically
 function saveDB(state: DBState) {
   try {
-    fs.writeFileSync(DB_PATH, JSON.stringify(state, null, 2), 'utf-8');
+    const tmpPath = `${DB_PATH}.tmp`;
+    fs.writeFileSync(tmpPath, JSON.stringify(state, null, 2), 'utf-8');
+    fs.renameSync(tmpPath, DB_PATH);
   } catch (error) {
     console.error('Error writing to database file:', error);
   }
