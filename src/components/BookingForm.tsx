@@ -90,6 +90,60 @@ const PREDEFINED_DEPARTMENTS = [
     nameEN: 'Psychiatry',
     nameTH: 'Psychiatry (แผนกจิตเวช)',
     relatedKeywords: ['psychiatry', 'psychiatrist', 'mental', 'จิตเวช', 'จิตแพทย์', 'ซึมเศร้า', 'เครียด', 'นอนไม่หลับ', 'จิต']
+  },
+  {
+    value: 'Diabetic & Endocrine',
+    nameEN: 'Diabetic & Endocrine',
+    nameTH: 'Diabetic & Endocrine (แผนกเบาหวานและต่อมไร้ท่อ)',
+    relatedKeywords: ['diabetic', 'diabetes', 'endocrine', 'dm', 'thyroid', 'เบาหวาน', 'ต่อมไร้ท่อ', 'ไทรอยด์', 'ฮอร์โมน', 'น้ำตาล']
+  },
+  {
+    value: 'Mental Health',
+    nameEN: 'Mental Health',
+    nameTH: 'Mental Health (แผนกสุขภาพจิต)',
+    relatedKeywords: ['mental health', 'mental', 'psychology', 'สุขภาพจิต', 'จิตเวช', 'จิตวิทยา', 'เครียด', 'ซึมเศร้า', 'นอนไม่หลับ']
+  },
+  {
+    value: 'GI',
+    nameEN: 'GI',
+    nameTH: 'GI (แผนกทางเดินอาหารและตับ)',
+    relatedKeywords: ['gi', 'gastro', 'gastroenterology', 'liver', 'ทางเดินอาหาร', 'ตับ', 'กระเพาะ', 'ลำไส้', 'ส่องกล้อง', 'จีไอ']
+  },
+  {
+    value: 'Urology',
+    nameEN: 'Urology',
+    nameTH: 'Urology (แผนกทางเดินปัสสาวะ)',
+    relatedKeywords: ['urology', 'uro', 'urinary', 'prostate', 'ทางเดินปัสสาวะ', 'ปัสสาวะ', 'ต่อมลูกหมาก', 'นิ่ว', 'ยูโร']
+  },
+  {
+    value: 'Eye Center',
+    nameEN: 'Eye Center',
+    nameTH: 'Eye Center (ศูนย์จักษุ)',
+    relatedKeywords: ['eye center', 'eye', 'ophthalmology', 'vision', 'ศูนย์จักษุ', 'จักษุ', 'ตา', 'หมอตา', 'ต้อกระจก', 'จอประสาทตา']
+  },
+  {
+    value: 'Lasik Center',
+    nameEN: 'Lasik Center',
+    nameTH: 'Lasik Center (ศูนย์เลสิก)',
+    relatedKeywords: ['lasik', 'lasik center', 'laser', 'eye', 'เลสิก', 'ศูนย์เลสิก', 'สายตาสั้น', 'ทำเลสิก', 'กระจกตา']
+  },
+  {
+    value: 'Prestige Wellness',
+    nameEN: 'Prestige Wellness',
+    nameTH: 'Prestige Wellness (แผนกศูนย์ชะลอวัย)',
+    relatedKeywords: ['prestige wellness', 'prestige', 'wellness', 'anti-aging', 'ชะลอวัย', 'ชะละวัย', 'ศูนย์ชะลอวัย', 'เวชศาสตร์ชะลอวัย', 'สุขภาพองค์รวม']
+  },
+  {
+    value: 'Hemodialysis',
+    nameEN: 'Hemodialysis',
+    nameTH: 'Hemodialysis (แผนกไตเทียม)',
+    relatedKeywords: ['hemodialysis', 'dialysis', 'hd', 'renal', 'kidney', 'ไตเทียม', 'ฟอกไต', 'ล้างไต', 'โรคไต']
+  },
+  {
+    value: 'Rehab',
+    nameEN: 'Rehab',
+    nameTH: 'Rehab (แผนกเวชศาสตร์ฟื้นฟู / กายภาพ)',
+    relatedKeywords: ['rehab', 'rehabilitation', 'pt', 'physical therapy', 'เวชศาสตร์ฟื้นฟู', 'ฟื้นฟู', 'กายภาพ', 'กายภาพบำบัด', 'รีแฮบ']
   }
 ];
 
